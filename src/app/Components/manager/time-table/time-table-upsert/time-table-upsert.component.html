@@ -12,15 +12,28 @@
           <option value="CSS">CSS</option>
           <option value="CShape">CShape</option>
           <option value="Angular">Angular</option>
-
         </select>
       </div>
 
       <div class="mb-3 p-2">
         <label for="dueDate" class="form-label">Due Date</label>
-        <input type="date" class="form-control" id="dueDate" formControlName="dueDate">
+        <input type="" bsDatepicker [bsConfig]="{ isAnimated: true }" autocomplete="off" class="form-control" id="dueDate" formControlName="dueDate">
       </div>
-      
+
+      <div class="mb-3  p-2">
+        <label for="day" class="form-label">Days</label>
+        <select class="form-control" id="day" formControlName="day">
+          <option value="monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+          <option value="Sunday">Sunday</option>
+        </select>
+      </div>
+
+
       <div class="mb-3  p-2">
         <label for="starttime" class="form-label">StartTime</label>
         <input type="time" class="form-control" id="starttime" formControlName="startTime">
@@ -30,13 +43,11 @@
         <input type="time" class="form-control" id="endtime" formControlName="endTime" >
       </div>
 
-      
-
       <div class="mb-3  p-2">
-        <label for="priority" class="form-label">Class</label>
-        <select class="form-control" id="priority" formControlName="location">
+        <label for="class" class="form-label">Class</label>
+        <select class="form-control" id="class" formControlName="class">
           <option value="lab">Lab</option>
-          <option value="Medium">Session</option>
+          <option value="Session">Session</option>
         </select>
       </div>
     </div>
