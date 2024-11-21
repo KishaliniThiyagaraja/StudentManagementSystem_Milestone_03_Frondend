@@ -1,9 +1,11 @@
-import { TimertableService } from './../../../../../Services/timertable.service';
+import { TimeTableService } from './../../../../time-table.service';
+import { TimeTable } from './../../../../../model';
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Route, Router } from '@angular/router';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
-import { TimeTable } from '../../../../../Services/Model';
+
 
 @Component({
   selector: 'app-time-table-upsert',
@@ -17,7 +19,7 @@ export class TimeTableUpsertComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private TimertableService: TimertableService,
+    private timeTableService : TimeTableService,
     private router: Router
   ) {
     this.timeTableForm = this.fb.group({
@@ -33,7 +35,7 @@ export class TimeTableUpsertComponent implements OnInit {
     let timeTable = this.timeTableForm.value;
     console.log(this.timeTableForm.value)
     console.log(timeTable);
-    this.TimertableService.createTable(timeTable)
+    this.timeTableService.createTable(timeTable)
     .subscribe((data: any) => {
      // this.router.navigate(['/timetableview']);
       console.log(data);
