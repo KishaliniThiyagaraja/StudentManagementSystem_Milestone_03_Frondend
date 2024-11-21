@@ -5,13 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
-export class RegisterComponent implements OnInit {
-[x: string]: any;
+export class RegisterComponent  {
 
-  onSubmit(){
 
-  }
-ngOnInit(): void {
 
-}
 }

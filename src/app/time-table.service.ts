@@ -12,6 +12,12 @@ export class TimeTableService {
 
   constructor(private http: HttpClient) { }
 
+  login(loginRequest: LoginRequest){
+     return this.http.post(this.url + '/login', loginRequest,{
+      responseType : 'text'
+     });
+  }
+
   getTables(){
     return this.http.get<TimeTable[]>(this.url);
   }
