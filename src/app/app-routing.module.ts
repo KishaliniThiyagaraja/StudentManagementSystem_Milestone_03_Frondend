@@ -6,6 +6,8 @@ import { TimeTableUpsertComponent } from './Components/manager/time-table/time-t
 import { ManagerComponent } from './Layout/manager/manager.component';
 import { MarkAttendanceComponent } from './Components/manager/mark-attendance/mark-attendance.component';
 import { ViewAttendanceComponent } from './Components/manager/view-attendance/view-attendance.component';
+import { LoginComponent } from './Layout/blank/login/login.component';
+import { RegisterComponent } from './Layout/blank/register/register.component';
 
 const routes: Routes = [
   {
@@ -18,7 +20,10 @@ const routes: Routes = [
       {path : 'layout-manager', component:ManagerComponent},
       { path: 'mark-attendance', component: MarkAttendanceComponent },
       { path: 'view-attendance', component: ViewAttendanceComponent },
-      { path: '', redirectTo: '/mark-attendance', pathMatch: 'full' }
+      { path: '', redirectTo: '/mark-attendance', pathMatch: 'full' },
+      {path : 'login',component:LoginComponent},
+      {path : 'register',component:RegisterComponent},
+      
     ]
   }
 ];
