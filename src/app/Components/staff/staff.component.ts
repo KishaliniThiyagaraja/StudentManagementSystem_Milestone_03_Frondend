@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './staff.component.css'
 })
 export class StaffComponent {
-
+myForm : any;
 }

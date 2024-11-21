@@ -1,1 +1,45 @@
-<p>time-table-upsert works!</p>
+<h3 class="mb-3  p-2" >Add New TimeTable</h3>
+<hr>
+<form [formGroup]="timeTableForm">
+  <div class="row">
+
+    <div class="col">
+
+      <div class="mb-3  p-2">
+        <label for="course" class="form-label">Course</label>
+        <select class="form-control" id="course" formControlName="course">
+          <option value="html">HTML</option>
+          <option value="CSS">CSS</option>
+          <option value="CShape">CShape</option>
+          <option value="Angular">Angular</option>
+
+        </select>
+      </div>
+      <div class="mb-3  p-2">
+        <label for="starttime" class="form-label">StartTime</label>
+        <input type="datetime" class="form-control" id="starttime" formControlName="startTime">
+      </div>
+      <div class="mb-3  p-2">
+        <label for="endtime" class="form-label">EndTime</label>
+        <input type="datetime" class="form-control" id="endtime" formControlName="endTime" >
+      </div>
+
+      <div class="mb-3 p-2">
+        <label for="dueDate" class="form-label">Due Date</label>
+        <input type="date" class="form-control" id="dueDate" formControlName="dueDate">
+      </div>
+
+      <div class="mb-3  p-2">
+        <label for="priority" class="form-label">Class</label>
+        <select class="form-control" id="priority" formControlName="location">
+          <option value="lab">Lab</option>
+          <option value="Medium">Session</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-secondary  "(click)="onSubmit()" >Submit</button>
+</form>
+
+
+

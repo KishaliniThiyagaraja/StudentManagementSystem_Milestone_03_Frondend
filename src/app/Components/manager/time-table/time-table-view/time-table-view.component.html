@@ -1,1 +1,136 @@
-<p>time-table-view works!</p>
+<div class="row m-3">
+  <div class="col-3 p-2">
+    <label for="email" class="form-label">Due Date</label>
+    <input type="text" bsDatepicker [bsConfig]="{ isAnimated: true }" autocomplete="off" class="form-control"
+      id="dueDate">
+
+
+  </div>
+  <div class="col-4 p-2">
+    <div class="mb-3">
+      <label for="days" class="form-label">Select Days</label>
+      <select class="form-control" id="days">
+        <option value="Sunday">Sunday</option>
+        <option value="Monday">Monday</option>
+        <option value="Teuseday">Teuseday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Firaday">Firaday</option>
+        <option value="Satuarday">Satuarday</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-4 p-5 d-flex justify-content-end">
+    <button type="button" class="btn btn-dark" [routerLink]="['/timetableform']">
+      Add Table
+    </button>
+
+  </div>
+
+
+  <!--  -->
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <!-- Header with day names and dates -->
+        <th scope="col" class="text-center">
+          Monday <br> <small>2024-11-20</small>
+        </th>
+        <th scope="col" class="text-center">
+          Tuesday <br> <small>2024-11-21</small>
+        </th>
+        <th scope="col" class="text-center">
+          Wednesday <br> <small>2024-11-22</small>
+        </th>
+        <th scope="col" class="text-center">
+          Thursday <br> <small>2024-11-23</small>
+        </th>
+        <th scope="col" class="text-center">
+          Friday <br> <small>2024-11-24</small>
+        </th>
+        <th scope="col" class="text-center">
+          Saturday <br> <small>2024-11-25</small>
+        </th>
+        <th scope="col" class="text-center">
+          Sunday <br> <small>2024-11-26</small>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Row 1: Lab and Session columns merged, with times for each session -->
+      <tr>
+        <td class="text-center">
+          <div class="border border-black">
+            <strong>Lab</strong><br>
+            <small>9:00 AM - 11:00 AM</small>
+          </div>
+          <div class="border border-black">
+            <strong>Session</strong><br>
+            <small>1:00 PM - 3:00 PM</small>
+          </div>
+        </td>
+        <td class="text-center">
+          <div class="border border-black">
+            <strong>Lab</strong><br>
+            <small>9:00 AM - 11:00 AM</small>
+          </div>
+          <div class="border border-black">
+            <strong>Session</strong><br>
+            <small>1:00 PM - 3:00 PM</small>
+          </div>
+        </td>
+        <td class="text-center">
+          <div class="border border-black">
+            <strong>Lab</strong><br>
+            <small>9:00 AM - 11:00 AM</small>
+          </div>
+          <div class="border border-black">
+            <strong>Session</strong><br>
+            <small>1:00 PM - 3:00 PM</small>
+          </div>
+        </td>
+        <td class="text-center">
+          <div class="border border-black">
+            <strong>Lab</strong><br>
+            <small>9:00 AM - 11:00 AM</small>
+          </div>
+          <div class="border border-black">
+            <strong>Session</strong><br>
+            <small>1:00 PM - 3:00 PM</small>
+          </div>
+        </td>
+        <td class="text-center">
+          <div class="border border-black">
+            <strong>Lab</strong><br>
+            <small>9:00 AM - 11:00 AM</small>
+          </div>
+          <div class="border border-black">
+            <strong>Session</strong><br>
+            <small>1:00 PM - 3:00 PM</small>
+          </div>
+        </td>
+        <td class="text-center">
+          <div class="border border-black">
+            <strong>Lab</strong><br>
+            <small>9:00 AM - 11:00 AM</small>
+          </div>
+          <div class="border border-black">
+            <strong>Session</strong><br>
+            <small>1:00 PM - 3:00 PM</small>
+          </div>
+        </td>
+        <td class="text-center">
+          <div class="border border-black">
+            <strong>Lab</strong><br>
+            <small>9:00 AM - 11:00 AM</small>
+          </div>
+          <div class="border border-black">
+            <strong>Session</strong><br>
+            <small>1:00 PM - 3:00 PM</small>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
