@@ -1,6 +1,7 @@
 import { TimeTable } from './../model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { LoginRequest } from './Layout/blank/login/login.component';
 
 
 @Injectable({
