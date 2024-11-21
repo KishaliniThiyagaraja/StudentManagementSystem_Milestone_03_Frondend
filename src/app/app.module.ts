@@ -25,6 +25,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TimeTableUpsertComponent } from './Components/manager/time-table/time-table-upsert/time-table-upsert.component';
+import { MarkAttendanceComponent } from './Components/manager/mark-attendance/mark-attendance.component';
+import { ViewAttendanceComponent } from './Components/manager/view-attendance/view-attendance.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,9 @@ import { TimeTableUpsertComponent } from './Components/manager/time-table/time-t
     StaffComponent,
     TimeTableComponent,
     TimeTableUpsertComponent,
-    TimeTableViewComponent
+    TimeTableViewComponent,
+    MarkAttendanceComponent,
+    ViewAttendanceComponent
   ],
   imports: [
     BrowserModule,
