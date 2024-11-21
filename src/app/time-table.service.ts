@@ -8,15 +8,16 @@ import { LoginRequest } from './Layout/blank/login/login.component';
   providedIn: 'root'
 })
 export class TimeTableService {
+  [x: string]: any;
 
   url = 'https://localhost:7229/api/TimetableControllers';
 
   constructor(private http: HttpClient) { }
 
-  login(loginRequest: LoginRequest){
-     return this.http.post(this.url + '/login', loginRequest,{
+  login(loginRequest :LoginRequest){
+    return this.http.post(this.url + '/login',loginRequest,{
       responseType : 'text'
-     });
+    });
   }
 
   getTables(){

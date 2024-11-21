@@ -18,6 +18,6 @@ export class ManagerComponent implements  OnInit {
   }
 
   logout(){
-
+     this.router.navigate(['/'])
   }
 }

@@ -15,7 +15,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 export class TimeTableUpsertComponent implements OnInit {
   timeTables: TimeTable[] = [];
 
-  timeTableForm: any;
+  timeTableForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,

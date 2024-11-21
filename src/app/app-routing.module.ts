@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Version } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TimeTableComponent } from './Components/manager/time-table/time-table.component';
 import { TimeTableViewComponent } from './Components/manager/time-table/time-table-view/time-table-view.component';
@@ -8,8 +8,24 @@ import { MarkAttendanceComponent } from './Components/manager/mark-attendance/ma
 import { ViewAttendanceComponent } from './Components/manager/view-attendance/view-attendance.component';
 import { LoginComponent } from './Layout/blank/login/login.component';
 import { RegisterComponent } from './Layout/blank/register/register.component';
+import { BlankComponent } from './Layout/blank/blank.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: BlankComponent,
+    children: [
+    
+      {
+        path: 'login',
+        component: LoginComponent
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
+      }
+    ]
+  },
   {
     path:'Manager',
     component:ManagerComponent,
@@ -25,7 +41,7 @@ const routes: Routes = [
       {path : 'register',component:RegisterComponent},
       
     ]
-  }
+  },
 ];
 
 @NgModule({
