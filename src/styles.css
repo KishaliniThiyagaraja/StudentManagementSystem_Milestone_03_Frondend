@@ -1,1 +1,66 @@
-/* You can add global styles to this file, and also import other style files */
+nav {
+    background-color: #007bff; /* Bootstrap Primary Color */
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+  }
+  
+  nav a {
+    color: white;
+    padding: 10px;
+    text-decoration: none; /* Remove underline */
+  }
+  
+  nav a:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  
+  h2 {
+    margin: 20px 0;
+  }
+  
+  form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+  }
+  
+  form input, form select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  table, th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2; /* Light grey for header */
+  }

@@ -43,7 +43,7 @@ export class TimeTableUpsertComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   this.TimertableService.getTables().subscribe(data =>{
+   this.TimertableService.getTables().subscribe((data :any) =>{
     this.timeTables =data;
    })
 
