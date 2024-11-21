@@ -22,7 +22,10 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-
+    this.TimeTableService.login(this.login).subscribe(daat =>{
+this.router.navigate(['/Managar/timetableview']);
+    })
+      
   }
 }
 

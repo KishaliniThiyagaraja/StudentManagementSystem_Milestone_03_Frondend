@@ -1,59 +1,66 @@
-<h3 class="mb-3  p-2" >Add New TimeTable</h3>
+<h3 class="mb-3 p-2">Add New TimeTable</h3>
 <hr>
-<form [formGroup]="timeTableForm">
+<form [formGroup]="timeTableForm" (ngSubmit)="onSubmit()">
   <div class="row">
-
     <div class="col">
 
-      <div class="mb-3  p-2">
+      <!-- Course -->
+      <div class="mb-3 p-2">
         <label for="course" class="form-label">Course</label>
         <select class="form-control" id="course" formControlName="course">
           <option value="html">HTML</option>
           <option value="CSS">CSS</option>
-          <option value="CShape">CShape</option>
+          <option value="CSharp">CSharp</option>
           <option value="Angular">Angular</option>
         </select>
       </div>
 
+      <!-- Due Date -->
       <div class="mb-3 p-2">
         <label for="dueDate" class="form-label">Due Date</label>
-        <input type="" bsDatepicker [bsConfig]="{ isAnimated: true }" autocomplete="off" class="form-control" id="dueDate" formControlName="dueDate">
+        <input type="text" bsDatepicker [bsConfig]="{ isAnimated: true }" autocomplete="off" class="form-control" id="dueDate" formControlName="dueDate">
       </div>
 
-      <div class="mb-3  p-2">
-        <label for="day" class="form-label">Days</label>
+      <!-- Day -->
+      <div class="mb-3 p-2">
+        <label for="day" class="form-label">Day</label>
         <select class="form-control" id="day" formControlName="day">
           <option value="monday">Monday</option>
-          <option value="Tuesday">Tuesday</option>
-          <option value="Wednesday">Wednesday</option>
-          <option value="Thursday">Thursday</option>
-          <option value="Friday">Friday</option>
-          <option value="Saturday">Saturday</option>
-          <option value="Sunday">Sunday</option>
+          <option value="tuesday">Tuesday</option>
+          <option value="wednesday">Wednesday</option>
+          <option value="thursday">Thursday</option>
+          <option value="friday">Friday</option>
+          <option value="saturday">Saturday</option>
+          <option value="sunday">Sunday</option>
         </select>
       </div>
 
-
-      <div class="mb-3  p-2">
-        <label for="starttime" class="form-label">StartTime</label>
+      <!-- Start Time -->
+      <div class="mb-3 p-2">
+        <label for="starttime" class="form-label">Start Time</label>
         <input type="time" class="form-control" id="starttime" formControlName="startTime">
       </div>
-      <div class="mb-3  p-2">
-        <label for="endtime" class="form-label">EndTime</label>
-        <input type="time" class="form-control" id="endtime" formControlName="endTime" >
+
+      <!-- End Time -->
+      <div class="mb-3 p-2">
+        <label for="endtime" class="form-label">End Time</label>
+        <input type="time" class="form-control" id="endtime" formControlName="endTime">
       </div>
 
-      <div class="mb-3  p-2">
-        <label for="class" class="form-label">Class</label>
+      <!-- Class Type -->
+      <div class="mb-3 p-2">
+        <label for="class" class="form-label">Class Type</label>
         <select class="form-control" id="class" formControlName="class">
           <option value="lab">Lab</option>
-          <option value="Session">Session</option>
+          <option value="session">Session</option>
         </select>
       </div>
+
     </div>
   </div>
-  <button type="button" class="btn btn-secondary  "(click)="onSubmit()" >Submit</button>
+
+  
+
+  <!-- Submit Button -->
+  <button type="submit" class="btn btn-secondary">Submit</button>
 </form>
-
-
-
