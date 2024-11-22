@@ -17,6 +17,13 @@
 
                 <div class="col-12">
                   <div class="form-floating mb-3">
+                    <input type="userId" class="form-control" name="userId" id="userId" value="" placeholder="userId" required>
+                    <label for="userId" class="form-label">UserId</label>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-floating mb-3">
                     <input type="text" class="form-control" name="email" id="email" placeholder="name@example.com" required>
                     <label for="email" class="form-label">Name</label>
                   </div>
@@ -47,9 +54,8 @@
                   <div data-mdb-input-init class="form-outline flex-fill mb-0">
                     <label class="form-label" for="form3Example4cd">Select Role</label>
                     <select type="Select Role" class="form-control" id="Select Role" formControlName="role">
-                      <option value="Manager">Manager</option>
                       <option value="Staff">Staff</option>
-                      <option value="Lacturer">Lacturer</option>
+                      <option value="lacturer">Lacturer</option>
                       <option value="Lacturer">Student</option>
                     </select>
                   </div>
@@ -63,11 +69,12 @@
                 </div>
               </div>
             </form>
+            <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
             <div class="row">
               <div class="col-12">
                 <hr class="mt-5 mb-4 border-secondary-subtle">
                 <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-end">
-                  <a [routerLink]="['/Manager/login']" class="link-secondary text-decoration-none">Log In</a>
+                  <a [routerLink]="['/login']" class="link-secondary text-decoration-none">Log In</a>
                 </div>
               </div>
             </div>
