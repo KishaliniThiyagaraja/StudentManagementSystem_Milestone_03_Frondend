@@ -27,6 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TimeTableUpsertComponent } from './Components/manager/time-table/time-table-upsert/time-table-upsert.component';
 import { MarkAttendanceComponent } from './Components/manager/mark-attendance/mark-attendance.component';
 import { ViewAttendanceComponent } from './Components/manager/view-attendance/view-attendance.component';
+import { HomeComponent } from './Layout/blank/home/home.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +46,9 @@ import { ViewAttendanceComponent } from './Components/manager/view-attendance/vi
     TimeTableUpsertComponent,
     TimeTableViewComponent,
     MarkAttendanceComponent,
-    ViewAttendanceComponent
+    ViewAttendanceComponent,
+    HomeComponent
+
   ],
   imports: [
     BrowserModule,

@@ -9,13 +9,14 @@ import { ViewAttendanceComponent } from './Components/manager/view-attendance/vi
 import { LoginComponent } from './Layout/blank/login/login.component';
 import { RegisterComponent } from './Layout/blank/register/register.component';
 import { BlankComponent } from './Layout/blank/blank.component';
+import { HomeComponent } from './Layout/blank/home/home.component';
 
 const routes: Routes = [
   {
     path: '',
     component: BlankComponent,
     children: [
-    
+
       {
         path: 'login',
         component: LoginComponent
@@ -23,7 +24,8 @@ const routes: Routes = [
       {
         path: 'register',
         component: RegisterComponent
-      }
+      },
+      { path: 'home', component: HomeComponent },
     ]
   },
   {
@@ -37,9 +39,6 @@ const routes: Routes = [
       { path: 'mark-attendance', component: MarkAttendanceComponent },
       { path: 'view-attendance', component: ViewAttendanceComponent },
       { path: '', redirectTo: '/mark-attendance', pathMatch: 'full' },
-      {path : 'login',component:LoginComponent},
-      {path : 'register',component:RegisterComponent},
-      
     ]
   },
 ];
