@@ -1,1 +1,36 @@
-<p>attendance works!</p>
+<div class="container mt-4">
+    <h2 class="text-center">Attendance App</h2>
+    <table class="table table-bordered text-center">
+      <thead class="thead-dark">
+        <tr>
+          <th>Sr. No.</th>
+          <th>Name</th>
+          <th>UT. No.</th>
+          <th>Roll</th>
+          <th>Attendance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let student of students; let i = index"
+         [ngClass]="{ 'bg-success': student.attendance === 'Present', 'bg-danger': student.attendance === 'Absent' }"
+        >
+          <td>{{ i + 1 }}</td>
+          <td>{{ student.name }}</td>
+          <td>{{ student.regNo }}</td>
+          <td>{{ student.roll }}</td>
+          <td>
+            <select
+              [(ngModel)]="student.attendance"
+              class="form-select"
+              (change)="updateAttendance(student.id, student.attendance)"
+            >
+              <option value="Present">Present</option>
+              <option value="Absent">Absent</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -28,6 +28,7 @@ import { TimeTableUpsertComponent } from './Components/manager/time-table/time-t
 import { MarkAttendanceComponent } from './Components/manager/mark-attendance/mark-attendance.component';
 import { ViewAttendanceComponent } from './Components/manager/view-attendance/view-attendance.component';
 import { HomeComponent } from './Layout/blank/home/home.component';
+import { AttendanceComponent } from './Components/manager/attendance/attendance.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { HomeComponent } from './Layout/blank/home/home.component';
     TimeTableViewComponent,
     MarkAttendanceComponent,
     ViewAttendanceComponent,
-    HomeComponent
+    HomeComponent,
+    AttendanceComponent
 
   ],
   imports: [

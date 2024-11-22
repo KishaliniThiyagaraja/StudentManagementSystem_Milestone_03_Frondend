@@ -10,6 +10,7 @@ import { LoginComponent } from './Layout/blank/login/login.component';
 import { RegisterComponent } from './Layout/blank/register/register.component';
 import { BlankComponent } from './Layout/blank/blank.component';
 import { HomeComponent } from './Layout/blank/home/home.component';
+import { AttendanceComponent } from './Components/manager/attendance/attendance.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,7 @@ const routes: Routes = [
       {path : 'layout-manager', component:ManagerComponent},
       { path: 'mark-attendance', component: MarkAttendanceComponent },
       { path: 'view-attendance', component: ViewAttendanceComponent },
+      {path:'list-attendance' , component : AttendanceComponent},
       { path: '', redirectTo: '/mark-attendance', pathMatch: 'full' },
     ]
   },
