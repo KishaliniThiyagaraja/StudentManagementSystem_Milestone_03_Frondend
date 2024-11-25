@@ -38,6 +38,9 @@ import { AdminComponent } from './RegisterComponents/admin/admin.component';
 import { StaffRegistrationComponent } from './RegisterComponents/staff-registration/staff-registration.component';
 import { StudentRegistrationComponent } from './RegisterComponents/student-registration/student-registration.component';
 import { LoginsComponent } from './RegisterComponents/logins/logins.component';
+import { StaffAttendanceComponent } from './Components/staff/staff-attendance/staff-attendance.component';
+import { LecturerAttendanceComponent } from './Components/lectures/lecturer-attendance/lecturer-attendance.component';
+import { ManagerAttendanceComponent } from './Components/manager/manager-attendance/manager-attendance.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +60,7 @@ import { LoginsComponent } from './RegisterComponents/logins/logins.component';
     MarkAttendanceComponent,
     ViewAttendanceComponent,
     HomeComponent,
-    AttendanceComponent,
+    
     RegisterComponent,
   
     LoginregisterComponent,
@@ -66,6 +69,9 @@ import { LoginsComponent } from './RegisterComponents/logins/logins.component';
         StaffRegistrationComponent,
         StudentRegistrationComponent,
         LoginsComponent,
+        StaffAttendanceComponent,
+        LecturerAttendanceComponent,
+        ManagerAttendanceComponent,
   ],
   imports: [
     BrowserModule,

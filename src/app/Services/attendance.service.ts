@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 interface AttendanceRecord {
     studentId: number;
@@ -11,13 +13,17 @@ interface AttendanceRecord {
     providedIn: 'root'
 })
 export class AttendanceService {
-    private attendanceRecords: AttendanceRecord[] = [];
+    private apiUrl = 'https://localhost:5001/api/Attendance'; // Update with your backend URL
 
-    markAttendance(record: AttendanceRecord) {
-        this.attendanceRecords.push(record);
-    }
+  constructor(private http: HttpClient) {}
 
-    getAttendanceRecords(): AttendanceRecord[] {
-        return this.attendanceRecords;
-    }
+  // Staff: Mark attendance
+  markAttendance(attendance: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}`, attendance);
+  }
+
+  // Admin: Get attendance records
+  getAttendanceRecords(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}`);
+  }
 }

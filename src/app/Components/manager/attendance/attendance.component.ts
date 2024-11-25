@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 import { NgModelGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 // interface Student { 
 //   id: number; 
@@ -16,43 +17,33 @@ import { NgModelGroup } from '@angular/forms';
   styleUrl: './attendance.component.css'
 })
 
-export class AttendanceComponent implements OnInit{
-  students: { id: number; name: string; regNo: string; roll: number; attendance: string }[] = [];
+export class AttendanceComponent implements OnInit {
+  attendanceRecords: Attendance[] = [];
+  newAttendance: Attendance = { timetableId: '', utNumber: '', date: new Date(), isPresent: false };
 
-  constructor(private http: HttpClient) {}
+  constructor(private attendanceService: AttendanceService) {}
 
   ngOnInit(): void {
-    this.fetchStudents();
+    this.loadAttendanceRecords();
   }
 
-  // Fetch students from API
-  fetchStudents(): void {
-    const apiUrl = 'https://your-api-endpoint.com/students'; //  API URL
-    this.http.get<any[]>(apiUrl).subscribe(
-      (data) => {
-        this.students = data.map((student) => ({
-          ...student,
-          attendance: 'Absent' // Default attendance
-        }));
-      },
-      (error) => {
-        console.error('Error fetching students:', error);
-      }
-    );
+  // Get attendance records (Admin)
+  loadAttendanceRecords(): void {
+    this.attendanceService.getAttendanceRecords().subscribe({
+      next: (data) => (this.attendanceRecords = data),
+      error: (err) => console.error('Error fetching attendance records', err)
+    });
   }
 
-  // Update attendance status in backend
-  updateAttendance(studentId: number, attendanceStatus: string): void {
-    const apiUrl = `https://your-api-endpoint.com/students/${studentId}/attendance`; //  API URL
-    const payload = { attendance: attendanceStatus };
-
-    this.http.put(apiUrl, payload).subscribe(
-      (response) => {
-        console.log(`Attendance updated for student ${studentId}:`, response);
+  // Mark attendance (Staff)
+  markAttendance(): void {
+    this.attendanceService.markAttendance(this.newAttendance).subscribe({
+      next: () => {
+        alert('Attendance marked successfully!');
+        this.loadAttendanceRecords();
+        this.newAttendance = { timetableId: '', utNumber: '', date: new Date(), isPresent: false };
       },
-      (error) => {
-        console.error('Error updating attendance:', error);
-      }
-    );
+      error: (err) => console.error('Error marking attendance', err)
+    });
   }
 }

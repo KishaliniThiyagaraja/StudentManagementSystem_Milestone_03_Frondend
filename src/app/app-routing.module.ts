@@ -18,48 +18,10 @@ import { StudentRegistrationComponent } from './RegisterComponents/student-regis
 import { LoginsComponent } from './RegisterComponents/logins/logins.component';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   component: BlankComponent,
-  //   children: [
-
-  //     {
-  //       path: 'login',
-  //       component: LoginComponent
-  //     },
-  //     {
-  //       path: 'register',
-  //       component: RegisterComponent
-  //     },
-  //     { path: 'home', component: HomeComponent },
-  //   ]
-  // },
-  // {
-  //   path:'Manager',
-  //   component:ManagerComponent,
-  //   children:[
-  //     {path : 'timetableview', component: TimeTableViewComponent},
-  //     {path : 'timeTable', component: TimeTableComponent},
-  //     {path : 'timetableform', component: TimeTableUpsertComponent},
-  //     {path : 'layout-manager', component:ManagerComponent},
-  //     { path: 'mark-attendance', component: MarkAttendanceComponent },
-  //     { path: 'view-attendance', component: ViewAttendanceComponent },
-  //     {path:'list-attendance' , component : AttendanceComponent},
-  //     { path: '', redirectTo: '/mark-attendance', pathMatch: 'full' },
-  //   ]
-  // },
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'admin', component: AdminComponent },
-  { path: 'staff-register', component: StaffRegistrationComponent },
-  { path: 'student-register', component: StudentRegistrationComponent },
-  { path: 'logins', component: LoginsComponent },
-  // {path: '', redirectTo: 'login',pathMatch:'full'},
-  // {path: 'login',           component: LoginComponent},
-  // {path: 'register',        component: LoginregisterComponent},
-  // {path: 'dashboard',       component: DashboardComponent},
-  // {path: 'forgotPassword',  component: ForgotPasswordComponent},
-  // {path: 'addStudent',      component: AddStudentComponent},
+  { path: 'attendance', component: AttendanceComponent },
+  { path: '', redirectTo: '/attendance', pathMatch: 'full' }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

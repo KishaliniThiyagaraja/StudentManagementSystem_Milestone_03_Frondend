@@ -1,1 +1,11 @@
-<p>lectures works!</p>
+<div *ngIf="role === 'Lecturer'">
+    <h3>View Attendance</h3>
+    <table>
+      <tr *ngFor="let attendance of attendances">
+        <td>{{attendance.date}}</td>
+        <td>{{attendance.studentUTNumber}}</td>
+        <td>{{attendance.isPresent ? 'Present' : 'Absent'}}</td>
+      </tr>
+    </table>
+  </div>
+  
