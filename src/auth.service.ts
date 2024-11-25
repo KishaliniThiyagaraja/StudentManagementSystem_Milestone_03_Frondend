@@ -5,6 +5,9 @@ import { User } from './user.model';
   providedIn: 'root'
 })
 export class AuthService {
+  googleSignIn() {
+    throw new Error('Method not implemented.');
+  }
 
   private users: User[] = [];
   private loggedInUser: User | null = null;

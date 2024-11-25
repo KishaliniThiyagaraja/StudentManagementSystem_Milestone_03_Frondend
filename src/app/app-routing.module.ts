@@ -7,42 +7,50 @@ import { ManagerComponent } from './Layout/manager/manager.component';
 import { MarkAttendanceComponent } from './Components/manager/mark-attendance/mark-attendance.component';
 import { ViewAttendanceComponent } from './Components/manager/view-attendance/view-attendance.component';
 import { LoginComponent } from './Layout/blank/login/login.component';
-import { RegisterComponent } from './Layout/blank/register/register.component';
+import { RegisterComponent } from './Components/manager/register/register.component';
 import { BlankComponent } from './Layout/blank/blank.component';
 import { HomeComponent } from './Layout/blank/home/home.component';
 import { AttendanceComponent } from './Components/manager/attendance/attendance.component';
+import { LoginregisterComponent } from './Layout/blank/loginregister/loginregister.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: BlankComponent,
-    children: [
+  // {
+  //   path: '',
+  //   component: BlankComponent,
+  //   children: [
 
-      {
-        path: 'login',
-        component: LoginComponent
-      },
-      {
-        path: 'register',
-        component: RegisterComponent
-      },
-      { path: 'home', component: HomeComponent },
-    ]
-  },
-  {
-    path:'Manager',
-    component:ManagerComponent,
-    children:[
-      {path : 'timetableview', component: TimeTableViewComponent},
-      {path : 'timeTable', component: TimeTableComponent},
-      {path : 'timetableform', component: TimeTableUpsertComponent},
-      {path : 'layout-manager', component:ManagerComponent},
-      { path: 'mark-attendance', component: MarkAttendanceComponent },
-      { path: 'view-attendance', component: ViewAttendanceComponent },
-      {path:'list-attendance' , component : AttendanceComponent},
-      { path: '', redirectTo: '/mark-attendance', pathMatch: 'full' },
-    ]
-  },
+  //     {
+  //       path: 'login',
+  //       component: LoginComponent
+  //     },
+  //     {
+  //       path: 'register',
+  //       component: RegisterComponent
+  //     },
+  //     { path: 'home', component: HomeComponent },
+  //   ]
+  // },
+  // {
+  //   path:'Manager',
+  //   component:ManagerComponent,
+  //   children:[
+  //     {path : 'timetableview', component: TimeTableViewComponent},
+  //     {path : 'timeTable', component: TimeTableComponent},
+  //     {path : 'timetableform', component: TimeTableUpsertComponent},
+  //     {path : 'layout-manager', component:ManagerComponent},
+  //     { path: 'mark-attendance', component: MarkAttendanceComponent },
+  //     { path: 'view-attendance', component: ViewAttendanceComponent },
+  //     {path:'list-attendance' , component : AttendanceComponent},
+  //     { path: '', redirectTo: '/mark-attendance', pathMatch: 'full' },
+  //   ]
+  // },
+
+  {path: '', redirectTo: 'login',pathMatch:'full'},
+  {path: 'login',           component: LoginComponent},
+  {path: 'register',        component: LoginregisterComponent},
+  // {path: 'dashboard',       component: DashboardComponent},
+  // {path: 'forgotPassword',  component: ForgotPasswordComponent},
+  // {path: 'addStudent',      component: AddStudentComponent},
 ];
 
 @NgModule({

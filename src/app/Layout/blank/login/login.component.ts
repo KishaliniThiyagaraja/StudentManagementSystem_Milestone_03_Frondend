@@ -2,48 +2,78 @@ import { Router } from '@angular/router';
 import { TimeTableComponent } from './../../../Components/manager/time-table/time-table.component';
 import { TimeTableService } from './../../../time-table.service';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../../../auth.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent implements OnInit {
-   login : LoginRequest;
-   userId: string = '';
-   password: string = '';
-   errorMessage: string = '';
-  authService: any;
+export class LoginComponent {
 
-   constructor(private TimeTableService: TimeTableService, private router: Router){
-    this.login = {UserId: '', password: ''};
-   }
+  loginForm: FormGroup;
 
-   logins() {
-    const user = this.authService.login(this.username, this.password);
-    if (user) {
-      this.router.navigate(['/home']);
+  constructor(private fb: FormBuilder) {
+    this.loginForm = this.fb.group({
+      identifier: ['', Validators.required], // Conditional validation will apply later
+      password: ['', [Validators.required]],
+      role: ['', [Validators.required]],
+      subscribeNewsletter: [false],
+    });
+
+    // React dynamically to role selection
+    this.loginForm.get('role')?.valueChanges.subscribe((role) => {
+      this.applyIdentifierValidation(role);
+    });
+  }
+
+  applyIdentifierValidation(role: string) {
+    const identifierControl = this.loginForm.get('identifier');
+
+    if (role === 'Student') {
+      identifierControl?.setValidators([Validators.required, Validators.pattern(/^\d{8}$/)]); // UT number: 8 digits
     } else {
-      this.errorMessage = 'Invalid username or password';
+      identifierControl?.setValidators([Validators.required, Validators.email]); // Email validation
+    }
+
+    identifierControl?.updateValueAndValidity();
+  }
+
+  onSubmit() {
+    if (this.loginForm.valid) {
+      console.log('Login Data:', this.loginForm.value);
+      // Add logic to handle login (e.g., API call)
     }
   }
-  username(username: any, password: string) {
-    throw new Error('Method not implemented.');
-  }
-
-   ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
-
-  onSubmit(){
-    this.TimeTableService.login(this.login).subscribe(daat =>{
-this.router.navigate(['/Managar/timetableview']);
-    })
-
-  }
 }
 
-export interface LoginRequest{
-  UserId:string;
-  password:string;
-}
+
+
+  // email : string = '';
+  // password : string = '';
+
+  // constructor(private auth : AuthService) { }
+
+  // ngOnInit(): void {
+  // }
+  // OnUserLogin(){
+  //   if (this.email == ''){
+  //     alert('please enter your email');
+  //     return;
+  //   }
+
+  //   if (this.password == ''){
+  //     alert('please enter your password');
+  //     return;
+  //   }
+
+  // this.auth.login(this.email, this.password);
+
+  // this.email = '';
+  // this.password = '';
+  // }
+  // OnSignInWithGoogle(){
+  //   this.auth.googleSignIn();
+  // }
+

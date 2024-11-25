@@ -7,7 +7,8 @@ import { BlankComponent } from './Layout/blank/blank.component';
 import { StudentsComponent } from './Layout/students/students.component';
 
 import { LoginComponent } from './Layout/blank/login/login.component';
-import { RegisterComponent } from './Layout/blank/register/register.component';
+import { RegisterComponent } from './Components/manager/register/register.component';
+
 import { HeaderComponent } from './Layout/students/header/header.component';
 import { FooterComponent } from './Layout/students/footer/footer.component';
 import { SectionComponent } from './Layout/students/section/section.component';
@@ -29,6 +30,9 @@ import { MarkAttendanceComponent } from './Components/manager/mark-attendance/ma
 import { ViewAttendanceComponent } from './Components/manager/view-attendance/view-attendance.component';
 import { HomeComponent } from './Layout/blank/home/home.component';
 import { AttendanceComponent } from './Components/manager/attendance/attendance.component';
+import { ToastrModule } from 'ngx-toastr';
+
+import { LoginregisterComponent } from './Layout/blank/loginregister/loginregister.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,6 @@ import { AttendanceComponent } from './Components/manager/attendance/attendance.
     BlankComponent,
     StudentsComponent,
     LoginComponent,
-    RegisterComponent,
     HeaderComponent,
     FooterComponent,
     SectionComponent,
@@ -49,8 +52,10 @@ import { AttendanceComponent } from './Components/manager/attendance/attendance.
     MarkAttendanceComponent,
     ViewAttendanceComponent,
     HomeComponent,
-    AttendanceComponent
-
+    AttendanceComponent,
+    RegisterComponent,
+  
+    LoginregisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +65,9 @@ import { AttendanceComponent } from './Components/manager/attendance/attendance.
     ReactiveFormsModule,
     BsDatepickerModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [BsModalService],
   bootstrap: [AppComponent]
