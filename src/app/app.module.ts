@@ -33,6 +33,11 @@ import { AttendanceComponent } from './Components/manager/attendance/attendance.
 import { ToastrModule } from 'ngx-toastr';
 
 import { LoginregisterComponent } from './Layout/blank/loginregister/loginregister.component';
+import { SetPasswordComponent } from './Components/set-password/set-password.component';
+import { AdminComponent } from './RegisterComponents/admin/admin.component';
+import { StaffRegistrationComponent } from './RegisterComponents/staff-registration/staff-registration.component';
+import { StudentRegistrationComponent } from './RegisterComponents/student-registration/student-registration.component';
+import { LoginsComponent } from './RegisterComponents/logins/logins.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +61,11 @@ import { LoginregisterComponent } from './Layout/blank/loginregister/loginregist
     RegisterComponent,
   
     LoginregisterComponent,
+        SetPasswordComponent,
+        AdminComponent,
+        StaffRegistrationComponent,
+        StudentRegistrationComponent,
+        LoginsComponent,
   ],
   imports: [
     BrowserModule,
