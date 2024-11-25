@@ -12,6 +12,10 @@ import { BlankComponent } from './Layout/blank/blank.component';
 import { HomeComponent } from './Layout/blank/home/home.component';
 import { AttendanceComponent } from './Components/manager/attendance/attendance.component';
 import { LoginregisterComponent } from './Layout/blank/loginregister/loginregister.component';
+import { AdminComponent } from './RegisterComponents/admin/admin.component';
+import { StaffRegistrationComponent } from './RegisterComponents/staff-registration/staff-registration.component';
+import { StudentRegistrationComponent } from './RegisterComponents/student-registration/student-registration.component';
+import { LoginsComponent } from './RegisterComponents/logins/logins.component';
 
 const routes: Routes = [
   // {
@@ -44,10 +48,14 @@ const routes: Routes = [
   //     { path: '', redirectTo: '/mark-attendance', pathMatch: 'full' },
   //   ]
   // },
-
-  {path: '', redirectTo: 'login',pathMatch:'full'},
-  {path: 'login',           component: LoginComponent},
-  {path: 'register',        component: LoginregisterComponent},
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'admin', component: AdminComponent },
+  { path: 'staff-register', component: StaffRegistrationComponent },
+  { path: 'student-register', component: StudentRegistrationComponent },
+  { path: 'logins', component: LoginsComponent },
+  // {path: '', redirectTo: 'login',pathMatch:'full'},
+  // {path: 'login',           component: LoginComponent},
+  // {path: 'register',        component: LoginregisterComponent},
   // {path: 'dashboard',       component: DashboardComponent},
   // {path: 'forgotPassword',  component: ForgotPasswordComponent},
   // {path: 'addStudent',      component: AddStudentComponent},

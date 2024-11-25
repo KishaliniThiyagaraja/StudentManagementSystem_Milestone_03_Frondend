@@ -1,1 +1,36 @@
-<p>staff-registration works!</p>
+<div class="registration-container">
+    <h2>Staff Registration</h2>
+    <form (ngSubmit)="register()" #staffForm="ngForm">
+      <!-- User ID -->
+      <div class="form-group">
+        <label for="userID">User ID:</label>
+        <input
+          type="text"
+          id="userID"
+          name="userID"
+          class="form-control"
+          [(ngModel)]="registrationData.userID"
+          required
+        />
+      </div>
+  
+      <!-- Password -->
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="form-control"
+          [(ngModel)]="registrationData.password"
+          required
+        />
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary" [disabled]="!staffForm.valid">
+        Register
+      </button>
+    </form>
+  </div>
+  
