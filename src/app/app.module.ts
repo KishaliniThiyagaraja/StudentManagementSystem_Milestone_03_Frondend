@@ -37,6 +37,8 @@ import { FilterPipe } from './Pipes/filter.pipe';
 import { PhonePipe } from './Pipes/phone.pipe';
 import { AttendanceFormComponent } from './Components/manager/attendance/attendance-form/attendance-form.component';
 import { AttendanceViewComponent } from './Components/manager/attendance/attendance-view/attendance-view.component';
+import { EnrollmentUpsertComponent } from './Components/manager/enrollment/enrollment-upsert/enrollment-upsert.component';
+import { EnrollmentViewComponent } from './Components/manager/enrollment/enrollment-view/enrollment-view.component';
 
 
 @NgModule({
@@ -54,6 +56,9 @@ import { AttendanceViewComponent } from './Components/manager/attendance/attenda
     TimeTableComponent,
     TimeTableUpsertComponent,
     TimeTableViewComponent,
+    EnrollmentUpsertComponent,
+    EnrollmentViewComponent,
+    
 
 
 
