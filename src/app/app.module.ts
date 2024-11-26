@@ -28,11 +28,15 @@ import { TimeTableUpsertComponent } from './Components/manager/time-table/time-t
 import { ToastrModule } from 'ngx-toastr';
 import { LoginregisterComponent } from './Layout/blank/loginregister/loginregister.component';
 import { LectureComponent } from './Components/lecture/lecture.component';
-import { AddEditStudentComponent } from './Components/students/add-edit-student/add-edit-student.component';
-import { ViewStudentComponent } from './Components/students/view-student/view-student.component';
 import { ViewLectureComponent } from './Components/lecture/view-lecture/view-lecture.component';
 import { ViewStaffComponent } from './Components/staff/view-staff/view-staff.component';
 import { StaffLectureComponent } from './Components/manager/add/staff-lecture/staff-lecture.component';
+import { StudentDetailsComponent } from './Components/students/student-details/student-details.component';
+import { StudentListComponent } from './Components/students/student-list/student-list.component';
+import { FilterPipe } from './Pipes/filter.pipe';
+import { PhonePipe } from './Pipes/phone.pipe';
+import { AttendanceFormComponent } from './Components/manager/attendance/attendance-form/attendance-form.component';
+import { AttendanceViewComponent } from './Components/manager/attendance/attendance-view/attendance-view.component';
 
 
 @NgModule({
@@ -57,12 +61,20 @@ import { StaffLectureComponent } from './Components/manager/add/staff-lecture/st
     LoginregisterComponent,
     LectureComponent,
 
-    AddEditStudentComponent,
-    ViewStudentComponent,
+
     ViewLectureComponent,
     ViewStaffComponent,
 
     StaffLectureComponent,
+
+      StudentDetailsComponent,
+      StudentListComponent,
+      FilterPipe,
+      PhonePipe,
+  
+      AttendanceFormComponent,
+      AttendanceViewComponent,
+
 
   ],
   imports: [
