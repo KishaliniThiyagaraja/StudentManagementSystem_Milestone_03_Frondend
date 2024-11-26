@@ -8,41 +8,28 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-
-  loginForm: FormGroup;
+  loginForm!: FormGroup;
+  showPassword: boolean = false;
 
   constructor(private fb: FormBuilder) {
+    // Initialize the form
     this.loginForm = this.fb.group({
-      identifier: ['', Validators.required], // Conditional validation will apply later
-      password: ['', [Validators.required]],
-      role: ['', [Validators.required]],
-      subscribeNewsletter: [false],
-    });
-
-    // React dynamically to role selection
-    this.loginForm.get('role')?.valueChanges.subscribe((role) => {
-      this.applyIdentifierValidation(role);
+      userId: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
-  applyIdentifierValidation(role: string) {
-    const identifierControl = this.loginForm.get('identifier');
-
-    if (role === 'Student') {
-      identifierControl?.setValidators([Validators.required, Validators.pattern(/^\d{8}$/)]); // UT number: 8 digits
-    } else {
-      identifierControl?.setValidators([Validators.required, Validators.email]); // Email validation
-    }
-
-    identifierControl?.updateValueAndValidity();
+  // Toggle password visibility
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
   }
 
-  onSubmit() {
+  // Submit form
+  onSubmit(): void {
     if (this.loginForm.valid) {
-      console.log('Login Data:', this.loginForm.value);
-      // Add logic to handle login (e.g., API call)
+      console.log('Login Successful:', this.loginForm.value);
+    } else {
+      console.error('Invalid Form');
     }
   }
 }
-
-

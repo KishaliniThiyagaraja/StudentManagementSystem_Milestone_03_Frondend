@@ -30,6 +30,9 @@ const routes: Routes = [
   // { path: 'attendance-view', component: AttendanceViewComponent },
   // { path: '', redirectTo: '/attendance-form', pathMatch: 'full' },
 
+
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' }, // Default route
   
 
   // {path:'app-time-table-view',component:TimeTableViewComponent},
