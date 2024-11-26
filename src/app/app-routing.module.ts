@@ -20,15 +20,18 @@ import { AttendanceViewComponent } from './Components/manager/attendance/attenda
 
 
 const routes: Routes = [
-  {path:'login', component:LoginComponent},
-  {path:'', component:LoginregisterComponent},
-  {path:'app-staff-lecture',component:StaffLectureComponent},
-  {path:'',component:ViewStaffComponent},
+  // {path:'login', component:LoginComponent},
+  // {path:'', component:LoginregisterComponent},
+  // {path:'app-staff-lecture',component:StaffLectureComponent},
+  // {path:'',component:ViewStaffComponent},
 
   { path: 'attendance-form', component: AttendanceFormComponent },
   { path: 'attendance-view', component: AttendanceViewComponent },
   { path: '', redirectTo: '/attendance-form', pathMatch: 'full' },
 
+
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' }, // Default route
   
 
   {path:'app-time-table-view',component:TimeTableViewComponent},

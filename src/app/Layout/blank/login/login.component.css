@@ -1,0 +1,10 @@
+.container {
+    background-color: #f8f9fa;
+  }
+  .card {
+    border-radius: 10px;
+  }
+  button.btn {
+    font-weight: bold;
+  }
+  
