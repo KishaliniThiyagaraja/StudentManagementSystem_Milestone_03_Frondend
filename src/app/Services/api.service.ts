@@ -10,23 +10,39 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  // Admin adds staff or lecturers
-  addUser(data: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}/addUser`, data);
+  // Admin API
+  addStaff(data: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/staff`, data);
   }
 
-  // Staff adds students
+  addLecturer(data: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/lecturers`, data);
+  }
+
+  // Staff API
   addStudent(data: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}/addStudent`, data);
+    return this.http.post(`${this.baseUrl}/students`, data);
   }
 
-  // User registration
-  register(data: any): Observable<any> {
+  // Get data
+  getStaff(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/staff`);
+  }
+
+  getLecturers(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/lecturers`);
+  }
+
+  getStudents(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/students`);
+  }
+
+  // Authentication API
+  registerUser(data: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/register`, data);
   }
 
-  // User login
-  login(data: any): Observable<any> {
+  loginUser(data: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/login`, data);
   }
 }

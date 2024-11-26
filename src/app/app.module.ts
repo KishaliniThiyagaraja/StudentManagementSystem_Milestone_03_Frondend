@@ -28,12 +28,11 @@ import { TimeTableUpsertComponent } from './Components/manager/time-table/time-t
 import { ToastrModule } from 'ngx-toastr';
 import { LoginregisterComponent } from './Layout/blank/loginregister/loginregister.component';
 import { LectureComponent } from './Components/lecture/lecture.component';
-import { AddViewStudentComponent } from './Components/students/add-view-student/add-view-student.component';
 import { AddEditStudentComponent } from './Components/students/add-edit-student/add-edit-student.component';
 import { ViewStudentComponent } from './Components/students/view-student/view-student.component';
 import { ViewLectureComponent } from './Components/lecture/view-lecture/view-lecture.component';
 import { ViewStaffComponent } from './Components/staff/view-staff/view-staff.component';
-import { AddEditStaffComponent } from './Components/staff/add-edit-staff/add-edit-staff.component';
+import { StaffLectureComponent } from './Components/manager/add/staff-lecture/staff-lecture.component';
 
 
 @NgModule({
@@ -52,18 +51,19 @@ import { AddEditStaffComponent } from './Components/staff/add-edit-staff/add-edi
     TimeTableUpsertComponent,
     TimeTableViewComponent,
 
-    
 
-  
+
+
     LoginregisterComponent,
-                  LectureComponent,
-                  AddViewStudentComponent,
-                  AddEditStudentComponent,
-                  ViewStudentComponent,
-                  ViewLectureComponent,
-                  ViewStaffComponent,
-                  AddEditStaffComponent,
-   
+    LectureComponent,
+
+    AddEditStudentComponent,
+    ViewStudentComponent,
+    ViewLectureComponent,
+    ViewStaffComponent,
+
+    StaffLectureComponent,
+
   ],
   imports: [
     BrowserModule,

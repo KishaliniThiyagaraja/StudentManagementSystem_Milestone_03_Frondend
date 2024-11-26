@@ -11,9 +11,17 @@ import { BlankComponent } from './Layout/blank/blank.component';
 
 
 import { LoginregisterComponent } from './Layout/blank/loginregister/loginregister.component';
+import { StaffComponent } from './Components/staff/staff.component';
+
+import { ViewStaffComponent } from './Components/staff/view-staff/view-staff.component';
+import { StaffLectureComponent } from './Components/manager/add/staff-lecture/staff-lecture.component';
 
 
 const routes: Routes = [
+  // {path:'login', component:LoginComponent},
+  // {path:'', component:LoginregisterComponent},
+  {path:'',component:StaffLectureComponent},
+  {path:'',component:ViewStaffComponent}
 ];
 
 

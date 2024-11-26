@@ -1,1 +1,24 @@
-<p>view-staff works!</p>
+<div class="container mt-4">
+    <h3>Staff List</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>User ID</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let staff of staffList">
+          <td>{{ staff.name }}</td>
+          <td>{{ staff.userId }}</td>
+          <td>{{ staff.email }}</td>
+          <td>{{ staff.phone }}</td>
+          <td><button class="btn btn-danger btn-sm" (click)="deleteStaff(staff.userId)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
