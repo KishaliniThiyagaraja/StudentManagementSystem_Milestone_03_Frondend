@@ -7,7 +7,6 @@ import { BlankComponent } from './Layout/blank/blank.component';
 import { StudentsComponent } from './Layout/students/students.component';
 
 import { LoginComponent } from './Layout/blank/login/login.component';
-import { RegisterComponent } from './Components/manager/register/register.component';
 
 import { HeaderComponent } from './Layout/students/header/header.component';
 import { FooterComponent } from './Layout/students/footer/footer.component';
@@ -26,21 +25,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TimeTableUpsertComponent } from './Components/manager/time-table/time-table-upsert/time-table-upsert.component';
-import { MarkAttendanceComponent } from './Components/manager/mark-attendance/mark-attendance.component';
-import { ViewAttendanceComponent } from './Components/manager/view-attendance/view-attendance.component';
-import { HomeComponent } from './Layout/blank/home/home.component';
-import { AttendanceComponent } from './Components/manager/attendance/attendance.component';
 import { ToastrModule } from 'ngx-toastr';
-
 import { LoginregisterComponent } from './Layout/blank/loginregister/loginregister.component';
-import { SetPasswordComponent } from './Components/set-password/set-password.component';
-import { AdminComponent } from './RegisterComponents/admin/admin.component';
-import { StaffRegistrationComponent } from './RegisterComponents/staff-registration/staff-registration.component';
-import { StudentRegistrationComponent } from './RegisterComponents/student-registration/student-registration.component';
-import { LoginsComponent } from './RegisterComponents/logins/logins.component';
-import { StaffAttendanceComponent } from './Components/staff/staff-attendance/staff-attendance.component';
-import { LecturerAttendanceComponent } from './Components/lectures/lecturer-attendance/lecturer-attendance.component';
-import { ManagerAttendanceComponent } from './Components/manager/manager-attendance/manager-attendance.component';
+import { LectureComponent } from './Components/lecture/lecture.component';
+import { AddViewStudentComponent } from './Components/students/add-view-student/add-view-student.component';
+import { AddEditStudentComponent } from './Components/students/add-edit-student/add-edit-student.component';
+import { ViewStudentComponent } from './Components/students/view-student/view-student.component';
+import { ViewLectureComponent } from './Components/lecture/view-lecture/view-lecture.component';
+import { ViewStaffComponent } from './Components/staff/view-staff/view-staff.component';
+import { AddEditStaffComponent } from './Components/staff/add-edit-staff/add-edit-staff.component';
+
 
 @NgModule({
   declarations: [
@@ -57,21 +51,19 @@ import { ManagerAttendanceComponent } from './Components/manager/manager-attenda
     TimeTableComponent,
     TimeTableUpsertComponent,
     TimeTableViewComponent,
-    MarkAttendanceComponent,
-    ViewAttendanceComponent,
-    HomeComponent,
+
     
-    RegisterComponent,
+
   
     LoginregisterComponent,
-        SetPasswordComponent,
-        AdminComponent,
-        StaffRegistrationComponent,
-        StudentRegistrationComponent,
-        LoginsComponent,
-        StaffAttendanceComponent,
-        LecturerAttendanceComponent,
-        ManagerAttendanceComponent,
+                  LectureComponent,
+                  AddViewStudentComponent,
+                  AddEditStudentComponent,
+                  ViewStudentComponent,
+                  ViewLectureComponent,
+                  ViewStaffComponent,
+                  AddEditStaffComponent,
+   
   ],
   imports: [
     BrowserModule,

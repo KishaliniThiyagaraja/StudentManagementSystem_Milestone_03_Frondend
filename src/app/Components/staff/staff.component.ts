@@ -6,11 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './staff.component.css'
 })
 export class StaffComponent {
-editAttendance(_t9: any) {
-throw new Error('Method not implemented.');
-}
-markAttendance() {
-throw new Error('Method not implemented.');
-}
-myForm : any;
+
 }
