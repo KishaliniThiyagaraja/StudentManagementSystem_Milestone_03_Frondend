@@ -9,6 +9,7 @@ import { ApiService } from '../../../../Services/api.service';
 export class StaffLectureComponent {
   name = '';
   userId = '';
+  nic = '';
   email = '';
   phone = '';
   role = '';
@@ -16,7 +17,7 @@ export class StaffLectureComponent {
   constructor(private apiService: ApiService) {}
 
   submitForm() {
-    const data = { name: this.name, userId: this.userId, email: this.email, phone: this.phone, role: this.role };
+    const data = { name: this.name, userId: this.userId, nic:this.nic, email: this.email, phone: this.phone, role: this.role };
     if (this.role === 'Staff') {
       this.apiService.addStaff(data).subscribe((res) => {
         alert('Staff added successfully');

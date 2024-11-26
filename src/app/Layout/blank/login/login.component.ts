@@ -46,31 +46,3 @@ export class LoginComponent {
 }
 
 
-
-  // email : string = '';
-  // password : string = '';
-
-  // constructor(private auth : AuthService) { }
-
-  // ngOnInit(): void {
-  // }
-  // OnUserLogin(){
-  //   if (this.email == ''){
-  //     alert('please enter your email');
-  //     return;
-  //   }
-
-  //   if (this.password == ''){
-  //     alert('please enter your password');
-  //     return;
-  //   }
-
-  // this.auth.login(this.email, this.password);
-
-  // this.email = '';
-  // this.password = '';
-  // }
-  // OnSignInWithGoogle(){
-  //   this.auth.googleSignIn();
-  // }
-
