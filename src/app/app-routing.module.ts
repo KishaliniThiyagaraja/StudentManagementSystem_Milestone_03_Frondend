@@ -15,31 +15,31 @@ import { StaffComponent } from './Components/staff/staff.component';
 
 import { ViewStaffComponent } from './Components/staff/view-staff/view-staff.component';
 import { StaffLectureComponent } from './Components/manager/add/staff-lecture/staff-lecture.component';
-import { AttendanceFormComponent } from './Components/manager/attendance/attendance-form/attendance-form.component';
-import { AttendanceViewComponent } from './Components/manager/attendance/attendance-view/attendance-view.component';
 import { EnrollmentUpsertComponent } from './Components/manager/enrollment/enrollment-upsert/enrollment-upsert.component';
+import { AttendanceComponent } from './Components/manager/attendance/attendance.component';
+
 
 
 const routes: Routes = [
-  // {path:'login', component:LoginComponent},
-  // {path:'', component:LoginregisterComponent},
-  // {path:'app-staff-lecture',component:StaffLectureComponent},
-  // {path:'',component:ViewStaffComponent},
+  {path:'login', component:LoginComponent},
+  {path:'', component:LoginregisterComponent},
+  {path:'app-staff-lecture',component:StaffLectureComponent},
+  {path:'',component:ViewStaffComponent},
 
-  // { path: 'attendance-form', component: AttendanceFormComponent },
-  // { path: 'attendance-view', component: AttendanceViewComponent },
-  // { path: '', redirectTo: '/attendance-form', pathMatch: 'full' },
+{path:'app-attendance',component:AttendanceComponent},
 
 
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Default route
   
 
-  // {path:'app-time-table-view',component:TimeTableViewComponent},
-  // {path:'app-time-table-upsert',component:TimeTableUpsertComponent},
 
+  {path:'app-time-table-view',component:TimeTableViewComponent},
+  {path:'app-time-table-upsert',component:TimeTableUpsertComponent},
+    
+  {path:'app-enrollment-upsert',component:EnrollmentUpsertComponent},
+  // {path:'manage-attent',component:ManagerComponent},
 
-  // {path:'app-enrollment-upsert',component:EnrollmentUpsertComponent}
 ];
 
 
@@ -48,3 +48,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+                                     

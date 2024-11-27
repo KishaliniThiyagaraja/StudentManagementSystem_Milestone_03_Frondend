@@ -8,23 +8,23 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AttendanceService {
-
-  private apiUrl = 'http://localhost:3000/api';  // Adjust API URL if needed
+  private apiUrl = 'http://your-api-url';
 
   constructor(private http: HttpClient) {}
 
-  // Get students for a specific course
-  getStudentsForCourse(courseId: number): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/students/${courseId}`);
+  getCurrentDate(): Observable<string> {
+    return this.http.get<string>(`${this.apiUrl}/date`);
   }
 
-  // Mark attendance
-  markAttendance(attendanceData: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/attendance`, attendanceData);
+  getTimetable(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/timetable`);
   }
 
-  // Get attendance records for a course and timetable
-  getAttendance(courseId: number, timetableId: number): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/attendance?courseId=${courseId}&timetableId=${timetableId}`);
+  getStudentList(sessionId: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/student-list?sessionId=${sessionId}`);
+  }
+
+  submitAttendance(sessionId: string, data: any[]): Observable<any> {
+    return this.http.post(`${this.apiUrl}/mark-attendance`, { sessionId, data });
   }
 }
