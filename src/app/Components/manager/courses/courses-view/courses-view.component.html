@@ -1,1 +1,22 @@
-<p>courses-view works!</p>
+<div>
+    <h2>Course Management (Admin)</h2>
+  
+    <div>
+      <h3>Add New Course</h3>
+      <input [(ngModel)]="newCourse.name" placeholder="Course Name" />
+      <input [(ngModel)]="newCourse.description" placeholder="Course Description" />
+      <button (click)="addCourse()">Add Course</button>
+    </div>
+  
+    <div>
+      <h3>Course List</h3>
+      <ul>
+        <li *ngFor="let course of courses">
+          {{ course.name }} - {{ course.description }}
+          <button (click)="updateCourse(course.id)">Update</button>
+          <button (click)="deleteCourse(course.id)">Delete</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

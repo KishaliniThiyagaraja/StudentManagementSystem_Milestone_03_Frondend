@@ -20,6 +20,9 @@ import { AttendanceComponent } from './Components/manager/attendance/attendance.
 import { AdminExamsComponent } from './Components/Exam-Manage/admin-exams/admin-exams.component';
 import { StudentExamsComponent } from './Components/Exam-Manage/student-exams/student-exams.component';
 import { LecturerExamsComponent } from './Components/Exam-Manage/lecturer-exams/lecturer-exams.component';
+import { CoursesComponent } from './Components/manager/courses/courses.component';
+import { CoursesUpsertComponent } from './Components/manager/courses/courses-upsert/courses-upsert.component';
+import { CoursesViewComponent } from './Components/manager/courses/courses-view/courses-view.component';
 
 
 
@@ -41,8 +44,11 @@ const routes: Routes = [
   { path: 'app-lecture-exams', component: LecturerExamsComponent },
 
   { path: '', redirectTo: '/exam-management', pathMatch: 'full'},
-
-
+  { path: 'app-courses-upsert', component: CoursesUpsertComponent },
+  { path: 'app-courses-view', component: CoursesViewComponent },
+  { path: 'my-courses', component: CoursesComponent },
+  { path: '', redirectTo: '/my-courses', pathMatch: 'full' },
+{path:'app-enrollment',component:EnrollmentUpsertComponent},
   { path: 'app-time-table-view', component: TimeTableViewComponent },
   { path: 'app-time-table-upsert', component: TimeTableUpsertComponent },
 
