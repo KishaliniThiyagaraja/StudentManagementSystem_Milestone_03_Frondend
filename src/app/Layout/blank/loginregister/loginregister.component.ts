@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginregisterComponent implements OnInit {
   registrationForm!: FormGroup;
   roles: string[] = ['Staff', 'Lecture', 'Student'];
+  submittedData: any;
 
   constructor(private fb: FormBuilder) {}
 
@@ -17,6 +18,7 @@ export class LoginregisterComponent implements OnInit {
     this.registrationForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
+      dob: ['', Validators.required], // Added Date of Birth field
       role: ['', Validators.required],
       utNumber: [''], // Optional fields
       batch: ['']
@@ -47,6 +49,5 @@ export class LoginregisterComponent implements OnInit {
     }
   }
 }
-
 
 
