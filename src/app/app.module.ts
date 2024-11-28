@@ -1,23 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BlankComponent } from './Layout/blank/blank.component';
 import { StudentsComponent } from './Layout/students/students.component';
-
 import { LoginComponent } from './Layout/blank/login/login.component';
-
 import { HeaderComponent } from './Layout/students/header/header.component';
 import { FooterComponent } from './Layout/students/footer/footer.component';
 import { SectionComponent } from './Layout/students/section/section.component';
-
 import { ManagerComponent } from './Layout/manager/manager.component';
 import { LecturesComponent } from './Layout/lectures/lectures.component';
 import { StaffComponent } from './Layout/staff/staff.component';
 import { TimeTableComponent } from './Components/manager/time-table/time-table.component';
 import { TimeTableViewComponent } from './Components/manager/time-table/time-table-view/time-table-view.component';
-
 import { CommonModule } from '@angular/common';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BsModalService } from 'ngx-bootstrap/modal';
@@ -33,11 +28,17 @@ import { ViewStaffComponent } from './Components/staff/view-staff/view-staff.com
 import { StaffLectureComponent } from './Components/manager/add/staff-lecture/staff-lecture.component';
 import { StudentDetailsComponent } from './Components/students/student-details/student-details.component';
 import { StudentListComponent } from './Components/students/student-list/student-list.component';
-import { FilterPipe } from './Pipes/filter.pipe';
-import { PhonePipe } from './Pipes/phone.pipe';
 import { EnrollmentUpsertComponent } from './Components/manager/enrollment/enrollment-upsert/enrollment-upsert.component';
 import { EnrollmentViewComponent } from './Components/manager/enrollment/enrollment-view/enrollment-view.component';
 import { AttendanceComponent } from './Components/manager/attendance/attendance.component';
+import { AdminExamsComponent } from './Components/Exam-Manage/admin-exams/admin-exams.component';
+import { LecturerExamsComponent } from './Components/Exam-Manage/lecturer-exams/lecturer-exams.component';
+import { StudentExamsComponent } from './Components/Exam-Manage/student-exams/student-exams.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+
 
 
 
@@ -58,27 +59,19 @@ import { AttendanceComponent } from './Components/manager/attendance/attendance.
     TimeTableViewComponent,
     EnrollmentUpsertComponent,
     EnrollmentViewComponent,
-    
-
-
-
-
     LoginregisterComponent,
     LectureComponent,
-
-
     ViewLectureComponent,
     ViewStaffComponent,
-
     StaffLectureComponent,
+    StudentDetailsComponent,
+    StudentListComponent,
+    AttendanceComponent,
+    AdminExamsComponent,
+    LecturerExamsComponent,
+    StudentExamsComponent,
 
-      StudentDetailsComponent,
-      StudentListComponent,
-      FilterPipe,
-      PhonePipe,
-  
 
-      AttendanceComponent,
 
 
 
@@ -93,7 +86,11 @@ import { AttendanceComponent } from './Components/manager/attendance/attendance.
     BrowserAnimationsModule,
     HttpClientModule,
     ToastrModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule,
+    MatButtonModule,
   ],
   providers: [BsModalService],
   bootstrap: [AppComponent]

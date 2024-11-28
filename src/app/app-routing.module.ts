@@ -17,27 +17,36 @@ import { ViewStaffComponent } from './Components/staff/view-staff/view-staff.com
 import { StaffLectureComponent } from './Components/manager/add/staff-lecture/staff-lecture.component';
 import { EnrollmentUpsertComponent } from './Components/manager/enrollment/enrollment-upsert/enrollment-upsert.component';
 import { AttendanceComponent } from './Components/manager/attendance/attendance.component';
+import { AdminExamsComponent } from './Components/Exam-Manage/admin-exams/admin-exams.component';
+import { StudentExamsComponent } from './Components/Exam-Manage/student-exams/student-exams.component';
+import { LecturerExamsComponent } from './Components/Exam-Manage/lecturer-exams/lecturer-exams.component';
+
 
 
 
 const routes: Routes = [
-  {path:'login', component:LoginComponent},
-  {path:'', component:LoginregisterComponent},
-  {path:'app-staff-lecture',component:StaffLectureComponent},
-  {path:'',component:ViewStaffComponent},
+  { path: 'login', component: LoginComponent },
+  { path: '', component: LoginregisterComponent },
+  { path: 'app-staff-lecture', component: StaffLectureComponent },
+  { path: '', component: ViewStaffComponent },
 
-{path:'app-attendance',component:AttendanceComponent},
+  { path: 'app-attendance', component: AttendanceComponent },
 
 
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Default route
-  
+
+  { path: 'app-admin-exams', component: AdminExamsComponent },
+  { path: 'app-student-exams', component: StudentExamsComponent },
+  { path: 'app-lecture-exams', component: LecturerExamsComponent },
+
+  { path: '', redirectTo: '/exam-management', pathMatch: 'full'},
 
 
-  {path:'app-time-table-view',component:TimeTableViewComponent},
-  {path:'app-time-table-upsert',component:TimeTableUpsertComponent},
-    
-  {path:'app-enrollment-upsert',component:EnrollmentUpsertComponent},
+  { path: 'app-time-table-view', component: TimeTableViewComponent },
+  { path: 'app-time-table-upsert', component: TimeTableUpsertComponent },
+
+  { path: 'app-enrollment-upsert', component: EnrollmentUpsertComponent },
   // {path:'manage-attent',component:ManagerComponent},
 
 ];
@@ -48,4 +57,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-                                     
+

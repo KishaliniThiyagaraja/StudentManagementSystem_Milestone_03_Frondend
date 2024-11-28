@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ExamViewComponent } from './exam-view.component';
+import { AdminExamsComponent } from './admin-exams.component';
 
-describe('ExamViewComponent', () => {
-  let component: ExamViewComponent;
-  let fixture: ComponentFixture<ExamViewComponent>;
+describe('AdminExamsComponent', () => {
+  let component: AdminExamsComponent;
+  let fixture: ComponentFixture<AdminExamsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ExamViewComponent]
+      declarations: [AdminExamsComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ExamViewComponent);
+    fixture = TestBed.createComponent(AdminExamsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

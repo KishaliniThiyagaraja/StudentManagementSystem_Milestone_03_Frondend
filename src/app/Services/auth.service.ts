@@ -5,6 +5,9 @@ import { User } from '../../user.model';
   providedIn: 'root'
 })
 export class AuthService {
+  logout() {
+    throw new Error('Method not implemented.');
+  }
   googleSignIn() {
     throw new Error('Method not implemented.');
   }
