@@ -22,14 +22,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TimeTableUpsertComponent } from './Components/manager/time-table/time-table-upsert/time-table-upsert.component';
 import { ToastrModule } from 'ngx-toastr';
 import { LoginregisterComponent } from './Layout/blank/loginregister/loginregister.component';
-import { LectureComponent } from './Components/lecture/lecture.component';
 import { ViewLectureComponent } from './Components/lecture/view-lecture/view-lecture.component';
 import { ViewStaffComponent } from './Components/staff/view-staff/view-staff.component';
 import { StaffLectureComponent } from './Components/manager/add/staff-lecture/staff-lecture.component';
-import { StudentDetailsComponent } from './Components/students/student-details/student-details.component';
 import { StudentListComponent } from './Components/students/student-list/student-list.component';
 import { EnrollmentUpsertComponent } from './Components/manager/enrollment/enrollment-upsert/enrollment-upsert.component';
-
 import { AttendanceComponent } from './Components/manager/attendance/attendance.component';
 import { AdminExamsComponent } from './Components/Exam-Manage/admin-exams/admin-exams.component';
 import { LecturerExamsComponent } from './Components/Exam-Manage/lecturer-exams/lecturer-exams.component';
@@ -38,10 +35,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
-import { CoursesViewComponent } from './Components/manager/courses/courses-view/courses-view.component';
-import { CoursesUpsertComponent } from './Components/manager/courses/courses-upsert/courses-upsert.component';
-import { CoursesComponent } from './Components/manager/courses/courses.component';
-
 
 
 
@@ -61,26 +54,17 @@ import { CoursesComponent } from './Components/manager/courses/courses.component
     TimeTableUpsertComponent,
     TimeTableViewComponent,
     EnrollmentUpsertComponent,
-
     LoginregisterComponent,
-    LectureComponent,
+
     ViewLectureComponent,
     ViewStaffComponent,
     StaffLectureComponent,
-    StudentDetailsComponent,
+
     StudentListComponent,
     AttendanceComponent,
     AdminExamsComponent,
     LecturerExamsComponent,
     StudentExamsComponent,
-    CoursesViewComponent,
-    CoursesUpsertComponent,
-    CoursesComponent
-
-
-
-
-
   ],
   imports: [
     BrowserModule,

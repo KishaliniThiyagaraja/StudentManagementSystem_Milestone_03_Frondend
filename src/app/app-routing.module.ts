@@ -11,7 +11,6 @@ import { BlankComponent } from './Layout/blank/blank.component';
 
 
 import { LoginregisterComponent } from './Layout/blank/loginregister/loginregister.component';
-import { StaffComponent } from './Components/staff/staff.component';
 
 import { ViewStaffComponent } from './Components/staff/view-staff/view-staff.component';
 import { StaffLectureComponent } from './Components/manager/add/staff-lecture/staff-lecture.component';
@@ -20,10 +19,8 @@ import { AttendanceComponent } from './Components/manager/attendance/attendance.
 import { AdminExamsComponent } from './Components/Exam-Manage/admin-exams/admin-exams.component';
 import { StudentExamsComponent } from './Components/Exam-Manage/student-exams/student-exams.component';
 import { LecturerExamsComponent } from './Components/Exam-Manage/lecturer-exams/lecturer-exams.component';
-import { CoursesComponent } from './Components/manager/courses/courses.component';
-import { CoursesUpsertComponent } from './Components/manager/courses/courses-upsert/courses-upsert.component';
-import { CoursesViewComponent } from './Components/manager/courses/courses-view/courses-view.component';
-
+import { StudentListComponent } from './Components/students/student-list/student-list.component';
+import { ViewLectureComponent } from './Components/lecture/view-lecture/view-lecture.component';
 
 
 
@@ -44,9 +41,7 @@ const routes: Routes = [
   { path: 'app-lecture-exams', component: LecturerExamsComponent },
 
   { path: '', redirectTo: '/exam-management', pathMatch: 'full'},
-  { path: 'app-courses-upsert', component: CoursesUpsertComponent },
-  { path: 'app-courses-view', component: CoursesViewComponent },
-  { path: 'my-courses', component: CoursesComponent },
+
   { path: '', redirectTo: '/my-courses', pathMatch: 'full' },
 {path:'app-enrollment',component:EnrollmentUpsertComponent},
   { path: 'app-time-table-view', component: TimeTableViewComponent },
@@ -54,6 +49,12 @@ const routes: Routes = [
 
   { path: 'app-enrollment-upsert', component: EnrollmentUpsertComponent },
   // {path:'manage-attent',component:ManagerComponent},
+
+
+  { path: '', component: LoginregisterComponent },
+  { path: 'app-student-list', component: StudentListComponent },
+  { path: 'app-view-staff', component: ViewStaffComponent },
+  { path: 'app-view-lecture', component: ViewLectureComponent }
 
 ];
 

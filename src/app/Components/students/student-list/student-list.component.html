@@ -1,1 +1,24 @@
-<p>student-list works!</p>
+<div class="container mt-5">
+    <h2>Student Details</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Date of Birth</th>
+          <th>UT Number</th>
+          <th>Batch</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ studentData?.name }}</td>
+          <td>{{ studentData?.email }}</td>
+          <td>{{ studentData?.dob }}</td>
+          <td>{{ studentData?.utNumber }}</td>
+          <td>{{ studentData?.batch }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

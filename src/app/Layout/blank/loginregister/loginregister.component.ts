@@ -10,6 +10,7 @@ export class LoginregisterComponent implements OnInit {
   registrationForm!: FormGroup;
   roles: string[] = ['Staff', 'Lecture', 'Student'];
   submittedData: any;
+  router: any;
 
   constructor(private fb: FormBuilder) {}
 
@@ -41,13 +42,30 @@ export class LoginregisterComponent implements OnInit {
   }
 
   // Handle form submission
-  onSubmit(): void {
-    if (this.registrationForm.valid) {
-      console.log('Form Data:', this.registrationForm.value);
-    } else {
-      console.error('Form is invalid');
+//   onSubmit(): void {
+//     if (this.registrationForm.valid) {
+//       console.log('Form Data:', this.registrationForm.value);
+//     } else {
+//       console.error('Form is invalid');
+//     }
+//   }
+// }
+onSubmit(): void {
+  if (this.registrationForm.valid) {
+    const formData = this.registrationForm.value;
+    const role = formData.role;
+    console.log(formData);
+    // Navigate to respective component based on role
+    if (role === 'Student') {
+      this.router.navigate(['/app-student-list'], { state: { data: formData } });
+    } else if (role === 'Staff') {
+      this.router.navigate(['/app-view-staff'], { state: { data: formData } });
+    } else if (role === 'Lecture') {
+      this.router.navigate(['/app-view-lecture'], { state: { data: formData } });
     }
+  } else {
+    console.error('Form is invalid');
   }
 }
-
+}
 
