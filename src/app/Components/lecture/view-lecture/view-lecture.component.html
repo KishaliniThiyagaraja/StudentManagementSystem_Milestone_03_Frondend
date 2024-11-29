@@ -1,0 +1,27 @@
+<div class="container mt-4">
+    <h3>Lecture List</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>User ID</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let lecture of lecturelist">
+          <td>{{ lecture.name }}</td>
+          <td>{{ lecture.userId }}</td>
+          <td>{{ lecture.email }}</td>
+          <td>{{ lecture.phone }}</td>
+          <td><button class="btn btn-danger btn-sm" (click)="deleteLecture(lecture.userId)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  
+  

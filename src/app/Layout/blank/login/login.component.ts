@@ -1,49 +1,35 @@
 import { Router } from '@angular/router';
-import { TimeTableComponent } from './../../../Components/manager/time-table/time-table.component';
-import { TimeTableService } from './../../../time-table.service';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent implements OnInit {
-   login : LoginRequest;
-   userId: string = '';
-   password: string = '';
-   errorMessage: string = '';
-  authService: any;
+export class LoginComponent {
+  loginForm!: FormGroup;
+  showPassword: boolean = false;
 
-   constructor(private TimeTableService: TimeTableService, private router: Router){
-    this.login = {UserId: '', password: ''};
-   }
+  constructor(private fb: FormBuilder) {
+    // Initialize the form
+    this.loginForm = this.fb.group({
+      userId: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
+  }
 
-   logins() {
-    const user = this.authService.login(this.username, this.password);
-    if (user) {
-      this.router.navigate(['/home']);
+  // Toggle password visibility
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
+
+  // Submit form
+  onSubmit(): void {
+    if (this.loginForm.valid) {
+      console.log('Login Successful:', this.loginForm.value);
     } else {
-      this.errorMessage = 'Invalid username or password';
+      console.error('Invalid Form');
     }
   }
-  username(username: any, password: string) {
-    throw new Error('Method not implemented.');
-  }
-
-   ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
-
-  onSubmit(){
-    this.TimeTableService.login(this.login).subscribe(daat =>{
-this.router.navigate(['/Managar/timetableview']);
-    })
-
-  }
-}
-
-export interface LoginRequest{
-  UserId:string;
-  password:string;
 }

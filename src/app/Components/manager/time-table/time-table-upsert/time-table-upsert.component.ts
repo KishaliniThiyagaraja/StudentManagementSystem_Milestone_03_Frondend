@@ -1,4 +1,4 @@
-import { TimeTableService } from './../../../../time-table.service';
+import { TimeTableService } from '../../../../Services/time-table.service';
 import { TimeTable } from './../../../../../model';
 
 import { Component, OnInit } from '@angular/core';

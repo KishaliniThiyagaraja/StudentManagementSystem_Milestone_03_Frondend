@@ -1,23 +1,30 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
-interface AttendanceRecord {
-    studentId: number;
-    courseId: number;
-    date: string;
-    status: boolean; // true for present, false for absent
-}
+
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class AttendanceService {
-    private attendanceRecords: AttendanceRecord[] = [];
+  private apiUrl = 'http://your-api-url';
 
-    markAttendance(record: AttendanceRecord) {
-        this.attendanceRecords.push(record);
-    }
+  constructor(private http: HttpClient) {}
 
-    getAttendanceRecords(): AttendanceRecord[] {
-        return this.attendanceRecords;
-    }
+  getCurrentDate(): Observable<string> {
+    return this.http.get<string>(`${this.apiUrl}/date`);
+  }
+
+  getTimetable(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/timetable`);
+  }
+
+  getStudentList(sessionId: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/student-list?sessionId=${sessionId}`);
+  }
+
+  submitAttendance(sessionId: string, data: any[]): Observable<any> {
+    return this.http.post(`${this.apiUrl}/mark-attendance`, { sessionId, data });
+  }
 }

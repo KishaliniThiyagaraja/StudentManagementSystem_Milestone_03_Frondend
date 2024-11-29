@@ -1,1 +1,11 @@
-<p>manager works!</p>
+<div *ngIf="role === 'Admin'">
+    <h3>View All Attendance Records</h3>
+    <table>
+      <tr *ngFor="let attendance of attendances">
+        <td>{{attendance.date}}</td>
+        <td>{{attendance.studentUTNumber}}</td>
+        <td>{{attendance.isPresent ? 'Present' : 'Absent'}}</td>
+      </tr>
+    </table>
+  </div>
+  
