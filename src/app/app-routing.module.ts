@@ -21,40 +21,77 @@ import { StudentExamsComponent } from './Components/Exam-Manage/student-exams/st
 import { LecturerExamsComponent } from './Components/Exam-Manage/lecturer-exams/lecturer-exams.component';
 import { StudentListComponent } from './Components/students/student-list/student-list.component';
 import { ViewLectureComponent } from './Components/lecture/view-lecture/view-lecture.component';
+import { StaffComponent } from './Layout/staff/staff.component';
+import { LecturesComponent } from './Layout/lectures/lectures.component';
+import { StudentsComponent } from './Layout/students/students.component';
 
 
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: '', component: LoginregisterComponent },
-  { path: 'app-staff-lecture', component: StaffLectureComponent },
-  { path: '', component: ViewStaffComponent },
-
-  { path: 'app-attendance', component: AttendanceComponent },
 
 
-  { path: 'login', component: LoginComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' }, // Default route
+   // Authentication Routes
+   { path: 'app-login', component: LoginComponent },
 
-  { path: 'app-admin-exams', component: AdminExamsComponent },
-  { path: 'app-student-exams', component: StudentExamsComponent },
-  { path: 'app-lecture-exams', component: LecturerExamsComponent },
-
-  { path: '', redirectTo: '/exam-management', pathMatch: 'full'},
-
-  { path: '', redirectTo: '/my-courses', pathMatch: 'full' },
-{path:'app-enrollment',component:EnrollmentUpsertComponent},
-  { path: 'app-time-table-view', component: TimeTableViewComponent },
-  { path: 'app-time-table-upsert', component: TimeTableUpsertComponent },
-
-  { path: 'app-enrollment-upsert', component: EnrollmentUpsertComponent },
-  // {path:'manage-attent',component:ManagerComponent},
-
-
-  { path: '', component: LoginregisterComponent },
-  { path: 'app-student-list', component: StudentListComponent },
-  { path: 'app-view-staff', component: ViewStaffComponent },
-  { path: 'app-view-lecture', component: ViewLectureComponent }
+   // Admin Routes
+   {
+     path: 'manager',
+     component: ManagerComponent,
+    //  canActivate: [AuthGuard, AdminGuard], // Admin-specific guards
+     children: [
+      //  { path: 'manage-courses', component: ManageCoursesComponent },
+      //  { path: 'manage-exams', component: ManageExamsComponent },
+       { path: 'app-time-table-upsert', component: TimeTableUpsertComponent },
+       { path: 'app-admin-exams', component: AdminExamsComponent },
+       { path: 'app-staff-lecture', component: StaffLectureComponent },
+       { path: 'app-student-list', component: StudentListComponent },
+     ],
+   },
+ 
+   // Staff Routes
+   {
+     path: 'staff',
+     component: StaffComponent,
+    //  canActivate: [AuthGuard, StaffGuard], // Staff-specific guards
+     children: [
+       { path: 'app-loginregister', component: LoginregisterComponent },
+      //  { path: 'enroll-student', component: EnrollStudentComponent },
+       { path: 'app-attendance', component: AttendanceComponent },
+       { path: 'app-student-list', component: StudentListComponent },
+     ],
+   },
+ 
+   // Lecturer Routes
+   {
+     path: 'lectures',
+     component: LecturesComponent,
+    //  canActivate: [AuthGuard, LecturerGuard], // Lecturer-specific guards
+     children: [
+       { path: 'app-lecturer-exams', component: LecturerExamsComponent},
+       { path: 'app-time-table-view', component: TimeTableViewComponent },
+       { path: 'app-student-list', component: StudentListComponent },
+     ],
+   },
+ 
+   // Student Routes
+   {
+     path: 'student',
+     component: StudentsComponent,
+    //  canActivate: [AuthGuard, StudentGuard], // Student-specific guards
+     children: [
+       { path: 'app-time-table-view', component: TimeTableViewComponent },
+       { path: 'app-student-exams', component: StudentExamsComponent },
+      //  { path: 'view-courses', component: ViewCoursesComponent },
+      //  { path: 'view-attendance', component: ViewAttendanceComponent },
+     ],
+   },
+ 
+   // Default Route
+   { path: 'app-login', redirectTo: '/login', pathMatch: 'full' },
+ 
+   // Fallback Route
+   { path: 'app-login', redirectTo: '/login' }, // Redirect invalid routes to login
+ 
 
 ];
 
