@@ -23,12 +23,17 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { TimeTableUpsertComponent } from './Components/manager/time-table/time-table-upsert/time-table-upsert.component';
 import { MarkAttendanceComponent } from './Components/manager/mark-attendance/mark-attendance.component';
 import { ViewAttendanceComponent } from './Components/manager/view-attendance/view-attendance.component';
 import { HomeComponent } from './Layout/blank/home/home.component';
 import { AttendanceComponent } from './Components/manager/attendance/attendance.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { CoursesComponent } from './Components/manager/courses/courses.component';
+import { CourseaddComponent } from './Components/manager/courses/courseadd/courseadd.component';
+import { CourseeditComponent } from './Components/manager/courses/courseedit/courseedit.component';
 
 @NgModule({
   declarations: [
@@ -49,10 +54,15 @@ import { AttendanceComponent } from './Components/manager/attendance/attendance.
     MarkAttendanceComponent,
     ViewAttendanceComponent,
     HomeComponent,
-    AttendanceComponent
+    AttendanceComponent,
+    CoursesComponent,
+    CourseaddComponent,
+    CourseeditComponent,
+   
 
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     CommonModule,
@@ -60,7 +70,8 @@ import { AttendanceComponent } from './Components/manager/attendance/attendance.
     ReactiveFormsModule,
     BsDatepickerModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+   
   ],
   providers: [BsModalService],
   bootstrap: [AppComponent]

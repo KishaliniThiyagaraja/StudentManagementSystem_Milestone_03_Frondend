@@ -1,4 +1,4 @@
-import { NgModule, Version } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TimeTableComponent } from './Components/manager/time-table/time-table.component';
 import { TimeTableViewComponent } from './Components/manager/time-table/time-table-view/time-table-view.component';
@@ -11,6 +11,9 @@ import { RegisterComponent } from './Layout/blank/register/register.component';
 import { BlankComponent } from './Layout/blank/blank.component';
 import { HomeComponent } from './Layout/blank/home/home.component';
 import { AttendanceComponent } from './Components/manager/attendance/attendance.component';
+import { CoursesComponent } from './Components/manager/courses/courses.component';
+import { CourseaddComponent } from './Components/manager/courses/courseadd/courseadd.component';
+import { CourseeditComponent } from './Components/manager/courses/courseedit/courseedit.component';
 
 const routes: Routes = [
   {
@@ -41,9 +44,19 @@ const routes: Routes = [
       { path: 'view-attendance', component: ViewAttendanceComponent },
       {path:'list-attendance' , component : AttendanceComponent},
       { path: '', redirectTo: '/mark-attendance', pathMatch: 'full' },
+     
     ]
+  },{
+    path: 'courses',
+    children: [
+      { path: '', component: CoursesComponent }, 
+      { path: 'add', component: CourseaddComponent }, 
+      { path: 'edit/:id', component: CourseeditComponent }, 
+    ],
   },
+ 
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
