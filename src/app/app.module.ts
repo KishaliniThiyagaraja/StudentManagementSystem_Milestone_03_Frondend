@@ -18,7 +18,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { TimeTableUpsertComponent } from './Components/manager/time-table/time-table-upsert/time-table-upsert.component';
 import { ToastrModule } from 'ngx-toastr';
 import { LoginregisterComponent } from './Layout/blank/loginregister/loginregister.component';
@@ -41,6 +41,11 @@ import { CourseViewComponent } from './Components/Courses/course-view/course-vie
 
 
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { CoursesComponent } from './Components/manager/courses/courses.component';
+import { CourseaddComponent } from './Components/manager/courses/courseadd/courseadd.component';
+import { CourseeditComponent } from './Components/manager/courses/courseedit/courseedit.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,8 +61,19 @@ import { CourseViewComponent } from './Components/Courses/course-view/course-vie
     TimeTableComponent,
     TimeTableUpsertComponent,
     TimeTableViewComponent,
+<<<<<<< HEAD
+    MarkAttendanceComponent,
+    ViewAttendanceComponent,
+    HomeComponent,
+    AttendanceComponent,
+    CoursesComponent,
+    CourseaddComponent,
+    CourseeditComponent,
+   
+=======
     EnrollmentUpsertComponent,
     LoginregisterComponent,
+>>>>>>> 3c8b0c3db0a0f8d919dccb36f3192bc956722943
 
     ViewLectureComponent,
     ViewStaffComponent,
@@ -73,6 +89,7 @@ import { CourseViewComponent } from './Components/Courses/course-view/course-vie
     CourseViewComponent,
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     CommonModule,
@@ -81,12 +98,16 @@ import { CourseViewComponent } from './Components/Courses/course-view/course-vie
     BsDatepickerModule,
     BrowserAnimationsModule,
     HttpClientModule,
+<<<<<<< HEAD
+   
+=======
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
     MatButtonModule,
+>>>>>>> 3c8b0c3db0a0f8d919dccb36f3192bc956722943
   ],
   providers: [BsModalService],
   bootstrap: [AppComponent]

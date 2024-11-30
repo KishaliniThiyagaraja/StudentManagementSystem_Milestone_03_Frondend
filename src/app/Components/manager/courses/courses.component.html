@@ -1,0 +1,38 @@
+<div class="container  mt-5">
+    <div class="card shadow p-3 mb-5 bg-white rounded">
+        <div class="card-body">
+            <div class="d-flex mb-3">
+                 <div class="ml-auto p-2">
+                     <button type="button" class="btn btn-dark" [routerLink]="['/courses/add']">Add Course</button>
+                  </div>
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Course Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Start Date</th>
+                    <th scope="col">End Date</th>
+                    <th scope="col">Available</th>
+                    <th scope="col">Action</th>
+                  </tr>
+              </thead> 
+              <tbody>
+                <tr *ngFor="let item of courses">
+                    <th scope="row">{{ item.Id }}</th>
+                    <td>{{ item.Name }}</td>
+                    <td>{{ item.Description }}</td>
+                    <td>{{ item.StartDate }}</td>
+                    <td>{{ item.EndDate }}</td>
+                    <td>{{ item.IsDeleted }}</td>
+                    <td>
+                      <button type="button" class="btn btn-danger me-3" (click)="OnDelete(item.Id)">Delete</button>
+                      <button type="button" class="btn btn-warning me-3" (click)="onEdit(item.Id)"  [routerLink]="['/courses/edit', item.Id]">Edit</button>
+                    </td>
+                </tr>
+              </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="card shadow p-3 mb-5 bg-white rounded">
+        <div class="card-header">
+            <h4>Add New Course</h4>
+        </div>
+
+
+        <div class="card-body">
+            <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label for="Name" class="form-label">CourseName</label>
+                    <input type="text" class="form-control" id="title" formControlName="Name">
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" class="form-control" id="description" formControlName="description">
+                </div>
+                <div class="mb-3">
+                    <label for="StartDate" class="form-label">Start Date</label>
+                    <input type="date" class="form-control" id="StartDate" formControlName="StartDate">
+                </div>
+                <div class="mb-3">
+                    <label for="EndDate" class="form-label">End Date</label>
+                    <input type="date" class="form-control" id="EndDate" formControlName="EndDate">
+                </div>
+                <div class="mb-3 mx-auto">
+                    <button type="submit" [disabled]="courseForm.invalid" class="btn btn-primary me-2">Submit</button>
+
+                    <button type="button" (click)="cancle()" class="btn btn-secondary">Cancel</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
