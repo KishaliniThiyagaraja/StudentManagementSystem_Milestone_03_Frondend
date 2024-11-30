@@ -31,9 +31,7 @@ import { CourseEditComponent } from './Components/Courses/course-edit/course-edi
 
 
 const routes: Routes = [
-
 {path:'',component:LoginComponent}
-
 ];
 
 @NgModule({
