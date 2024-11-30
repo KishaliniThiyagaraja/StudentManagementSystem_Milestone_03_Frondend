@@ -3,14 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BlankComponent } from './Layout/blank/blank.component';
-import { StudentsComponent } from './Layout/students/students.component';
 import { LoginComponent } from './Layout/blank/login/login.component';
-import { HeaderComponent } from './Layout/students/header/header.component';
-import { FooterComponent } from './Layout/students/footer/footer.component';
-import { SectionComponent } from './Layout/students/section/section.component';
-import { ManagerComponent } from './Layout/manager/manager.component';
-import { LecturesComponent } from './Layout/lectures/lectures.component';
-import { StaffComponent } from './Layout/staff/staff.component';
 import { TimeTableComponent } from './Components/manager/time-table/time-table.component';
 import { TimeTableViewComponent } from './Components/manager/time-table/time-table-view/time-table-view.component';
 import { CommonModule } from '@angular/common';
@@ -42,19 +35,27 @@ import { CourseViewComponent } from './Components/Courses/course-view/course-vie
 
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { DshboardComponent } from './Layout/dshboard/dshboard.component';
+import { StudentDashboardComponent } from './Layout/student-dashboard/student-dashboard.component';
+import { ManagerDashboardComponent } from './Layout/manager-dashboard/manager-dashboard.component';
+import { StaffDashboardComponent } from './Layout/staff-dashboard/staff-dashboard.component';
+import { LectureDashboardComponent } from './Layout/lecture-dashboard/lecture-dashboard.component';
+import { CardComponent } from './Layout/dshboard/card/card.component';
+import { HeaderComponent } from './Layout/dshboard/header/header.component';
+import { SidebarComponent } from './Layout/dshboard/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BlankComponent,
-    StudentsComponent,
+
     LoginComponent,
-    HeaderComponent,
-    FooterComponent,
-    SectionComponent,
-    ManagerComponent,
-    LecturesComponent,
-    StaffComponent,
+
+
+
+
+
+    
     TimeTableComponent,
     TimeTableUpsertComponent,
     TimeTableViewComponent,
@@ -78,6 +79,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     CourseAddComponent,
     CourseEditComponent,
     CourseViewComponent,
+    DshboardComponent,
+    StudentDashboardComponent,
+    ManagerDashboardComponent,
+    StaffDashboardComponent,
+    LectureDashboardComponent,
+    CardComponent,
+    HeaderComponent,
+    SidebarComponent,
   ],
   imports: [
     ReactiveFormsModule,

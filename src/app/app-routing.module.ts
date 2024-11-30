@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TimeTableComponent } from './Components/manager/time-table/time-table.component';
 import { TimeTableViewComponent } from './Components/manager/time-table/time-table-view/time-table-view.component';
 import { TimeTableUpsertComponent } from './Components/manager/time-table/time-table-upsert/time-table-upsert.component';
-import { ManagerComponent } from './Layout/manager/manager.component';
+
 
 import { LoginComponent } from './Layout/blank/login/login.component';
 
@@ -21,17 +21,17 @@ import { StudentExamsComponent } from './Components/Exam-Manage/student-exams/st
 import { LecturerExamsComponent } from './Components/Exam-Manage/lecturer-exams/lecturer-exams.component';
 import { StudentListComponent } from './Components/students/student-list/student-list.component';
 import { ViewLectureComponent } from './Components/lecture/view-lecture/view-lecture.component';
-import { StaffComponent } from './Layout/staff/staff.component';
-import { LecturesComponent } from './Layout/lectures/lectures.component';
-import { StudentsComponent } from './Layout/students/students.component';
+
 import { CourseViewComponent } from './Components/Courses/course-view/course-view.component';
 import { CourseAddComponent } from './Components/Courses/course-add/course-add.component';
 import { CourseEditComponent } from './Components/Courses/course-edit/course-edit.component';
+import { HeaderComponent } from './Layout/dshboard/header/header.component';
 
 
 
 const routes: Routes = [
-{path:'',component:LoginComponent}
+{path:'',component:LoginComponent},
+{path:'header',component:HeaderComponent}
 ];
 
 @NgModule({
