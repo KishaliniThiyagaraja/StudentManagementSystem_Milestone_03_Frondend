@@ -35,6 +35,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
+import { CourseAddComponent } from './Components/Courses/course-add/course-add.component';
+import { CourseEditComponent } from './Components/Courses/course-edit/course-edit.component';
+import { CourseViewComponent } from './Components/Courses/course-view/course-view.component';
 
 
 
@@ -65,6 +68,9 @@ import { MatTableModule } from '@angular/material/table';
     AdminExamsComponent,
     LecturerExamsComponent,
     StudentExamsComponent,
+    CourseAddComponent,
+    CourseEditComponent,
+    CourseViewComponent,
   ],
   imports: [
     BrowserModule,
