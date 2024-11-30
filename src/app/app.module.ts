@@ -18,7 +18,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { TimeTableUpsertComponent } from './Components/manager/time-table/time-table-upsert/time-table-upsert.component';
 import { ToastrModule } from 'ngx-toastr';
 import { LoginregisterComponent } from './Layout/blank/loginregister/loginregister.component';
@@ -41,6 +41,8 @@ import { CourseViewComponent } from './Components/Courses/course-view/course-vie
 
 
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,8 +58,13 @@ import { CourseViewComponent } from './Components/Courses/course-view/course-vie
     TimeTableComponent,
     TimeTableUpsertComponent,
     TimeTableViewComponent,
+
+    AttendanceComponent,
+
+
     EnrollmentUpsertComponent,
     LoginregisterComponent,
+
 
     ViewLectureComponent,
     ViewStaffComponent,
@@ -73,6 +80,7 @@ import { CourseViewComponent } from './Components/Courses/course-view/course-vie
     CourseViewComponent,
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     CommonModule,
@@ -87,6 +95,7 @@ import { CourseViewComponent } from './Components/Courses/course-view/course-vie
     MatInputModule,
     MatTableModule,
     MatButtonModule,
+
   ],
   providers: [BsModalService],
   bootstrap: [AppComponent]

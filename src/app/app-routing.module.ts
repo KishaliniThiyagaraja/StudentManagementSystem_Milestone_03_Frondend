@@ -1,4 +1,4 @@
-import { NgModule, Version } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TimeTableComponent } from './Components/manager/time-table/time-table.component';
 import { TimeTableViewComponent } from './Components/manager/time-table/time-table-view/time-table-view.component';
@@ -32,81 +32,9 @@ import { CourseEditComponent } from './Components/Courses/course-edit/course-edi
 
 const routes: Routes = [
 
+{path:'',component:LoginComponent}
 
-   // Authentication Routes
-   { path: '', component: LoginComponent },
-   { path: 'app-time-table-upsert', component: TimeTableUpsertComponent },
-   { path: 'app-admin-exams', component: AdminExamsComponent },
-   { path: 'app-staff-lecture', component: StaffLectureComponent },
-   { path: 'app-student-list', component: StudentListComponent },
-   { path: 'app-course-view', component: CourseViewComponent },
-{ path: 'app-course-add', component: CourseAddComponent}, // AddCourseComponent to be implemented
-{ path: 'app-course-edit/edit/:id', component: CourseEditComponent} // EditCourseComponent to be implemented
- ];
-
-   // Admin Routes
-  //  {
-  //    path: 'manager',
-  //    component: ManagerComponent,
-  //   //  canActivate: [AuthGuard, AdminGuard], // Admin-specific guards
-  //    children: [
-      //  { path: 'manage-courses', component: ManageCoursesComponent },
-      //  { path: 'manage-exams', component: ManageExamsComponent },
-      //  { path: 'app-time-table-upsert', component: TimeTableUpsertComponent },
-      //  { path: 'app-admin-exams', component: AdminExamsComponent },
-      //  { path: 'app-staff-lecture', component: StaffLectureComponent },
-      //  { path: 'app-student-list', component: StudentListComponent },
-  //    ],
-  //  },
- 
-   // Staff Routes
-//    {
-//      path: 'staff',
-//      component: StaffComponent,
-//     //  canActivate: [AuthGuard, StaffGuard], // Staff-specific guards
-//      children: [
-//        { path: 'app-loginregister', component: LoginregisterComponent },
-//       //  { path: 'enroll-student', component: EnrollStudentComponent },
-//        { path: 'app-attendance', component: AttendanceComponent },
-//        { path: 'app-student-list', component: StudentListComponent },
-//      ],
-//    },
- 
-//    // Lecturer Routes
-//    {
-//      path: 'lectures',
-//      component: LecturesComponent,
-//     //  canActivate: [AuthGuard, LecturerGuard], // Lecturer-specific guards
-//      children: [
-//        { path: 'app-lecturer-exams', component: LecturerExamsComponent},
-//        { path: 'app-time-table-view', component: TimeTableViewComponent },
-//        { path: 'app-student-list', component: StudentListComponent },
-//      ],
-//    },
- 
-//    // Student Routes
-//    {
-//      path: 'student',
-//      component: StudentsComponent,
-//     //  canActivate: [AuthGuard, StudentGuard], // Student-specific guards
-//      children: [
-//        { path: 'app-time-table-view', component: TimeTableViewComponent },
-//        { path: 'app-student-exams', component: StudentExamsComponent },
-//       //  { path: 'view-courses', component: ViewCoursesComponent },
-//       //  { path: 'view-attendance', component: ViewAttendanceComponent },
-//      ],
-//    },
- 
-//    // Default Route
-//    { path: 'app-login', redirectTo: '/login', pathMatch: 'full' },
- 
-//    // Fallback Route
-//    { path: 'app-login', redirectTo: '/login' }, // Redirect invalid routes to login
- 
-
-
-// ];
-
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

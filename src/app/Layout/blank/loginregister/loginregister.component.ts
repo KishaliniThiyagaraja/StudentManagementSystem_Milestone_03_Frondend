@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-loginregister',
-  templateUrl: './loginregister.component.html',
+  templateUrl:'./loginregister.component.html',
   styleUrl: './loginregister.component.css'
 })
 export class LoginregisterComponent implements OnInit {
