@@ -7,42 +7,22 @@ import { ExamService } from '../../../Services/exam.service';
   templateUrl: './admin-exams.component.html',
   styleUrl: './admin-exams.component.css'
 })
-export class AdminExamsComponent implements OnInit {
-  examForm: FormGroup;
-  exams: any[] = [];
+export class AdminExamsComponent  {
+  exams = [
+    { id: 1, utNumber: 'UT001', studentName: 'John Doe', examType: 'Midterm' },
+    { id: 2, utNumber: 'UT002', studentName: 'Jane Smith', examType: 'Final' }
+  ];
 
-  constructor(private fb: FormBuilder, private examService: ExamService) {
-    this.examForm = this.fb.group({
-      name: [''],
-      date: [''],
-    });
+  addExam() {
+    console.log('Add Exam');
   }
 
-  ngOnInit(): void {
-    this.loadExams();
+  editExam(exam: any) {
+    console.log('Edit Exam:', exam);
   }
 
-  loadExams(): void {
-    this.examService.getExams().subscribe((data) => (this.exams = data));
-  }
-
-  onSubmit(): void {
-    const exam = this.examForm.value;
-    this.examService.addExam(exam).subscribe(() => {
-      this.examForm.reset();
-      this.loadExams();
-    });
-  }
-
-  approveMarks(examId: string): void {
-    this.examService.approveMarks(examId).subscribe(() => {
-      this.loadExams();
-    });
-  }
-
-  deleteExam(examId: string): void {
-    this.examService.deleteExam(examId).subscribe(() => {
-      this.loadExams();
-    });
+  deleteExam(id: number) {
+    console.log('Delete Exam ID:', id);
+    this.exams = this.exams.filter(e => e.id !== id);
   }
 }
