@@ -3,7 +3,7 @@ import { ApiService } from '../../../../Services/api.service';
 
 @Component({
   selector: 'app-staff-lecture',
-  templateUrl: './staff-lecture.component.html',
+  templateUrl:'staff-lecture.component.html',
   styleUrl: './staff-lecture.component.css'
 })
 export class StaffLectureComponent {
