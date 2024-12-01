@@ -33,6 +33,7 @@ import { ManagerDashboardComponent } from './Layout/manager-dashboard/manager-da
 import { StaffDashboardComponent } from './Layout/staff-dashboard/staff-dashboard.component';
 import { LectureDashboardComponent } from './Layout/lecture-dashboard/lecture-dashboard.component';
 import { StudentDashboardComponent } from './Layout/student-dashboard/student-dashboard.component';
+import { LandingpageComponent } from './Components/LandingPage/landingpage/landingpage.component';
 
 
 
@@ -45,40 +46,36 @@ const routes: Routes = [
 {path:'app-admin-exams',component:AdminExamsComponent},
 {path:'app-lecturer-exams',component:LecturerExamsComponent},
 {path:'app-student-exams',component:StudentExamsComponent},
-
-
+{path:'app-attendance',component:AttendanceComponent},
+{path:'app-landingpage',component:LandingpageComponent}
   // {path:'',
   // component:CardComponent},
 
-  {
-    path: '',
-    component: BlankComponent, children: [
-      { path: '', component: LoginComponent },
-      { path: 'register', component: LoginregisterComponent },
-    ]
-  },
-  {path : 'dashboard' , component : DshboardComponent , children : [
-    {
-      path: 'manager', component: ManagerDashboardComponent, children : [
-        {path : 'timetable' , component : TimeTableComponent}
-      ]
-    },
-    {
-      path: 'staff', component: StaffDashboardComponent
-    },
-    {
-      path: 'lecturer', component: LectureDashboardComponent
-    },
-    {
-      path: 'student', component: StudentDashboardComponent
-    }
-  ]} ,
+  // {
+  //   path: '',
+  //   component: BlankComponent, children: [
+  //     { path: '', component: LoginComponent },
+  //     { path: 'register', component: LoginregisterComponent },
+  //   ]
+  // },
+  // {path : 'dashboard' , component : DshboardComponent , children : [
+  //   {
+  //     path: 'manager', component: ManagerDashboardComponent, children : [
+  //       {path : 'timetable' , component : TimeTableComponent}
+  //     ]
+  //   },
+  //   {
+  //     path: 'staff', component: StaffDashboardComponent
+  //   },
+  //   {
+  //     path: 'lecturer', component: LectureDashboardComponent
+  //   },
+  //   {
+  //     path: 'student', component: StudentDashboardComponent
+  //   }
+  // ]} ,
 
-  // {path:'',
-  // component:HeaderComponent},
-  // {path:'',
-  // component:SidebarComponent
-  // }
+
 ];
 
 @NgModule({

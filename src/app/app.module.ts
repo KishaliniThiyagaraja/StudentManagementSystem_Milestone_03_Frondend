@@ -44,6 +44,7 @@ import { CardComponent } from './Layout/dshboard/card/card.component';
 import { HeaderComponent } from './Layout/dshboard/header/header.component';
 import { SidebarComponent } from './Layout/dshboard/sidebar/sidebar.component';
 import { BlankComponent } from './Layout/blank/blank.component';
+import { LandingpageComponent } from './Components/LandingPage/landingpage/landingpage.component';
 
 
 
@@ -93,7 +94,8 @@ import { BlankComponent } from './Layout/blank/blank.component';
     // BlankComponent,
   
   
-    BlankComponent
+    BlankComponent,
+    LandingpageComponent
   ],
   imports: [
     ReactiveFormsModule,

@@ -1,12 +1,10 @@
-
-
-<div class="container d-flex justify-content-center align-items-center vh-100">
-  <div class="card p-4 shadow" style="max-width: 400px; width: 100%;">
-    <h3 class="text-center mb-4">Login</h3>
+<div class="container-fluid d-flex justify-content-center align-items-center vh-100 bg-light">
+  <div class="card p-4 shadow-lg rounded" style="max-width: 400px; width: 100%;">
+    <h3 class="text-center mb-4 text-primary fw-bold">Login</h3>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <!-- User ID Field -->
       <div class="mb-3">
-        <label for="userId" class="form-label">User ID</label>
+        <label for="userId" class="form-label text-secondary fw-medium">User ID</label>
         <input
           type="text"
           id="userId"
@@ -14,14 +12,14 @@
           formControlName="userId"
           placeholder="Enter your User ID"
         />
-        <div *ngIf="loginForm.get('userId')?.touched && loginForm.get('userId')?.invalid" class="text-danger small">
+        <div *ngIf="loginForm.get('userId')?.touched && loginForm.get('userId')?.invalid" class="text-danger small mt-1">
           User ID is required.
         </div>
       </div>
 
       <!-- Password Field -->
       <div class="mb-3">
-        <label for="password" class="form-label">Password</label>
+        <label for="password" class="form-label text-secondary fw-medium">Password</label>
         <div class="input-group">
           <input
             [type]="showPassword ? 'text' : 'password'"
@@ -30,21 +28,22 @@
             formControlName="password"
             placeholder="Enter your password"
           />
-          <button type="button" class="btn btn-outline-secondary" (click)="togglePasswordVisibility()">
-            <i class="bi" [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"></i>
-          </button>
+          <span class="input-group-text bg-white border-0">
+            <i class="bi" [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'" (click)="togglePasswordVisibility()" style="cursor: pointer;"></i>
+          </span>
         </div>
-        <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid" class="text-danger small">
+        <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid" class="text-danger small mt-1">
           Password must be at least 6 characters long.
         </div>
       </div>
 
       <!-- Submit Button -->
       <div class="d-grid">
-        <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">
+        <button type="submit" class="btn btn-primary btn-lg" [disabled]="loginForm.invalid">
           Login
         </button>
       </div>
     </form>
   </div>
 </div>
+
