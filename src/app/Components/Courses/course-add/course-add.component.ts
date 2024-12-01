@@ -8,18 +8,17 @@ import { Router } from '@angular/router';
   templateUrl: './course-add.component.html',
   styleUrl: './course-add.component.css'
 })
-export class CourseAddComponent implements OnInit {
-  courseForm!: FormGroup;
+export class CourseAddComponent {
+  courseForm:FormGroup;
 
-  constructor(private fb: FormBuilder , private courseService:CourseService,private router:Router) {}
-
-   ngOnInit(): void {
+  constructor(private fb: FormBuilder , private courseService:CourseService,private router:Router) {
 
     this.courseForm = this.fb.group({
-      courseName: ['', Validators.required],
+      courseName: ['', [Validators.required]],
       description: [''],
-      startDate:['',Validators.required],
-      endDate:['']
+      startDate:['',[Validators.required]],
+      endDate:[''],
+      isDeleted:['']
     });
   }
 
@@ -31,3 +30,4 @@ export class CourseAddComponent implements OnInit {
     })
   }
 }
+

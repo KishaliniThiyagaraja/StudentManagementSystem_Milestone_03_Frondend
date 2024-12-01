@@ -29,5 +29,9 @@ export class CourseService {
   updateCourse(course:Course){
     return this.http.put<Course[]>(this.apiURL+'/'+course.id,course)
   }
+
+  getCourseById(id:string){
+    return this.http.get<Course[]>(this.apiURL+'/'+id)
+  }
 }
 

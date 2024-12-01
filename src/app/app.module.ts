@@ -95,6 +95,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatTableModule,
     MatButtonModule,
+    ReactiveFormsModule
 
   ],
   providers: [BsModalService],
