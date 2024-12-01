@@ -31,7 +31,7 @@ import { CourseEditComponent } from './Components/Courses/course-edit/course-edi
 
 
 const routes: Routes = [
-// {path:'',component:LoginComponent}
+{path:'',component:LoginComponent},
 {path:'', component:CourseViewComponent},
 {path:'course-view', component:CourseViewComponent},
 {path:'course-add', component:CourseAddComponent},
