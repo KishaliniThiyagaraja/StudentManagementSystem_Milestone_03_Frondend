@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BlankComponent } from './Layout/blank/blank.component';
+
 import { LoginComponent } from './Layout/blank/login/login.component';
 import { TimeTableComponent } from './Components/manager/time-table/time-table.component';
 import { TimeTableViewComponent } from './Components/manager/time-table/time-table-view/time-table-view.component';
@@ -43,50 +43,57 @@ import { LectureDashboardComponent } from './Layout/lecture-dashboard/lecture-da
 import { CardComponent } from './Layout/dshboard/card/card.component';
 import { HeaderComponent } from './Layout/dshboard/header/header.component';
 import { SidebarComponent } from './Layout/dshboard/sidebar/sidebar.component';
+import { BlankComponent } from './Layout/blank/blank.component';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    BlankComponent,
+     AppComponent,
 
-    LoginComponent,
+
+     LoginComponent,
 
 
 
 
 
     
-    TimeTableComponent,
-    TimeTableUpsertComponent,
-    TimeTableViewComponent,
+     TimeTableComponent,
+     TimeTableUpsertComponent,
+     TimeTableViewComponent,
 
-    AttendanceComponent,
-
-
-    EnrollmentUpsertComponent,
-    LoginregisterComponent,
+     AttendanceComponent,
 
 
-    ViewLectureComponent,
-    ViewStaffComponent,
-    StaffLectureComponent,
+     EnrollmentUpsertComponent,
+     LoginregisterComponent,
 
-    StudentListComponent,
-    AttendanceComponent,
-    AdminExamsComponent,
-    LecturerExamsComponent,
-    StudentExamsComponent,
-    CourseAddComponent,
-    CourseEditComponent,
-    CourseViewComponent,
-    DshboardComponent,
+
+     ViewLectureComponent,
+     ViewStaffComponent,
+     StaffLectureComponent,
+
+     StudentListComponent,
+     AttendanceComponent,
+     AdminExamsComponent,
+     LecturerExamsComponent,
+     StudentExamsComponent,
+     CourseAddComponent,
+     CourseEditComponent,
+     CourseViewComponent,
+     DshboardComponent,
     StudentDashboardComponent,
-    ManagerDashboardComponent,
-    StaffDashboardComponent,
-    LectureDashboardComponent,
-    CardComponent,
-    HeaderComponent,
-    SidebarComponent,
+     ManagerDashboardComponent,
+     StaffDashboardComponent,
+     LectureDashboardComponent,
+    // CardComponent,
+     HeaderComponent,
+     SidebarComponent,
+    // BlankComponent,
+  
+  
+    BlankComponent
   ],
   imports: [
     ReactiveFormsModule,
