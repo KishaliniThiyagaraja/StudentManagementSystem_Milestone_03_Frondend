@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Course } from '../user.model';
+import { Course } from '../../model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,34 +12,22 @@ export class CourseService {
 
   constructor(private http: HttpClient) { }
 
-  // Fetch all courses (for Admin and Staff)
-  getCourses(): Observable<any> {
-    return this.http.get(this.apiUrl);
+  apiURL='https://localhost:7229/api/CourseControllers'
+
+  getCourse(){
+    return this.http.get<Course[]>(this.apiURL)
   }
 
-  // Add new course (for Admin)
-  addCourse(course: any): Observable<any> {
-    return this.http.post(this.apiUrl, course);
+  addCourse(course:Course){
+    return this.http.post<Course[]>(this.apiURL,course)
+
+  }
+  deleteCourse(id:string){
+    return this.http.delete<Course[]>(this.apiURL+'/'+id)
   }
 
-  // Update course (for Admin)
-  updateCourse(courseId: string, course: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${courseId}`, course);
-  }
-
-  // Delete course (for Admin)
-  deleteCourse(id: number): Observable<void> {
-  return this.http.delete<void>(`${this.apiUrl}/${id}`);
-}
-
-  // Enroll student in a course (for Staff)
-  enrollStudent(courseId: string, studentId: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/${courseId}/enroll`, { studentId });
-  }
-
-  // Get courses a student or lecturer is enrolled in
-  getEnrolledCourses(userId: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/enrolled/${userId}`);
+  updateCourse(course:Course){
+    return this.http.put<Course[]>(this.apiURL+'/'+course.id,course)
   }
 }
 

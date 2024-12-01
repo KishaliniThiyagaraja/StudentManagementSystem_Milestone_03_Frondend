@@ -6,13 +6,9 @@ import { ExamService } from '../../../Services/exam.service';
   templateUrl: './student-exams.component.html',
   styleUrl: './student-exams.component.css'
 })
-export class StudentExamsComponent implements OnInit {
-  marks: any[] = [];
-
-  constructor(private examService: ExamService) {}
-
-  ngOnInit(): void {
-    const studentId = 'student123'; // Replace with dynamic ID
-    this.examService.getMarks(studentId).subscribe((data) => (this.marks = data));
-  }
+export class StudentExamsComponent {
+  marks = [
+    { utNumber: 'UT001', studentName: 'John Doe', examType: 'Midterm', marks: 85, status: 'Approved' },
+    { utNumber: 'UT002', studentName: 'Jane Smith', examType: 'Final', marks: 90, status: 'Approved' }
+  ];
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../../../Services/course.service';
 import { Router } from '@angular/router';
+import { Course } from '../../../../model';
 
 @Component({
   selector: 'app-course-view',
@@ -8,39 +9,27 @@ import { Router } from '@angular/router';
   styleUrl: './course-view.component.css'
 })
 export class CourseViewComponent implements OnInit {
-  courses: any[] = [];
+  courses:Course[] = []
 
   constructor(private courseService: CourseService, private router: Router) {}
 
   ngOnInit(): void {
-    this.getCourses();
+    this.loadCourse();
   }
 
-  getCourses(): void {
-    this.courseService.getCourses().subscribe(
-      (data: any[]) => {
-        this.courses = data;
-      },
-      (error) => {
-        console.error('Error fetching courses', error);
-      }
-    );
+
+
+  loadCourse(){
+    this.courseService.getCourse().subscribe(c=>
+      this.courses=c)
   }
-  onDelete(id: number): void {
-    if (confirm('Are you sure you want to delete this course?')) {
-      this.courseService.deleteCourse(id).subscribe(
-        () => {
-          this.courses = this.courses.filter((course) => course.Id !== id);
-        },
-        (error) => {
-          console.error('Error deleting course', error);
-        }
-      );
+
+  deleteCourse(id:string){
+    if(confirm("If You Want Delete The Course...")){
+      this.courseService.deleteCourse(id).subscribe(d=>{
+        alert("Course Deleted Successfully...")
+        this.loadCourse();
+      })
     }
-  }
-  
-
-  onEdit(id: number): void {
-    this.router.navigate(['/courses/edit', id]);
   }
 }

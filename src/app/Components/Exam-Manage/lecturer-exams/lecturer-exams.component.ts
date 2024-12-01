@@ -8,20 +8,18 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrl: './lecturer-exams.component.css'
 })
 export class LecturerExamsComponent {
-marksForm: FormGroup;
+  exams = [
+    { id: 1, utNumber: 'UT001', studentName: 'John Doe', examType: 'Midterm', marks: null },
+    { id: 2, utNumber: 'UT002', studentName: 'Jane Smith', examType: 'Final', marks: null }
+  ];
 
-  constructor(private fb: FormBuilder, private examService: ExamService) {
-    this.marksForm = this.fb.group({
-      examId: [''],
-      studentId: [''],
-      marks: [''],
-    });
-  }
-
-  onSubmit(): void {
-    const { examId, ...marks } = this.marksForm.value;
-    this.examService.submitMarks(examId, marks).subscribe(() => {
-      this.marksForm.reset();
-    });
+  submitMarks(exam: any) {
+    if (exam.marks === null || exam.marks < 0 || exam.marks > 100) {
+      alert('Please enter valid marks between 0 and 100.');
+      return;
+    }
+    console.log('Submitted Marks:', exam);
+    alert(`Marks submitted successfully for ${exam.studentName}: ${exam.marks}`);
+    // Additional logic to send marks to backend can be added here
   }
 }

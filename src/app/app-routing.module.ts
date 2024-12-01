@@ -37,6 +37,16 @@ import { StudentDashboardComponent } from './Layout/student-dashboard/student-da
 
 
 const routes: Routes = [
+// {path:'',component:LoginComponent}
+{path:'', component:CourseViewComponent},
+{path:'course-view', component:CourseViewComponent},
+{path:'course-add', component:CourseAddComponent},
+{path:'app-course-edit',component:CourseEditComponent},
+{path:'app-admin-exams',component:AdminExamsComponent},
+{path:'app-lecturer-exams',component:LecturerExamsComponent},
+{path:'app-student-exams',component:StudentExamsComponent},
+
+
   // {path:'',
   // component:CardComponent},
 
@@ -46,7 +56,7 @@ const routes: Routes = [
       { path: '', component: LoginComponent },
       { path: 'register', component: LoginregisterComponent },
     ]
-  }, 
+  },
   {path : 'dashboard' , component : DshboardComponent , children : [
     {
       path: 'manager', component: ManagerDashboardComponent, children : [
