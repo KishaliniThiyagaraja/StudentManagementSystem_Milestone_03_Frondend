@@ -24,10 +24,10 @@ import { AttendanceComponent } from './Components/manager/attendance/attendance.
 import { AdminExamsComponent } from './Components/Exam-Manage/admin-exams/admin-exams.component';
 import { LecturerExamsComponent } from './Components/Exam-Manage/lecturer-exams/lecturer-exams.component';
 import { StudentExamsComponent } from './Components/Exam-Manage/student-exams/student-exams.component';
-// import { MatButtonModule } from '@angular/material/button';
-// import { MatFormFieldModule } from '@angular/material/form-field';
-// import { MatInputModule } from '@angular/material/input';
-// import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
 import { CourseAddComponent } from './Components/Courses/course-add/course-add.component';
 import { CourseEditComponent } from './Components/Courses/course-edit/course-edit.component';
 import { CourseViewComponent } from './Components/Courses/course-view/course-view.component';
@@ -65,7 +65,7 @@ import { HomeComponent } from './Components/LandingPage/home/home.component';
 
 
 
-    
+
      TimeTableComponent,
      TimeTableUpsertComponent,
      TimeTableViewComponent,
@@ -98,8 +98,8 @@ import { HomeComponent } from './Components/LandingPage/home/home.component';
      HeaderComponent,
      SidebarComponent,
     // BlankComponent,
-  
-  
+
+
     BlankComponent,
     LandingpageComponent,
     LpContactComponent,
@@ -122,10 +122,11 @@ import { HomeComponent } from './Components/LandingPage/home/home.component';
     HttpClientModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    // MatFormFieldModule,
-    // MatInputModule,
-    // MatTableModule,
-    // MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule,
+    MatButtonModule,
+    ReactiveFormsModule
 
   ],
   providers: [BsModalService],

@@ -9,11 +9,12 @@ export interface TimeTable {
 }
 
 
-export class Course {
-  id!: string;
-  courseName!: string;
-  description!: string;
-  startDate!: Date;
-  endDate?: Date;
-  isDeleted: boolean = false;
+export interface Course {
+  id: string;
+  courseName: string;
+  description: string;
+  startDate: Date;
+  endDate: Date;
+ isDeleted: true ;
+ isEditing?: true | undefined
 }
