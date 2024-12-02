@@ -113,6 +113,7 @@ import { LandingpageComponent } from './Components/LandingPage/landingpage/landi
     MatInputModule,
     MatTableModule,
     MatButtonModule,
+    ReactiveFormsModule
 
   ],
   providers: [BsModalService],

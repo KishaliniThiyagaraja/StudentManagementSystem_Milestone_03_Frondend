@@ -42,6 +42,8 @@ const routes: Routes = [
 {path:'', component:CourseViewComponent},
 {path:'course-view', component:CourseViewComponent},
 {path:'course-add', component:CourseAddComponent},
+{path:'course-edit', component:CourseEditComponent}
+{path:'course-add', component:CourseAddComponent},
 {path:'app-course-edit',component:CourseEditComponent},
 {path:'app-admin-exams',component:AdminExamsComponent},
 {path:'app-lecturer-exams',component:LecturerExamsComponent},
