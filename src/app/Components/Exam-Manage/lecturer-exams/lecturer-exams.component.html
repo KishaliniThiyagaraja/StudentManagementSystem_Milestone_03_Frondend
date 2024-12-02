@@ -1,16 +1,46 @@
-<h2>Submit Exam Marks</h2>
-<form [formGroup]="marksForm" (ngSubmit)="onSubmit()">
-  <mat-form-field>
-    <mat-label>Exam ID</mat-label>
-    <input matInput formControlName="examId" required />
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Student ID</mat-label>
-    <input matInput formControlName="studentId" required />
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Marks</mat-label>
-    <input matInput formControlName="marks" type="number" required />
-  </mat-form-field>
-  <button mat-raised-button color="primary" type="submit">Submit Marks</button>
-</form>
+<div class="container mt-4">
+  <h2 class="mb-3 text-center">Submit Marks</h2>
+
+  <div *ngIf="exams.length > 0" class="table-responsive">
+    <table class="table table-bordered">
+      <thead class="table-light">
+        <tr>
+          <th>No</th>
+          <th>UT Number</th>
+          <th>Student Name</th>
+          <th>Exam Type</th>
+          <th>Marks</th>
+          <th>Submit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let exam of exams; index as i">
+          <td>{{ i + 1 }}</td>
+          <td>{{ exam.utNumber }}</td>
+          <td>{{ exam.studentName }}</td>
+          <td>{{ exam.examType }}</td>
+          <td>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="exam.marks"
+              placeholder="Enter marks"
+            />
+          </td>
+          <td>
+            <button
+              class="btn btn-success btn-sm d-flex align-items-center"
+              (click)="submitMarks(exam)"
+            >
+              Submit <i class="bi bi-check-circle ms-2"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p *ngIf="exams.length === 0" class="text-center text-muted">
+    No exams available to submit marks for.
+  </p>
+</div>

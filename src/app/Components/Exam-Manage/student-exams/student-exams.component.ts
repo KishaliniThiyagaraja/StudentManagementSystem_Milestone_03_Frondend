@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ExamService } from '../../../Services/exam.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-student-exams',
@@ -8,11 +9,24 @@ import { ExamService } from '../../../Services/exam.service';
 })
 export class StudentExamsComponent implements OnInit {
   marks: any[] = [];
+  apiUrl = 'https://your-backend-api.com/api/marks'; // Replace with your actual API URL
 
-  constructor(private examService: ExamService) {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    const studentId = 'student123'; // Replace with dynamic ID
-    this.examService.getMarks(studentId).subscribe((data) => (this.marks = data));
+    this.getMarks();
+  }
+
+  // Fetch marks from the backend
+  getMarks() {
+    this.http.get<any[]>(this.apiUrl).subscribe(
+      (data) => {
+        this.marks = data;
+      },
+      (error) => {
+        console.error('Error fetching marks:', error);
+        alert('Failed to load marks.');
+      }
+    );
   }
 }
