@@ -45,6 +45,12 @@ import { HeaderComponent } from './Layout/dshboard/header/header.component';
 import { SidebarComponent } from './Layout/dshboard/sidebar/sidebar.component';
 import { BlankComponent } from './Layout/blank/blank.component';
 import { LandingpageComponent } from './Components/LandingPage/landingpage/landingpage.component';
+import { LpContactComponent } from './Components/LandingPage/lp-contact/lp-contact.component';
+import { LpAboutUsComponent } from './Components/LandingPage/lp-about-us/lp-about-us.component';
+
+import { LpCourseComponent } from './Components/LandingPage/lp-course/lp-course.component';
+import { HomeComponent } from './Components/LandingPage/home/home.component';
+
 
 
 
@@ -59,7 +65,7 @@ import { LandingpageComponent } from './Components/LandingPage/landingpage/landi
 
 
 
-    
+
      TimeTableComponent,
      TimeTableUpsertComponent,
      TimeTableViewComponent,
@@ -92,10 +98,17 @@ import { LandingpageComponent } from './Components/LandingPage/landingpage/landi
      HeaderComponent,
      SidebarComponent,
     // BlankComponent,
-  
-  
+
+
     BlankComponent,
-    LandingpageComponent
+    LandingpageComponent,
+    LpContactComponent,
+    LpAboutUsComponent,
+
+    LpCourseComponent,
+
+      HomeComponent,
+
   ],
   imports: [
     ReactiveFormsModule,

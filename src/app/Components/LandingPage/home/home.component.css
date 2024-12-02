@@ -1,0 +1,12 @@
+/* Add styling specific to the header, e.g., transparent navigation bar styles */
+.transparent-nav {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .logo img {
+    height: 50px;
+  }
+  .main-menu li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
