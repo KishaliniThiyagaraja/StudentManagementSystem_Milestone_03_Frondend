@@ -1,0 +1,140 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/">
+        
+        <!-- <img src="/utlogo-1H.jpg" alt="logo"></a> -->
+   <img src="/utlogo-1H.jpg" alt="logo" width="100" height="60" class="d-inline-block align-text-top"></a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" routerLink="/home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/about">About</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/courses">Courses</a></li>
+  
+          <li class="nav-item"><a class="nav-link" routerLink="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="hero-area d-flex align-items-center"
+  style="background-image: url('/home-background.jpg'); height: 50vh; background-size: cover;">
+  <div class="container text-center text-green">
+    <div class="col-md-8">
+        <h1 class="white-text">Edusite Free Online Training Courses</h1>
+        <p class="lead white-text">Your journey to knowledge begins here.</p>
+        <a class="main-button icon-button" routerLink="/">Get Started!</a>
+      </div>
+    <h1 class="display-4">Get In Touch</h1>
+  </div>
+</div>
+
+<div id="home" class="hero-area">
+    <div class="bg-image bg-parallax overlay" style="background-image:url('/home-background.jpg')"></div>
+    <div class="home-wrapper">
+      <div class="container">
+        <div class="row">
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div id="about" class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="section-header">
+          <h2>Welcome to Edusite</h2>
+          <p class="lead">Where learning meets excellence.</p>
+        </div>
+        <div class="feature">
+          <i class="feature-icon fa fa-flask"></i>
+          <h4>Physical Courses</h4>
+          <p>Learn anytime.</p>
+        </div>
+        <div class="feature">
+          <i class="feature-icon fa fa-users"></i>
+          <h4>Expert Teachers</h4>
+          <p>Our courses are taught by industry leaders and experts.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img src="/about.png" alt="About Us">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="courses" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="section-header text-center">
+          <h2>Explore Courses</h2>
+          <p class="lead">Find the right course for you.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-6" *ngFor="let course of courses">
+          <div class="course">
+            <a class="course-img" href="#">
+              <img [src]="course.image" alt="{{ course.title }}">
+              <i class="course-link-icon fa fa-link"></i>
+            </a>
+            <h4>{{ course.title }}</h4>
+            <p>{{ course.category }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="center-btn">
+        <a class="main-button icon-button" href="app-lp-courses" a class="nav-link" routerLink="/courses">More Courses Details</a>
+      </div>
+    </div>
+  </div>
+
+<!--   
+  <footer id="footer" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="footer-logo">
+            <a class="logo" routerLink="/">
+              <img src="./assets/img/logo.png" alt="logo">
+            </a>
+          </div>
+        </div>
+        
+      </div>
+      
+      </div>
+   
+  </footer> -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <a class="navbar-brand" routerLink="/">
+            
+            <img src="/utlogo-1H.jpg" alt="logo" width="100" height="60" class="d-inline-block align-text-buttom"></a>
+        </div>
+        
+      </div>
+      <div class="text-center mt-3">
+
+        &copy; 2024. All Rights Reserved. <i class="bi bi-heart"></i> by <a href="https://colorlib.com"
+          class="text-white">Colorlib</a>
+      </div>
+    </div>
+  </footer>
+  

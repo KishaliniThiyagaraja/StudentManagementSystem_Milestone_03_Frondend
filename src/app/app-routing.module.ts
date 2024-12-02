@@ -34,46 +34,41 @@ import { StaffDashboardComponent } from './Layout/staff-dashboard/staff-dashboar
 import { LectureDashboardComponent } from './Layout/lecture-dashboard/lecture-dashboard.component';
 import { StudentDashboardComponent } from './Layout/student-dashboard/student-dashboard.component';
 import { LandingpageComponent } from './Components/LandingPage/landingpage/landingpage.component';
+import { LpContactComponent } from './Components/LandingPage/lp-contact/lp-contact.component';
+import { LpCourseComponent } from './Components/LandingPage/lp-course/lp-course.component';
+import { HomeComponent } from './Components/LandingPage/home/home.component';
+
 
 
 
 const routes: Routes = [
-{path:'',component:LoginComponent},
-{path:'', component:CourseViewComponent},
-{path:'course-view', component:CourseViewComponent},
-{path:'course-add', component:CourseAddComponent},
-{path:'app-course-edit',component:CourseEditComponent},
-{path:'app-admin-exams',component:AdminExamsComponent},
-{path:'app-lecturer-exams',component:LecturerExamsComponent},
-{path:'app-student-exams',component:StudentExamsComponent},
-{path:'app-attendance',component:AttendanceComponent},
-{path:'app-landingpage',component:LandingpageComponent}
-  // {path:'',
-  // component:CardComponent},
 
-  // {
-  //   path: '',
-  //   component: BlankComponent, children: [
-  //     { path: '', component: LoginComponent },
-  //     { path: 'register', component: LoginregisterComponent },
-  //   ]
-  // },
-  // {path : 'dashboard' , component : DshboardComponent , children : [
-  //   {
-  //     path: 'manager', component: ManagerDashboardComponent, children : [
-  //       {path : 'timetable' , component : TimeTableComponent}
-  //     ]
-  //   },
-  //   {
-  //     path: 'staff', component: StaffDashboardComponent
-  //   },
-  //   {
-  //     path: 'lecturer', component: LectureDashboardComponent
-  //   },
-  //   {
-  //     path: 'student', component: StudentDashboardComponent
-  //   }
-  // ]} ,
+  {path:'',
+  component:CardComponent},
+
+  {
+    path: '',
+    component: BlankComponent, children: [
+      { path: '', component: LoginComponent },
+      { path: 'register', component: LoginregisterComponent },
+    ]
+  },
+  {path : 'dashboard' , component : DshboardComponent , children : [
+    {
+      path: 'manager', component: ManagerDashboardComponent, children : [
+        {path : 'timetable' , component : TimeTableComponent}
+      ]
+    },
+    {
+      path: 'staff', component: StaffDashboardComponent
+    },
+    {
+      path: 'lecturer', component: LectureDashboardComponent
+    },
+    {
+      path: 'student', component: StudentDashboardComponent
+    }
+  ]} ,
 
 
 ];

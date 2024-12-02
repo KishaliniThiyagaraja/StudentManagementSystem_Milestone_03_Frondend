@@ -24,10 +24,10 @@ import { AttendanceComponent } from './Components/manager/attendance/attendance.
 import { AdminExamsComponent } from './Components/Exam-Manage/admin-exams/admin-exams.component';
 import { LecturerExamsComponent } from './Components/Exam-Manage/lecturer-exams/lecturer-exams.component';
 import { StudentExamsComponent } from './Components/Exam-Manage/student-exams/student-exams.component';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatTableModule } from '@angular/material/table';
+// import { MatButtonModule } from '@angular/material/button';
+// import { MatFormFieldModule } from '@angular/material/form-field';
+// import { MatInputModule } from '@angular/material/input';
+// import { MatTableModule } from '@angular/material/table';
 import { CourseAddComponent } from './Components/Courses/course-add/course-add.component';
 import { CourseEditComponent } from './Components/Courses/course-edit/course-edit.component';
 import { CourseViewComponent } from './Components/Courses/course-view/course-view.component';
@@ -45,6 +45,12 @@ import { HeaderComponent } from './Layout/dshboard/header/header.component';
 import { SidebarComponent } from './Layout/dshboard/sidebar/sidebar.component';
 import { BlankComponent } from './Layout/blank/blank.component';
 import { LandingpageComponent } from './Components/LandingPage/landingpage/landingpage.component';
+import { LpContactComponent } from './Components/LandingPage/lp-contact/lp-contact.component';
+import { LpAboutUsComponent } from './Components/LandingPage/lp-about-us/lp-about-us.component';
+
+import { LpCourseComponent } from './Components/LandingPage/lp-course/lp-course.component';
+import { HomeComponent } from './Components/LandingPage/home/home.component';
+
 
 
 
@@ -95,7 +101,14 @@ import { LandingpageComponent } from './Components/LandingPage/landingpage/landi
   
   
     BlankComponent,
-    LandingpageComponent
+    LandingpageComponent,
+    LpContactComponent,
+    LpAboutUsComponent,
+
+    LpCourseComponent,
+
+      HomeComponent,
+
   ],
   imports: [
     ReactiveFormsModule,
@@ -109,10 +122,10 @@ import { LandingpageComponent } from './Components/LandingPage/landingpage/landi
     HttpClientModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatTableModule,
-    MatButtonModule,
+    // MatFormFieldModule,
+    // MatInputModule,
+    // MatTableModule,
+    // MatButtonModule,
 
   ],
   providers: [BsModalService],
