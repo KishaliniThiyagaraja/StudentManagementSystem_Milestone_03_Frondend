@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { LoginComponent } from './Layout/blank/login/login.component';
 import { TimeTableComponent } from './Components/manager/time-table/time-table.component';
 import { TimeTableViewComponent } from './Components/manager/time-table/time-table-view/time-table-view.component';
@@ -31,9 +30,6 @@ import { MatTableModule } from '@angular/material/table';
 import { CourseAddComponent } from './Components/Courses/course-add/course-add.component';
 import { CourseEditComponent } from './Components/Courses/course-edit/course-edit.component';
 import { CourseViewComponent } from './Components/Courses/course-view/course-view.component';
-
-
-
 import { ReactiveFormsModule } from '@angular/forms';
 import { DshboardComponent } from './Layout/dshboard/dshboard.component';
 import { StudentDashboardComponent } from './Layout/student-dashboard/student-dashboard.component';
@@ -47,7 +43,6 @@ import { BlankComponent } from './Layout/blank/blank.component';
 import { LandingpageComponent } from './Components/LandingPage/landingpage/landingpage.component';
 import { LpContactComponent } from './Components/LandingPage/lp-contact/lp-contact.component';
 import { LpAboutUsComponent } from './Components/LandingPage/lp-about-us/lp-about-us.component';
-
 import { LpCourseComponent } from './Components/LandingPage/lp-course/lp-course.component';
 import { HomeComponent } from './Components/LandingPage/home/home.component';
 
@@ -56,58 +51,40 @@ import { HomeComponent } from './Components/LandingPage/home/home.component';
 
 @NgModule({
   declarations: [
-     AppComponent,
-
-
-     LoginComponent,
-
-
-
-
-
-
-     TimeTableComponent,
-     TimeTableUpsertComponent,
-     TimeTableViewComponent,
-
-     AttendanceComponent,
-
-
-     EnrollmentUpsertComponent,
-     LoginregisterComponent,
-
-
-     ViewLectureComponent,
-     ViewStaffComponent,
-     StaffLectureComponent,
-
-     StudentListComponent,
-     AttendanceComponent,
-     AdminExamsComponent,
-     LecturerExamsComponent,
-     StudentExamsComponent,
-     CourseAddComponent,
-     CourseEditComponent,
-     CourseViewComponent,
-     DshboardComponent,
+    AppComponent,
+    LoginComponent,
+    TimeTableComponent,
+    TimeTableUpsertComponent,
+    TimeTableViewComponent,
+    AttendanceComponent,
+    EnrollmentUpsertComponent,
+    LoginregisterComponent,
+    ViewLectureComponent,
+    ViewStaffComponent,
+    StaffLectureComponent,
+    StudentListComponent,
+    AttendanceComponent,
+    AdminExamsComponent,
+    LecturerExamsComponent,
+    StudentExamsComponent,
+    CourseAddComponent,
+    CourseEditComponent,
+    CourseViewComponent,
+    DshboardComponent,
     StudentDashboardComponent,
-     ManagerDashboardComponent,
-     StaffDashboardComponent,
-     LectureDashboardComponent,
-    // CardComponent,
-     HeaderComponent,
-     SidebarComponent,
-    // BlankComponent,
-
-
+    ManagerDashboardComponent,
+    StaffDashboardComponent,
+    LectureDashboardComponent,
+    CardComponent,
+    HeaderComponent,
+    SidebarComponent,
+    BlankComponent,
     BlankComponent,
     LandingpageComponent,
     LpContactComponent,
     LpAboutUsComponent,
-
     LpCourseComponent,
-
-      HomeComponent,
+    HomeComponent,
 
   ],
   imports: [
