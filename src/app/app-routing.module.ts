@@ -43,8 +43,6 @@ import { HomeComponent } from './Components/LandingPage/home/home.component';
 
 const routes: Routes = [
 
-  {path:'',
-  component:CardComponent},
 
   {
     path: '',
