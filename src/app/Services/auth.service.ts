@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { User } from '../../user.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  constructor(private http : HttpClient){}
+  baseUrl = "http://localhost:5075/api/Login"
   logout() {
     throw new Error('Method not implemented.');
   }
@@ -15,22 +18,15 @@ export class AuthService {
   private users: User[] = [];
   private loggedInUser: User | null = null;
 
-  constructor() { }
 
-  // Register a new user
-  register(user: User): boolean {
-    this.users.push(user);
-    return true;
+  // Register a new user 
+  register(user: User): any {
+    return this.http.post<any>(`${this.baseUrl}/Register/Staff` , user)
   }
 
   // Login a user
-  login(username: string, password: string): User | null {
-    const user = this.users.find(u => u.username === username && u.password === password);
-    if (user) {
-      this.loggedInUser = user;
-      return user;
-    }
-    return null;
+  login(obj : any):any {
+    return this.http.post(`${this.baseUrl}/Login`,obj)
   }
 
   // Get logged in user

@@ -31,13 +31,11 @@ import { LpContactComponent } from './Components/LandingPage/lp-contact/lp-conta
 import { LpCourseComponent } from './Components/LandingPage/lp-course/lp-course.component';
 import { HomeComponent } from './Components/LandingPage/home/home.component';
 
-
+//dashboard/manager/timetable/add
 
 
 const routes: Routes = [
 
-  {path:'',
-  component:CardComponent},
 
   {
     path: '',
@@ -49,7 +47,10 @@ const routes: Routes = [
   {path : 'dashboard' , component : DshboardComponent , children : [
     {
       path: 'manager', component: ManagerDashboardComponent, children : [
-        {path : 'timetable' , component : TimeTableComponent}
+        {path : 'timetable', children : [
+          {path : '', component : TimeTableComponent},
+         {path : 'add' , component : TimeTableUpsertComponent} 
+        ]}
       ]
     },
     {

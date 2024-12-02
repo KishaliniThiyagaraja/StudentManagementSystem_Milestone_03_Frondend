@@ -114,6 +114,19 @@ nav {
     background-color: #cccccc;
     cursor: not-allowed;
   }
+/* styles.css or styles.scss */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto; /* Ensures a vertical scrollbar */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
   
 
   

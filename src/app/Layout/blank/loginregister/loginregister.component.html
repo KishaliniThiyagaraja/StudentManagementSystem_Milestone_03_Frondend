@@ -1,100 +1,113 @@
-<div class="container mt-5">
-  <h2>Registration Form</h2>
-  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-    <!-- Name -->
-    <div class="mb-3">
-      <label for="name" class="form-label">Name</label>
-      <input
-        id="name"
-        type="text"
-        class="form-control"
-        formControlName="name"
-        placeholder="Enter your name"
-      />
-      <div *ngIf="registrationForm.get('name')?.touched && registrationForm.get('name')?.invalid" class="text-danger">
-        Name is required.
+<div class="">
+  <div class="container-fluid d-flex justify-content-center align-items-center bg-image" style="height: 100vh; width: 100%;">
+    <div class="card p-4 shadow-lg rounded w-100" style="max-width:700px;">
+      <div class="container" style="max-width:700px;">
+        <h2 class="text-center">Registration Form</h2>
+        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+          <!-- User ID -->
+          <div class="mb-2">
+            <label for="userId" class="form-label">User ID</label>
+            <input id="userId" type="text" class="form-control" formControlName="userId" placeholder="Enter your ID" />
+            <div *ngIf="registrationForm.get('userId')?.touched && registrationForm.get('userId')?.invalid" class="text-danger">
+              User ID is required.
+            </div>
+          </div>
+
+          <!-- First Name -->
+          <div class="row">
+            <div class="col-md-6 mb-2">
+              <label for="firstName" class="form-label">First Name</label>
+              <input id="firstName" type="text" class="form-control" formControlName="firstName" placeholder="first name" />
+              <div *ngIf="registrationForm.get('firstName')?.touched && registrationForm.get('firstName')?.invalid" class="text-danger">
+                First name is required.
+              </div>
+            </div>
+
+            <!-- Last Name -->
+            <div class="col-md-6 mb-2">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input id="lastName" type="text" class="form-control" formControlName="lastName" placeholder="last name" />
+              <div *ngIf="registrationForm.get('lastName')?.touched && registrationForm.get('lastName')?.invalid" class="text-danger">
+                Last name is required.
+              </div>
+            </div>
+          </div>
+
+          <!-- NIC No -->
+          <div class="mb-2">
+            <label for="nicNumber" class="form-label">NIC No</label>
+            <input id="nicNumber" type="text" class="form-control" formControlName="nicNumber" placeholder="Enter your NIC No" />
+            <div *ngIf="registrationForm.get('nicNumber')?.touched && registrationForm.get('nicNumber')?.invalid" class="text-danger">
+              NIC Number is required.
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="mb-2">
+            <label for="email" class="form-label">Email</label>
+            <input id="email" type="email" class="form-control" formControlName="email" placeholder="Enter your email" />
+            <div *ngIf="registrationForm.get('email')?.touched && registrationForm.get('email')?.invalid" class="text-danger">
+              Valid email is required.
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="mb-2">
+            <label for="password" class="form-label">Password</label>
+            <input id="password" type="password" class="form-control" formControlName="password" placeholder="Enter your password" />
+            <div *ngIf="registrationForm.get('password')?.touched && registrationForm.get('password')?.invalid" class="text-danger">
+              Password is required.
+            </div>
+          </div>
+
+          <!-- Date of Birth -->
+          <div class="mb-2">
+            <label for="dob" class="form-label">Date of Birth</label>
+            <input id="dob" type="date" class="form-control" formControlName="dob" />
+            <div *ngIf="registrationForm.get('dob')?.touched && registrationForm.get('dob')?.invalid" class="text-danger">
+              Date of birth is required.
+            </div>
+          </div>
+
+          <!-- Role -->
+          <div class="mb-2">
+            <label for="userRole" class="form-label">Role</label>
+            <select id="userRole" class="form-select" formControlName="userRole">
+              <option value="" disabled selected>Select Role</option>
+              <option [value]="2">Staff</option>
+              <option [value]="3">Lecturer</option>
+              <option [value]="4">Student</option>
+            </select>
+            <div *ngIf="registrationForm.get('userRole')?.touched && registrationForm.get('userRole')?.invalid" class="text-danger">
+              Role is required.
+            </div>
+          </div>
+
+          <!-- Additional Fields for Students -->
+          <div *ngIf="registrationForm.get('userRole')?.value == 4">
+            <div class="mb-2">
+              <label for="utNumber" class="form-label">UT Number</label>
+              <input id="utNumber" type="text" class="form-control" formControlName="utNumber" placeholder="Enter UT Number" />
+              <div *ngIf="registrationForm.get('utNumber')?.touched && registrationForm.get('utNumber')?.invalid" class="text-danger">
+                UT Number is required.
+              </div>
+            </div>
+
+            <div class="mb-2">
+              <label for="batch" class="form-label">Batch</label>
+              <input id="batch" type="text" class="form-control" formControlName="batch" placeholder="Enter Batch" />
+              <div *ngIf="registrationForm.get('batch')?.touched && registrationForm.get('batch')?.invalid" class="text-danger">
+                Batch is required.
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary w-100">
+            Register
+          </button>
+        </form>
       </div>
     </div>
-
-    <!-- Email -->
-    <div class="mb-3">
-      <label for="email" class="form-label">Email</label>
-      <input
-        id="email"
-        type="email"
-        class="form-control"
-        formControlName="email"
-        placeholder="Enter your email"
-      />
-      <div *ngIf="registrationForm.get('email')?.touched && registrationForm.get('email')?.invalid" class="text-danger">
-        Valid email is required.
-      </div>
-    </div>
-
-    <!-- Date of Birth -->
-<div class="mb-3">
-  <label for="dob" class="form-label">Date of Birth</label>
-  <input
-    id="dob"
-    type="date"
-    class="form-control"
-    formControlName="dob"
-    placeholder="Select your date of birth"
-  />
-  <div *ngIf="registrationForm.get('dob')?.touched && registrationForm.get('dob')?.invalid" class="text-danger">
-    Date of birth is required.
   </div>
 </div>
-
-
-    <!-- Role -->
-    <div class="mb-3">
-      <label for="role" class="form-label">Role</label>
-      <select id="role" class="form-select" formControlName="role">
-        <option value="" disabled selected>Select Role</option>
-        <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
-      </select>
-      <div *ngIf="registrationForm.get('role')?.touched && registrationForm.get('role')?.invalid" class="text-danger">
-        Role is required.
-      </div>
-    </div>
-
-    <!-- Additional Fields for Students -->
-    <div *ngIf="registrationForm.get('role')?.value === 'Student'">
-      <div class="mb-3">
-        <label for="utNumber" class="form-label">UT Number</label>
-        <input
-          id="utNumber"
-          type="text"
-          class="form-control"
-          formControlName="utNumber"
-          placeholder="Enter UT Number"
-        />
-        <div *ngIf="registrationForm.get('utNumber')?.touched && registrationForm.get('utNumber')?.invalid" class="text-danger">
-          UT Number is required.
-        </div>
-      </div>
-
-      <div class="mb-3">
-        <label for="batch" class="form-label">Batch</label>
-        <input
-          id="batch"
-          type="text"
-          class="form-control"
-          formControlName="batch"
-          placeholder="Enter Batch"
-        />
-        <div *ngIf="registrationForm.get('batch')?.touched && registrationForm.get('batch')?.invalid" class="text-danger">
-          Batch is required.
-        </div>
-      </div>
-    </div>
-
-    <!-- Submit Button -->
-    <button type="submit" class="btn btn-primary" [disabled]="registrationForm.invalid">
-      Register
-    </button>
-  </form>
-</div>
-
-
