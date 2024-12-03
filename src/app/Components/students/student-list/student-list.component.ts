@@ -30,7 +30,7 @@ export class StudentListComponent implements OnInit {
     if(confirm("If you want delete a student")){
        this.studentService.deleteStudent(utNumber).subscribe(d=>{
         alert("Student Delete Successfully...")
-        this.listStudent(); 
+        this.listStudent();
       })
     }
 }
