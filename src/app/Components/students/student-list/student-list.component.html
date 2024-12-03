@@ -1,24 +1,42 @@
-<div class="container mt-5">
-    <h2>Student Details</h2>
+
+
+<div class="card mt-5 Larger shadow w-50 m-auto">
+  <div class="container mt-3">
+    <div class="d-grid gap-2 d-md-flex justify-content-between">
+      <input type="text" placeholder="Search Task" class="p-auto m-4 w-5"/>
+      <button class="btn btn-dark p-auto m-4" type="button" [routerLink]="['/add']">+ Add New</button>
+    </div>
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Date of Birth</th>
           <th>UT Number</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>NIC Number</th>
           <th>Batch</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>{{ studentData?.name }}</td>
-          <td>{{ studentData?.email }}</td>
-          <td>{{ studentData?.dob }}</td>
-          <td>{{ studentData?.utNumber }}</td>
-          <td>{{ studentData?.batch }}</td>
+        <tr *ngFor="let item of student">
+          <td>{{ item.utNumber }}</td>
+          <td>{{ item.firstName }}</td>
+          <td>{{ item.lastName }}</td>
+          <td>{{ item.nicNumber }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.batch }}</td>
+          <td>
+            <button type="button" class="btn btn-warning " [routerLink]="['/edit',item.utNumber]">
+              <i class="bi bi-pencil-square"></i>
+            </button>
+
+            <button type="button" class="btn btn-danger mt-3" (click)="studentDelete(item.utNumber)" >
+              <i class="bi bi-trash3-fill"></i>
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
-  
+</div>
+
