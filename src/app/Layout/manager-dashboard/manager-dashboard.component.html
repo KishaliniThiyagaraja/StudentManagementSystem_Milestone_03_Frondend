@@ -3,16 +3,16 @@
 <div class="container">
     <div class="row ">
         <div class="col-xl-6 col-lg-6">
-            <div class="card l-bg-cherry">
+            <div class="card l-bg-cherry" [routerLink]="['/register']">
                 <div class="card-statistic-3 p-4">
-                    <div class="card-icon card-icon-large"><i class="fas fa-shopping-cart"></i></div>
+                    <div class="card-icon card-icon-large me-2"><i class="fas fa-users"></i></div>
                     <div class="mb-4">
-                        <h5 class="card-title mb-0">Add Students</h5>
+                        <h5 class="card-title mb-0">Register a New Role</h5>
                     </div>
                     <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8">
                             <h2 class="d-flex align-items-center mb-0">
-                                3,243
+                              <br>
                             </h2>
                         </div>
                       </div>
@@ -20,16 +20,16 @@
             </div>
         </div>
         <div class="col-xl-6 col-lg-6">
-            <div class="card l-bg-blue-dark">
+            <div class="card l-bg-blue-dark" [routerLink]="['/dashboard/student/view']">
                 <div class="card-statistic-3 p-4">
-                    <div class="card-icon card-icon-large"><i class="fas fa-users"></i></div>
+                    <div class="card-icon card-icon-large me-2"><i class="fas fa-users"></i></div>
                     <div class="mb-4">
-                        <h5 class="card-title mb-0">Add Staffs</h5>
+                        <h5 class="card-title mb-0">View Students</h5>
                     </div>
                     <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8">
                             <h2 class="d-flex align-items-center mb-0">
-                                15.07k
+                             <br>
                             </h2>
                         </div>
                     </div>
@@ -37,16 +37,16 @@
             </div>
         </div>
         <div class="col-xl-6 col-lg-6">
-            <div class="card l-bg-green-dark">
+            <div class="card l-bg-blue-dark" [routerLink]="['/staff']">
                 <div class="card-statistic-3 p-4">
-                    <div class="card-icon card-icon-large"><i class="fas fa-ticket-alt"></i></div>
+                    <div class="card-icon card-icon-large me-2"><i class="fas fa-users"></i></div>
                     <div class="mb-4">
-                        <h5 class="card-title mb-0">Attendance</h5>
+                        <h5 class="card-title mb-0">View Staffs</h5>
                     </div>
                     <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8">
                             <h2 class="d-flex align-items-center mb-0">
-                                578
+                               <br>
                             </h2>
                         </div>
                     </div>
@@ -54,16 +54,16 @@
             </div>
         </div>
         <div class="col-xl-6 col-lg-6">
-            <div class="card l-bg-orange-dark">
+            <div class="card l-bg-orange-dark" [routerLink]="['/lecturer']">
                 <div class="card-statistic-3 p-4">
-                    <div class="card-icon card-icon-large"><i class="fas fa-dollar-sign"></i></div>
+                    <div class="card-icon card-icon-large me-2"><i class="fas fa-users"></i></div>
                     <div class="mb-4">
                         <h5 class="card-title mb-0"> View Lecturers</h5>
                     </div>
                     <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8">
                             <h2 class="d-flex align-items-center mb-0">
-                                $11.61k
+                               <br>
                             </h2>
                         </div>
                     </div>
@@ -71,50 +71,67 @@
             </div>
         </div>
         <div class="col-xl-6 col-lg-6">
-            <div class="card l-bg-orange-dark">
-                <div class="card-statistic-3 p-4">
-                    <div class="card-icon card-icon-large"><i class="fas fa-dollar-sign"></i></div>
-                    <div class="mb-4">
-                        <h5 class="card-title mb-0"> View Timetable</h5>
-                    </div>
-                    <div class="row align-items-center mb-2 d-flex">
-                        <div class="col-8">
+          <div class="card l-bg-orange-dark">
+            <div class="card-statistic-3 p-4">
+              <div class="card-icon card-icon-large me-2"><i class="fas fa-table"></i></div>
+              <div class="mb-4">
+                <h5 class="card-title mb-0"> View Timetable</h5>
+              </div>
+              <div class="row align-items-center mb-2 d-flex">
+                <div class="col-8">
+                  <h2 class="d-flex align-items-center mb-0">
+                   <br>
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6">
+          <div class="card l-bg-orange-dark">
+            <div class="card-statistic-3 p-4">
+              <div class="card-icon card-icon-large me-2"><i class="fas fa-book"></i></div>
+              <div class="mb-4">
+                <h5 class="card-title mb-0"> View Courses</h5>
+              </div>
+              <div class="row align-items-center mb-2 d-flex">
+                <div class="col-8">
                             <h2 class="d-flex align-items-center mb-0">
-                                $11.61k
+                               <br>
                             </h2>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+          </div>
         <div class="col-xl-6 col-lg-6">
             <div class="card l-bg-orange-dark">
                 <div class="card-statistic-3 p-4">
-                    <div class="card-icon card-icon-large"><i class="fas fa-dollar-sign"></i></div>
-                    <div class="mb-4">
-                        <h5 class="card-title mb-0"> View Courses</h5>
-                    </div>
-                    <div class="row align-items-center mb-2 d-flex">
-                        <div class="col-8">
-                            <h2 class="d-flex align-items-center mb-0">
-                                $11.61k
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-6 col-lg-6">
-            <div class="card l-bg-orange-dark">
-                <div class="card-statistic-3 p-4">
-                    <div class="card-icon card-icon-large"><i class="fas fa-dollar-sign"></i></div>
+                    <div class="card-icon card-icon-large me-2"><i class="fas fa-pencil-square-o"></i></div>
                     <div class="mb-4">
                         <h5 class="card-title mb-0"> View Marks</h5>
                     </div>
                     <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8">
                             <h2 class="d-flex align-items-center mb-0">
-                                $11.61k
+<br>
+                              </h2>
+                        </div>
+                    </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-xl-6 col-lg-6">
+            <div class="card l-bg-green-dark">
+                <div class="card-statistic-3 p-4">
+                    <div class="card-icon card-icon-large me-2"><i class="fas fa-check"></i></div>
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0">Attendance</h5>
+                    </div>
+                    <div class="row align-items-center mb-2 d-flex">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0">
+                          <br>
                             </h2>
                         </div>
                     </div>
@@ -123,4 +140,4 @@
         </div>
     </div>
 </div>
-<router-outlet></router-outlet>
+

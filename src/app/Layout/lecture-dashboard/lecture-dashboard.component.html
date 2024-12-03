@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row ">
     <div class="col-xl-6 col-lg-6">
-      <div class="card l-bg-cherry">
+      <div class="card l-bg-cherry" [routerLink]="['/dashboard/lecturer/timetable/view']" >
         <div class="card-statistic-3 p-4">
           <div class="card-icon card-icon-large"><i class="fas fa-shopping-cart"></i></div>
           <div class="mb-4">
@@ -42,11 +42,30 @@
       </div>
     </div>
     <div class="col-xl-6 col-lg-6">
-      <div class="card l-bg-green-dark">
+      <div class="card l-bg-green-dark" [routerLink]="['/dashboard/lecturer/view']">
         <div class="card-statistic-3 p-4">
           <div class="card-icon card-icon-large"><i class="fas fa-ticket-alt"></i></div>
           <div class="mb-4">
             <h5 class="card-title mb-0">View Lecturers</h5>
+          </div>
+          <div class="row align-items-center mb-2 d-flex">
+            <div class="col-8">
+              <h2 class="d-flex align-items-center mb-0">
+                578
+              </h2>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6 col-lg-6">
+      <div class="card l-bg-cherry" [routerLink]="['dashboard/lecturer/view']">
+        <div class="card-statistic-3 p-4">
+          <div class="card-icon card-icon-large"><i class="fas fa-ticket-alt"></i></div>
+          <div class="mb-4">
+            <h5 class="card-title mb-0">Add Marks</h5>
           </div>
           <div class="row align-items-center mb-2 d-flex">
             <div class="col-8">
