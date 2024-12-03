@@ -7,14 +7,12 @@ import { ApiService } from '../../../Services/api.service';
   styleUrl: './view-staff.component.css'
 })
 export class ViewStaffComponent implements OnInit {
-  staffList: any[] = [];
+  staffMembers: any[] = []; // Holds the list of staff members
 
-  constructor(private apiService: ApiService) {}
-
-  ngOnInit() {
-    this.apiService.getStaff().subscribe((data) => {
-      this.staffList = data;
-    });
+  ngOnInit(): void {
+    // Retrieve staff data (role `2`) from localStorage
+    const storedData = localStorage.getItem('2');
+    this.staffMembers = storedData ? JSON.parse(storedData) : [];
   }
 
   deleteStaff(userId: string) {

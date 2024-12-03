@@ -6,11 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './student-list.component.css'
 })
 export class StudentListComponent implements OnInit {
-  studentData: any;
-
+  students: any[] = [];
   ngOnInit(): void {
-    // Retrieve data from state
-    this.studentData = history.state.data;
-    console.log('Student Data:', this.studentData);
+    // Retrieve student data (role `4`) from localStorage
+    const storedData = localStorage.getItem('4');
+    this.students = storedData ? JSON.parse(storedData) : [];
   }
 }

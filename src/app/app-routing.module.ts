@@ -35,50 +35,62 @@ import { HomeComponent } from './Components/LandingPage/home/home.component';
 
 
 const routes: Routes = [
-  {
-    path: '',
-    component: BlankComponent, children: [
-      { path: '', component: LoginComponent },
-      { path: 'register', component: LoginregisterComponent },
-    ]
-  },
-  {
-    path: 'dashboard', component: DshboardComponent, children: [
-      {
-        path: 'manager', component: ManagerDashboardComponent, children: [
-          {
-            path: 'timetable', children: [
-              { path: '', component: TimeTableComponent },
-              { path: 'add', component: TimeTableUpsertComponent },
-              { path: 'view', component: TimeTableViewComponent },
-            ]
-          }
-        ]
-      },
-      {
-        path: 'staff', children:[
-          {path:'', component: StaffDashboardComponent},
-          {path:'add',component:TimeTableUpsertComponent},
-          {path:'view',component:TimeTableViewComponent},
-        ]
-      },
-      {
-        path: 'lecturer', children:[
-          {path:'', component: LectureDashboardComponent}, 
-          {path:'view',component:TimeTableViewComponent},
-        ]
+  // {
+  //   path: '',
+  //   component: BlankComponent, children: [
+  //     { path: '', component: LoginComponent },
+  //     { path: 'register', component: LoginregisterComponent },
+  //   ]
+  // },
+  // {
+  //   path: 'dashboard', component: DshboardComponent, children: [
+  //     {
+  //       path: 'manager', component: ManagerDashboardComponent, children: [
+  //         {
+  //           path: 'timetable', children: [
+  //             { path: '', component: TimeTableComponent },
+  //             { path: 'add', component: TimeTableUpsertComponent },
+  //             { path: 'view', component: TimeTableViewComponent },
+  //           ]
+  //         }
+  //       ]
+  //     },
+  //     {
+  //       path: 'staff', children:[
+  //         {path:'', component: StaffDashboardComponent},
+  //         {path:'add',component:TimeTableUpsertComponent},
+  //         {path:'view',component:TimeTableViewComponent},
+  //       ]
+  //     },
+  //     {
+  //       path: 'lecturer', children:[
+  //         {path:'', component: LectureDashboardComponent}, 
+  //         {path:'view',component:TimeTableViewComponent},
+  //       ]
        
-      },
-      {
-        path: 'student', children:[
-          {path:'',component: StudentDashboardComponent},
-          {path:'view',component:TimeTableViewComponent}
-        ]
+  //     },
+  //     {
+  //       path: 'student', children:[
+  //         {path:'',component: StudentDashboardComponent},
+  //         {path:'view',component:TimeTableViewComponent}
+  //       ]
          
-      }
-    ]
-  },
-
+  //     }
+  //   ]
+  // },
+  {path:'attendance',component:AttendanceComponent},
+  {path:'admin-exam',component:AdminExamsComponent},
+  {path:'lecturer-exam',component:LecturerExamsComponent},
+  {path:'student-exam',component:StudentExamsComponent},
+  {path:'course-add',component:CourseAddComponent},
+  {path:'course-edit',component:CourseEditComponent},
+  {path:'course-view',component:CourseViewComponent},
+  {path:'landingpage',component:LandingpageComponent},
+  {path:'student',component:StudentListComponent},
+  {path:'staff',component:ViewStaffComponent},
+  {path:'lecturer',component:ViewLectureComponent},
+  {path:'enrollment',component:EnrollmentUpsertComponent}
+  
 
 ];
 
