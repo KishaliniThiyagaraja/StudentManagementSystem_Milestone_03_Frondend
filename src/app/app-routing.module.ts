@@ -86,6 +86,17 @@ const routes: Routes = [
             ]
           }
         ]
+      },
+      {
+        path: 'course', children: [
+          {
+            path: '', children: [
+              { path: '', component: CourseViewComponent },
+              { path: 'add', component: CourseAddComponent },
+              { path: 'edit', component: CourseEditComponent }
+            ]
+          }
+        ]
       }
     ]
   },
