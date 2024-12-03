@@ -56,6 +56,30 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'staff', children: [
+          {
+            path: '', children: [
+              { path: '', component: StaffDashboardComponent },
+              { path: 'add', component: ViewStaffComponent },
+              { path: 'view', component: ViewStaffComponent },
+            ]
+          },
+
+
+
+        ]
+      },
+      {
+        path: 'lecturer', component: LectureDashboardComponent, children: [
+          { path: '', component: TimeTableComponent },
+          { path: 'add', component: ViewLectureComponent },
+          { path: 'view', component: ViewLectureComponent },
+
+
+        ]
+
+      },
+      {
         path: 'student', children: [
           { path: '', component: StudentDashboardComponent },
           { path: 'view', component: StudentListComponent }
@@ -75,9 +99,7 @@ const routes: Routes = [
   { path: 'student', component: StudentListComponent },
   { path: 'staff', component: ViewStaffComponent },
   { path: 'lecturer', component: ViewLectureComponent },
-  { path: 'enrollment', component: EnrollmentUpsertComponent },
-  {path:'attendance-student',component:AttendanceComponent},
-
+  { path: 'enrollment', component: EnrollmentUpsertComponent }
 
 
 ];
