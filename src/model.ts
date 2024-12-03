@@ -18,3 +18,12 @@ export interface Course {
  isDeleted: true ;
  isEditing?: true | undefined
 }
+
+export interface Student{
+  utNumber:string;
+  firstName:string;
+  lastName:string;
+  nicNumber:string;
+  email:string;
+  batch:string;
+}
