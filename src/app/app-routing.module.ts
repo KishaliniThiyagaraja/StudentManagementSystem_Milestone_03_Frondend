@@ -83,7 +83,8 @@ const routes: Routes = [
             path: '', children: [
               { path: '', component: StudentDashboardComponent },
               { path: 'view', component: StudentListComponent },
-              { path: 'marks', component: StudentExamsComponent }
+              { path: 'marks', component: StudentExamsComponent },
+              { path: 'attendance', component: AttendanceComponent },
             ]
           }
         ]

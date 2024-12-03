@@ -1,5 +1,7 @@
+<br><br>
+
 <div class="container mt-3">
-    <h2>Attendance - {{ date | date:'fullDate' }}</h2> 
+    <h2>Attendance - {{ date | date:'fullDate' }}</h2>
     <h4>Timetable</h4>
     <table class="table">
       <thead>
@@ -23,7 +25,7 @@
         </tr>
       </tbody>
     </table>
-  
+
     <div *ngIf="timetable[0]?.sessionType === 'Lab'">
       <h4>Student Details</h4>
       <table class="table">
