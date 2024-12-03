@@ -1,0 +1,52 @@
+<div class="container py-4">
+    <h2 class="text-center mb-4">My Attendance</h2>
+  
+    <!-- Attendance Summary -->
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <div class="card text-white bg-success">
+          <div class="card-body">
+            <h5 class="card-title">Total Present</h5>
+            <p class="card-text fs-3">{{ totalPresent }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card text-white bg-danger">
+          <div class="card-body">
+            <h5 class="card-title">Total Absent</h5>
+            <p class="card-text fs-3">{{ totalAbsent }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Detailed Attendance Records -->
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>#</th>
+            <th>Course</th>
+            <th>Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let record of attendanceRecords; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ record.course }}</td>
+            <td>{{ record.date | date }}</td>
+            
+            <td>
+              <span [class.text-success]="record.status === 'Present'"
+                    [class.text-danger]="record.status === 'Absent'">
+                {{ record.status }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

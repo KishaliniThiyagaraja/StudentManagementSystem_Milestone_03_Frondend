@@ -75,7 +75,9 @@ const routes: Routes = [
   { path: 'student', component: StudentListComponent },
   { path: 'staff', component: ViewStaffComponent },
   { path: 'lecturer', component: ViewLectureComponent },
-  { path: 'enrollment', component: EnrollmentUpsertComponent }
+  { path: 'enrollment', component: EnrollmentUpsertComponent },
+  {path:'attendance-student',component:AttendanceComponent},
+
 
 
 ];

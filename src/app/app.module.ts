@@ -45,6 +45,7 @@ import { LpContactComponent } from './Components/LandingPage/lp-contact/lp-conta
 import { LpAboutUsComponent } from './Components/LandingPage/lp-about-us/lp-about-us.component';
 import { LpCourseComponent } from './Components/LandingPage/lp-course/lp-course.component';
 import { HomeComponent } from './Components/LandingPage/home/home.component';
+import { ViweAttendanceComponent } from './Components/students/viwe-attendance/viwe-attendance.component';
 
 
 
@@ -85,6 +86,7 @@ import { HomeComponent } from './Components/LandingPage/home/home.component';
     LpAboutUsComponent,
     LpCourseComponent,
     HomeComponent,
+    ViweAttendanceComponent,
 
   ],
   imports: [
