@@ -50,9 +50,9 @@ const routes: Routes = [
             path: 'timetable', children: [
               { path: '', component: TimeTableComponent },
               { path: 'add', component: TimeTableUpsertComponent },
-              { path: 'view', component: TimeTableViewComponent },
+              { path: 'view', component: TimeTableViewComponent }
             ]
-          }, { path: 'register', component: LoginregisterComponent },
+          }, { path: 'register', component: LoginregisterComponent }
         ]
       },
       {
@@ -61,30 +61,31 @@ const routes: Routes = [
             path: '', children: [
               { path: '', component: StaffDashboardComponent },
               { path: 'add', component: ViewStaffComponent },
-              { path: 'view', component: ViewStaffComponent },
+              { path: 'view', component: ViewStaffComponent }
             ]
           },
-
-
-
         ]
       },
       {
-        path: 'lecturer', component: LectureDashboardComponent, children: [
-          { path: '', component: TimeTableComponent },
-          { path: 'add', component: ViewLectureComponent },
-          { path: 'view', component: ViewLectureComponent },
-
-
+        path: 'lecturer', children: [
+          {
+            path: '', children: [
+              { path: '', component: TimeTableComponent },
+              { path: 'add', component: ViewLectureComponent },
+              { path: 'view', component: ViewLectureComponent }
+            ]
+          }
         ]
-
       },
       {
         path: 'student', children: [
-          { path: '', component: StudentDashboardComponent },
-          { path: 'view', component: StudentListComponent }
+          {
+            path: '', children: [
+              { path: '', component: StudentDashboardComponent },
+              { path: 'view', component: StudentListComponent }
+            ]
+          }
         ]
-
       }
     ]
   },
