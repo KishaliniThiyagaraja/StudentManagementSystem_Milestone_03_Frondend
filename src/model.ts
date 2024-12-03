@@ -15,6 +15,6 @@ export interface Course {
   description: string;
   startDate: Date;
   endDate: Date;
- isDeleted: true ;
- isEditing?: true | undefined
+  isDeleted: true ;
+  isEditing?: true | undefined
 }
