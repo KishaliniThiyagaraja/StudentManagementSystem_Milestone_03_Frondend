@@ -35,6 +35,10 @@ import { HomeComponent } from './Components/LandingPage/home/home.component';
 
 
 const routes: Routes = [
+
+  {path:'',
+  component:CardComponent},
+
   {
     path: '',
     component: BlankComponent, children: [
@@ -42,42 +46,22 @@ const routes: Routes = [
       { path: 'register', component: LoginregisterComponent },
     ]
   },
-  {
-    path: 'dashboard', component: DshboardComponent, children: [
-      {
-        path: 'manager', component: ManagerDashboardComponent, children: [
-          {
-            path: 'timetable', children: [
-              { path: '', component: TimeTableComponent },
-              { path: 'add', component: TimeTableUpsertComponent },
-              { path: 'view', component: TimeTableViewComponent },
-            ]
-          }
-        ]
-      },
-      {
-        path: 'staff', children:[
-          {path:'', component: StaffDashboardComponent},
-          {path:'add',component:TimeTableUpsertComponent},
-          {path:'view',component:TimeTableViewComponent},
-        ]
-      },
-      {
-        path: 'lecturer', children:[
-          {path:'', component: LectureDashboardComponent}, 
-          {path:'view',component:TimeTableViewComponent},
-        ]
-       
-      },
-      {
-        path: 'student', children:[
-          {path:'',component: StudentDashboardComponent},
-          {path:'view',component:TimeTableViewComponent}
-        ]
-         
-      }
-    ]
-  },
+  {path : 'dashboard' , component : DshboardComponent , children : [
+    {
+      path: 'manager', component: ManagerDashboardComponent, children : [
+        {path : 'timetable' , component : TimeTableComponent}
+      ]
+    },
+    {
+      path: 'staff', component: StaffDashboardComponent
+    },
+    {
+      path: 'lecturer', component: LectureDashboardComponent
+    },
+    {
+      path: 'student', component: StudentDashboardComponent
+    }
+  ]} ,
 
 
 ];
