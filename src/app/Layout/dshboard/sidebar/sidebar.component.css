@@ -135,6 +135,8 @@
     background-color: var(--bs-tertiary-bg);
   }
 
-  .scrollarea {
+
+
+  .container-fluid {
     overflow-y: auto;
   }

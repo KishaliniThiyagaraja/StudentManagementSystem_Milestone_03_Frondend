@@ -15,6 +15,15 @@ export interface Course {
   description: string;
   startDate: Date;
   endDate: Date;
- isDeleted: true ;
- isEditing?: true | undefined
+  isDeleted: true ;
+  isEditing?: true | undefined
+}
+
+export interface Student{
+  utNumber:string;
+  firstName:string;
+  lastName:string;
+  nicNumber:string;
+  email:string;
+  batch:string;
 }

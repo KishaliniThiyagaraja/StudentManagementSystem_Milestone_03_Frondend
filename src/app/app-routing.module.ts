@@ -3,14 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { TimeTableComponent } from './Components/manager/time-table/time-table.component';
 import { TimeTableViewComponent } from './Components/manager/time-table/time-table-view/time-table-view.component';
 import { TimeTableUpsertComponent } from './Components/manager/time-table/time-table-upsert/time-table-upsert.component';
-
-
 import { LoginComponent } from './Layout/blank/login/login.component';
-
-
-
 import { LoginregisterComponent } from './Layout/blank/loginregister/loginregister.component';
-
 import { ViewStaffComponent } from './Components/staff/view-staff/view-staff.component';
 import { StaffLectureComponent } from './Components/manager/add/staff-lecture/staff-lecture.component';
 import { EnrollmentUpsertComponent } from './Components/manager/enrollment/enrollment-upsert/enrollment-upsert.component';
@@ -20,7 +14,6 @@ import { StudentExamsComponent } from './Components/Exam-Manage/student-exams/st
 import { LecturerExamsComponent } from './Components/Exam-Manage/lecturer-exams/lecturer-exams.component';
 import { StudentListComponent } from './Components/students/student-list/student-list.component';
 import { ViewLectureComponent } from './Components/lecture/view-lecture/view-lecture.component';
-
 import { CourseViewComponent } from './Components/Courses/course-view/course-view.component';
 import { CourseAddComponent } from './Components/Courses/course-add/course-add.component';
 import { CourseEditComponent } from './Components/Courses/course-edit/course-edit.component';
@@ -38,11 +31,13 @@ import { LpContactComponent } from './Components/LandingPage/lp-contact/lp-conta
 import { LpCourseComponent } from './Components/LandingPage/lp-course/lp-course.component';
 import { HomeComponent } from './Components/LandingPage/home/home.component';
 
-
+//dashboard/manager/timetable/add
 
 
 const routes: Routes = [
 
+  {path:'',
+  component:CardComponent},
 
   {
     path: '',
