@@ -95,7 +95,7 @@ const routes: Routes = [
   { path: 'student-exam', component: StudentExamsComponent },
   { path: 'course-add', component: CourseAddComponent },
   { path: 'course-edit', component: CourseEditComponent },
-  { path: 'course-view', component: CourseViewComponent },
+  { path: 'courseView', component: CourseViewComponent },
   { path: 'landingpage', component: LandingpageComponent },
   { path: 'student', component: StudentListComponent },
   { path: 'staff', component: ViewStaffComponent },
