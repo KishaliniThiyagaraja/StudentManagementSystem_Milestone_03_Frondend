@@ -18,3 +18,8 @@ export interface Course {
   isDeleted: true ;
   isEditing?: true | undefined
 }
+
+
+export interface Enrollment{
+  
+}
