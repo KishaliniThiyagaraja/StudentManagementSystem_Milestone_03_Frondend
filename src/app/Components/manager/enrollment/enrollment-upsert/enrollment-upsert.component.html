@@ -1,4 +1,4 @@
-
+<!-- 
    <div class="card mt-5 Larger shadow w-50 m-auto">
     <div class="container mt-3">
       <h2>Enrollment</h2>
@@ -16,6 +16,46 @@
                 <option value="" disabled selected>Select CourseId</option>
                 <option *ngFor="let course of courses" [value]="course">
                   {{ course }}
+                </option>
+              </select>
+            </th>
+            <th>
+              <button class="btn btn-primary" (click)="addRow()">+Add</button>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of rows; let i = index">
+            <td>{{ row.name }}</td>
+            <td>{{ row.date }}</td>
+            <td>{{ row.course }}</td>
+            <td>
+              <button class="btn btn-danger" (click)="deleteRow(i)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+   -->
+
+   <div class="card mt-5 Larger shadow w-50 m-auto">
+    <div class="container mt-3">
+      <h2>Enrollment</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>
+              <input type="text" [(ngModel)]="newEntry.name" placeholder="Name" />
+            </th>
+            <th>
+              <input type="date" [(ngModel)]="newEntry.date" />
+            </th>
+            <th>
+              <select [(ngModel)]="newEntry.course" class="form-select" aria-label="Default select example">
+                <option value="" disabled selected>Select Course</option>
+                <option *ngFor="let course of courses" [value]="course.id">
+                  {{ course.courseName }}
                 </option>
               </select>
             </th>

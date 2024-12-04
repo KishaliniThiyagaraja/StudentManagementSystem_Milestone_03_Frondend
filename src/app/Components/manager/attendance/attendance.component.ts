@@ -1,41 +1,68 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AttendanceService } from '../../../Services/attendance.service';
+import { Router } from '@angular/router';
 
-interface Timetable {
-  course: string;
-  startTime: string;
-  endTime: string;
-  lecture: string;
-  group: 'A' | 'B';
-  sessionType: 'Session' | 'Lab';
+export interface Attendance {
+  id: string; // Unique identifier for the attendance record
+  studentId: string; // ID of the student
+  courseId: string; // ID of the course the student is enrolled in
+  date: Date; // Date of the attendance record
+  isPresent: boolean; // Whether the student was present or absent
+  student?: Student; // Optional: Include student data for convenience
+  course?: Course; // Optional: Include course data for convenience
 }
 
-interface Student {
-  utNumber: string;
+export interface Student {
+  id: string;
+  utnumber: string;
+  email: string;
+  // other properties as needed
+}
+
+export interface Course {
+  id: string;
   name: string;
-  present: boolean;
+  description: string;
+  // other properties as needed
 }
+
+
 
 @Component({
   selector: 'app-attendance',
   templateUrl: './attendance.component.html',
   styleUrl: './attendance.component.css'
 })
-export class AttendanceComponent {
+export class AttendanceComponent implements OnInit {
+  attendances: Attendance[] = [];
 
-  date: Date = new Date();
-  timetable: Timetable[] = [
-    {
-      course: 'Math',
-      startTime: '10:00 AM',
-      endTime: '11:00 AM',
-      lecture: 'Mr. Smith',
-      group: 'A',
-      sessionType: 'Lab',
-    },
-  ];
-  
-  students: Student[] = [
-    { utNumber: '001', name: 'Alice', present: false },
-    { utNumber: '002', name: 'Bob', present: false },
-  ];
+  isLoading = false;
+
+  constructor(private attendanceService: AttendanceService, private router: Router) {}
+
+  ngOnInit(): void {
+    this.isLoading = true;
+    this.attendanceService.getAttendances().subscribe(data => {
+      this.attendances = data;
+      this.isLoading = false;
+    });
+  }
+  fetchAttendances() {
+    this.isLoading = true;
+    this.attendanceService.getAttendances().subscribe(
+      (data) => {
+        this.attendances = data;
+        this.isLoading = false;
+      },
+      (error) => {
+        console.error('Error fetching attendances', error);
+        this.isLoading = false;
+      }
+    );
+  }
+
+  addAttendance() {
+    // Logic to navigate to the add attendance form or show modal
+    console.log('Navigate to add attendance form');
+  }
 }
