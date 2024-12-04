@@ -59,18 +59,18 @@ const routes: Routes = [
         path: 'staff', children: [
           {
             path: '', children: [
-              { path: '', component: StaffDashboardComponent },
-              { path: 'add', component: ViewStaffComponent },
-              { path: 'view', component: ViewStaffComponent }
+              { path: '', component: ViewStaffComponent },
+              { path: 'add', component: StaffLectureComponent},
+              { path: 'view', component: ViewLectureComponent }
             ]
-          },
+          }
         ]
       },
       {
         path: 'lecturer', children: [
           {
             path: '', children: [
-              { path: '', component: TimeTableComponent },
+              { path: '', component: ViewLectureComponent },
               { path: 'add', component: ViewLectureComponent },
               { path: 'view', component: ViewLectureComponent }
             ]
@@ -82,20 +82,34 @@ const routes: Routes = [
           {
             path: '', children: [
               { path: '', component: StudentDashboardComponent },
-              { path: 'view', component: StudentListComponent }
+              { path: 'view', component: StudentListComponent },
+              { path: 'marks', component: StudentExamsComponent },
+              { path: 'attendance', component: AttendanceComponent },
             ]
           }
         ]
-      }
+      },
+      {
+        path: 'course', children: [
+          {
+            path: '', children: [
+              { path: '', component: CourseViewComponent },
+              { path: 'add', component: CourseAddComponent },
+              { path: 'edit', component: CourseEditComponent }
+            ]
+          }
+        ]
+      },
+
     ]
   },
   { path: 'attendance', component: AttendanceComponent },
   { path: 'admin-exam', component: AdminExamsComponent },
   { path: 'lecturer-exam', component: LecturerExamsComponent },
-  { path: 'student-exam', component: StudentExamsComponent },
+  { path: 'studentExam', component: StudentExamsComponent },
   { path: 'course-add', component: CourseAddComponent },
   { path: 'course-edit', component: CourseEditComponent },
-  { path: 'course-view', component: CourseViewComponent },
+  { path: 'courseView', component: CourseViewComponent },
   { path: 'landingpage', component: LandingpageComponent },
   { path: 'student', component: StudentListComponent },
   { path: 'staff', component: ViewStaffComponent },
