@@ -12,14 +12,15 @@ export class CourseService {
 
   constructor(private http: HttpClient) { }
 
-  apiURL='https://localhost:7229/api/CourseControllers'
+  apiURL='http://localhost:5075/api/CourseControllers'
+  //http://localhost:5075/api/CourseControllers/Add-Course
 
   getCourse(){
     return this.http.get<Course[]>(this.apiURL)
   }
 
   addCourse(course:Course){
-    return this.http.post<Course[]>(this.apiURL,course)
+    return this.http.post<Course[]>(`${this.apiURL}/Add-Course`,course)
 
   }
   deleteCourse(id:string){

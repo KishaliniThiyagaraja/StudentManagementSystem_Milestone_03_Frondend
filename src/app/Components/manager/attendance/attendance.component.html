@@ -1,43 +1,44 @@
-<div class="container mt-4">
-  <div class="row">
-    <div class="col-12 text-center">
-      <h2>Attendance Management</h2>
-      <button class="btn btn-primary" (click)="addAttendance()">Add Attendance</button>
-    </div>
+<div class="container">
+  <!-- Date and Time Section -->
+  <div class="date-time-section">
+    <h3>Date and Time</h3>
+    <table  class="date-time-table">
+      <tr>
+        <th>Date</th>
+        <input type="text" [(ngModel)]="currentDate" (input)="fetchCourses()">
+      </tr>
+    </table>
   </div>
-
-  <div class="row mt-4" *ngIf="!isLoading">
-    <div class="col-12">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">UT Number</th>
-            <th scope="col">Course</th>
-            <th scope="col">Date</th>
-            <th scope="col">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let attendance of attendances">
-            <td>{{ attendance.id }}</td>
-            <!-- Safe Navigation Operator for student.utnumber -->
-            <td>{{ attendance.student?.utnumber }}</td> <!-- Safe navigation here -->
-            <td>{{ attendance.course?.name }}</td>
-            <td>{{ attendance.date | date }}</td>
-            <td>
-              <span [ngClass]="attendance.isPresent ? 'text-success' : 'text-danger'">
-                {{ attendance.isPresent ? 'Present' : 'Absent' }}
-              </span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-
-  <div *ngIf="isLoading" class="text-center">
-    <i class="bi bi-arrow-repeat spin"></i> Loading...
+<div class="row">
+  <button class="col-2 btn btn-outline-primary" *ngFor="let table of timeTables" (click)="fetchSlots(table.batch)">{{table.batch}}</button>
+</div>
+<div class="row mt-2">
+  <button class="col-2 btn btn-outline-primary" *ngFor="let slot of timeSlots" (click)="getStudents(slot.courseId)" (click)="currentSlot=slot.id">{{slot.startTime}}</button>
+</div>
+  <!-- Attendance Table -->
+  <div class="attendance-section">
+    <h3>Mark Attendance</h3>
+    <table  class="attendance-table ">
+      <thead>
+        <tr>
+          <th>UT Number</th>
+          <th>Full Name</th>
+          <th class="align-middle">Present</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of attendanceData; let i = index">
+          <td>{{ record.utNumber }}</td>
+          <td>{{ record.user.firstName}} {{ record.user.lastName}}</td>
+          <td class="align-middle">
+            <input
+              type="checkbox"
+              [checked]="record.isPresent"
+              (change)="markAttendance(record.utNumber)"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>

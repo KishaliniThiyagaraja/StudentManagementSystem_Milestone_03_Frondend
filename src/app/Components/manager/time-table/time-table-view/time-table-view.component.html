@@ -1,110 +1,62 @@
 <div class="row m-3">
-
-
-
-  <!--  -->
+  <button *ngIf="userRole!='Student'" class="btn btn-primary" (click)="routeAdd()">Add TimeTable</button>
 <div class="container">
+  <h3>{{heading0}}</h3>
   <table class="table table-bordered">
     <thead>
       <tr>
         <!-- Header with day names and dates -->
-        <th scope="col" class="text-center">
-          Monday <br> <small>2024-11-20</small>
-        </th>
-        <th scope="col" class="text-center">
-          Tuesday <br> <small>2024-11-21</small>
-        </th>
-        <th scope="col" class="text-center">
-          Wednesday <br> <small>2024-11-22</small>
-        </th>
-        <th scope="col" class="text-center">
-          Thursday <br> <small>2024-11-23</small>
-        </th>
-        <th scope="col" class="text-center">
-          Friday <br> <small>2024-11-24</small>
-        </th>
-        <th scope="col" class="text-center">
-          Saturday <br> <small>2024-11-25</small>
-        </th>
-        <th scope="col" class="text-center">
-          Sunday <br> <small>2024-11-26</small>
+        <th scope="col" class="text-center" *ngFor="let table of timeTableData0">
+          {{table.dayOfWeek == 0 ? "Monday" : 
+          table.dayOfWeek == 1 ? "Tuesday" : 
+          table.dayOfWeek == 2 ? "Wednesday" : 
+          table.dayOfWeek == 3 ? "Thursday" : 
+          table.dayOfWeek == 4 ? "Friday" : 
+          table.dayOfWeek == 5 ? "Saturday" : "Sunday"}} <br> <small>{{table.day}}</small>
         </th>
       </tr>
     </thead>
     <tbody>
       <!-- Row 1: Lab and Session columns merged, with times for each session -->
       <tr>
-        <td class="text-center">
-          <div class="border border-black">
-            <strong>Lab</strong><br>
-            <small>9:00 AM - 11:00 AM</small>
-          </div>
-          <div class="border border-black">
-            <strong>Session</strong><br>
-            <small>1:00 PM - 3:00 PM</small>
+        <td class="text-center" *ngFor="let table of timeTableData0">
+          <div class="border border-black" *ngFor="let slot of table.timeSlots">
+            <strong>{{slot.classType}}</strong><br>
+            <small>{{slot.startTime}} - {{slot.endTime}}</small>
           </div>
         </td>
-        <td class="text-center">
-          <div class="border border-black">
-            <strong>Lab</strong><br>
-            <small>9:00 AM - 11:00 AM</small>
-          </div>
-          <div class="border border-black">
-            <strong>Session</strong><br>
-            <small>1:00 PM - 3:00 PM</small>
-          </div>
-        </td>
-        <td class="text-center">
-          <div class="border border-black">
-            <strong>Lab</strong><br>
-            <small>9:00 AM - 11:00 AM</small>
-          </div>
-          <div class="border border-black">
-            <strong>Session</strong><br>
-            <small>1:00 PM - 3:00 PM</small>
-          </div>
-        </td>
-        <td class="text-center">
-          <div class="border border-black">
-            <strong>Lab</strong><br>
-            <small>9:00 AM - 11:00 AM</small>
-          </div>
-          <div class="border border-black">
-            <strong>Session</strong><br>
-            <small>1:00 PM - 3:00 PM</small>
-          </div>
-        </td>
-        <td class="text-center">
-          <div class="border border-black">
-            <strong>Lab</strong><br>
-            <small>9:00 AM - 11:00 AM</small>
-          </div>
-          <div class="border border-black">
-            <strong>Session</strong><br>
-            <small>1:00 PM - 3:00 PM</small>
-          </div>
-        </td>
-        <td class="text-center">
-          <div class="border border-black">
-            <strong>Lab</strong><br>
-            <small>9:00 AM - 11:00 AM</small>
-          </div>
-          <div class="border border-black">
-            <strong>Session</strong><br>
-            <small>1:00 PM - 3:00 PM</small>
-          </div>
-        </td>
-        <td class="text-center">
-          <div class="border border-black">
-            <strong>Lab</strong><br>
-            <small>9:00 AM - 11:00 AM</small>
-          </div>
-          <div class="border border-black">
-            <strong>Session</strong><br>
-            <small>1:00 PM - 3:00 PM</small>
+      </tr>
+    </tbody>
+  </table>
+  <h3>{{heading1}}</h3>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <!-- Header with day names and dates -->
+        <th scope="col" class="text-center" *ngFor="let table of timeTableData1">
+          {{table.dayOfWeek == 0 ? "Monday" : 
+          table.dayOfWeek == 1 ? "Tuesday" : 
+          table.dayOfWeek == 2 ? "Wednesday" : 
+          table.dayOfWeek == 3 ? "Thursday" : 
+          table.dayOfWeek == 4 ? "Friday" : 
+          table.dayOfWeek == 5 ? "Saturday" : "Sunday"}} <br> <small>{{table.day}}</small>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Row 1: Lab and Session columns merged, with times for each session -->
+      <tr>
+        <td class="text-center" *ngFor="let table of timeTableData1">
+          <div class="border border-black" *ngFor="let slot of table.timeSlots">
+            <strong>{{slot.classType}}</strong><br>
+            <small>{{slot.startTime}} - {{slot.endTime}}</small>
           </div>
         </td>
       </tr>
     </tbody>
   </table>
 </div>
+<input type="date" [(ngModel)]="dateReq" (input)="inputDate()">
+{{init}}
+
+<!-- <button class="btn btn-primary" [routerLink]="['/dashboard/Staff/timetable/add']">Add Table</button> -->

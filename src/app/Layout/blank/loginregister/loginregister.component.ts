@@ -28,7 +28,8 @@ export class LoginregisterComponent implements OnInit {
       dob: ['', Validators.required], // Added Date of Birth field
       userRole: ['', Validators.required],
       utNumber: [''], // Optional fields
-      batch: ['']
+      batch: [''],
+      group : ['']
     });
 
     // Handle role changes dynamically
@@ -38,13 +39,16 @@ export class LoginregisterComponent implements OnInit {
         // Add validators for UTNumber and Batch
         this.registrationForm.get('utNumber')?.setValidators([Validators.required]);
         this.registrationForm.get('batch')?.setValidators([Validators.required]);
+        this.registrationForm.get('group')?.setValidators([Validators.required]);
       } else {
         // Clear validators for UTNumber and Batch
         this.registrationForm.get('utNumber')?.clearValidators();
         this.registrationForm.get('batch')?.clearValidators();
+        this.registrationForm.get('group')?.clearValidators();
       }
       this.registrationForm.get('utNumber')?.updateValueAndValidity();
       this.registrationForm.get('batch')?.updateValueAndValidity();
+      this.registrationForm.get('group')?.updateValueAndValidity();
     });
   }
 
@@ -53,7 +57,9 @@ export class LoginregisterComponent implements OnInit {
   onSubmit(): void {
     if (this.registrationForm.valid) {
       const formData = this.registrationForm.value;
+      console.log(formData);
       formData.userRole = parseInt(formData.userRole);
+      formData.group = parseInt(formData.group);
       console.log(formData);
       this.authService.register(formData).subscribe((data: any) => {
         console.log(data);

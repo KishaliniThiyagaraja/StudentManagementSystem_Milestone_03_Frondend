@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Attendance, Student } from '../Components/manager/attendance/attendance.component';
+import { AttendanceRequest } from '../../model';
 
 
 
@@ -37,8 +38,16 @@ export class AttendanceService {
     return this.http.get<Student[]>(`${this.apiUrl}/Get-students${courseId}`);
   }
 
-  addAttendance(attendance: Attendance): Observable<Attendance> {
-    return this.http.post<Attendance>(this.apiUrl, attendance);
+  addAttendance(attendance:AttendanceRequest): Observable<Attendance> {
+    return this.http.post<Attendance>(`http://localhost:5075/api/AttendanceControllers`, attendance);
+  }
+//http://localhost:5075/api/AttendanceControllers/Get-students53123AAB-9411-42A9-756C-08DD16C07B28?batch=2
+  getAttendancebyCourseAndBatch(courseId : string, batch : string){
+    return this.http.get<any[]>(`http://localhost:5075/api/AttendanceControllers/Get-students${courseId}?batch=${batch}`)
+  }
+//http://localhost:5075/api/AttendanceControllers/Get-students?timeSlotId=AEA59A3D-1482-41A4-DA6C-08DD18DD480A
+  getAttendedStudents(slotId ){
+    return this.http.get(`http://localhost:5075/api/AttendanceControllers/Get-students?timeSlotId=`)
   }
   
 }
