@@ -39,14 +39,15 @@ export class LoginComponent {
           const decoded = jwtDecode(data.token);
           console.log(decoded)
           let user : any = JSON.parse(JSON.stringify(decoded))
-          localStorage.setItem('userId' , user.UserId)
+          localStorage.setItem('userId' , user.UserId);
+          localStorage.setItem('role', user.UserRole);
           if(user.UserRole == "Student"){
-            this.router.navigate(['/dashboard/student'])
+            this.router.navigate(['/dashboard/Student'])
           }
           else if(user.UserRole == "Lecturer"){
             this.router.navigate(['/dashboard/lecturer'])
           }else if(user.UserRole == "Staff"){
-            this.router.navigate(['/dashboard/staff'])
+            this.router.navigate(['/dashboard/Staff'])
           }
           else if(user.UserRole == "Manager"){
             this.router.navigate(['/dashboard/manager'])

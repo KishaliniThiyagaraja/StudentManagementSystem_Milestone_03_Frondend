@@ -1,11 +1,12 @@
 export interface TimeTable {
   id: number;
-  CourseId: string;
+  courseId: string;
   Date: string;
-  StartTime: string;
-  EndTime: string;
-  Location:string;
-
+  startTime: string;
+  endTime: string;
+  location:string;
+  batch : string;
+  timeSlots : any[]
 }
 
 
@@ -22,4 +23,9 @@ export interface Course {
 
 export interface Enrollment{
   
+}
+
+export interface AttendanceRequest{
+  timeSlotId : string;
+  studentUtNumber : string
 }

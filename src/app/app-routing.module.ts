@@ -30,6 +30,7 @@ import { LandingpageComponent } from './Components/LandingPage/landingpage/landi
 import { LpContactComponent } from './Components/LandingPage/lp-contact/lp-contact.component';
 import { LpCourseComponent } from './Components/LandingPage/lp-course/lp-course.component';
 import { HomeComponent } from './Components/LandingPage/home/home.component';
+import { TimeTableAddComponent } from './Components/manager/time-table/time-table-add/time-table-add.component';
 
 //dashboard/manager/timetable/add
 
@@ -52,18 +53,43 @@ const routes: Routes = [
               { path: 'add', component: TimeTableUpsertComponent },
               { path: 'view', component: TimeTableViewComponent }
             ]
-          }, { path: 'register', component: LoginregisterComponent }
+          }
+          , { path: 'register', component: LoginregisterComponent }
         ]
       },
       {
-        path: 'staff', children: [
+        path: 'Staff', children: [
           {
-            path: '', children: [
-              { path: '', component: ViewStaffComponent },
-              { path: 'add', component: StaffLectureComponent},
-              { path: 'view', component: ViewLectureComponent }
+            path: 'timetable', children: [
+              {
+                path: '', component: TimeTableComponent, children: [
+                  { path: '', component: TimeTableViewComponent },
+                  { path: 'add', component: TimeTableAddComponent },
+                ]
+              },
+
             ]
-          }
+          },
+          {
+            path: 'course', children: [
+              {
+                path: '', children: [
+                  { path: '', component: CourseViewComponent },
+                  { path: 'add', component: CourseAddComponent },
+                  { path: 'edit', component: CourseEditComponent }
+                ]
+              }
+            ]
+          },
+          {
+            path: 'attendance', children: [
+              {
+                path: '', component: AttendanceComponent, children: [
+                ]
+              },
+
+            ]
+          },
         ]
       },
       {
@@ -78,28 +104,20 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'student', children: [
+        path: 'Student', children: [
           {
-            path: '', children: [
-              { path: '', component: StudentDashboardComponent },
-              { path: 'view', component: StudentListComponent },
-              { path: 'marks', component: StudentExamsComponent },
-              { path: 'attendance', component: AttendanceComponent },
+            path: 'timetable', children: [
+              {
+                path: '', component: TimeTableComponent, children: [
+                  { path: '', component: TimeTableViewComponent },
+                ]
+              },
+
             ]
           }
         ]
       },
-      {
-        path: 'course', children: [
-          {
-            path: '', children: [
-              { path: '', component: CourseViewComponent },
-              { path: 'add', component: CourseAddComponent },
-              { path: 'edit', component: CourseEditComponent }
-            ]
-          }
-        ]
-      },
+
 
     ]
   },
@@ -114,8 +132,8 @@ const routes: Routes = [
   { path: 'student', component: StudentListComponent },
   { path: 'staff', component: ViewStaffComponent },
   { path: 'lecturer', component: ViewLectureComponent },
-  { path: 'enrollment', component: EnrollmentUpsertComponent }
-
+  { path: 'enrollment', component: EnrollmentUpsertComponent },
+  { path: 'table', component: TimeTableAddComponent }
 
 ];
 

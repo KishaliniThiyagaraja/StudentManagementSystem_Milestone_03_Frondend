@@ -1,0 +1,76 @@
+<div class="container">
+    <form [formGroup]="timetableForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-12 row">
+                <h2 class="text-danger mt-3"></h2>
+
+                <div class="col-3">
+                    <label for="model" class="form-label">Year : </label>
+                    <input type="text" class="form-control" id="" formControlName="year">
+                    <div *ngIf="timetableForm.controls.year?.touched">
+                        <small class="text-danger" *ngIf="timetableForm.get('year').errors">
+                            Model is required
+                        </small>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <label for="model" class="form-label">Week : </label>
+                    <input type="text" class="form-control" id="" formControlName="week">
+                    <div *ngIf="timetableForm.controls.week?.touched">
+                        <small class="text-danger" *ngIf="timetableForm.get('week').errors">
+                            Model is required
+                        </small>
+                    </div>
+                </div>
+                <div class="col-3"> <label for="model" class="form-label">Batch : </label>
+                    <select  class="form-control" formControlName="batch">
+                        <option value="" disabled selected>Select a Batch</option>
+                        <option value="1">D</option>
+                        <option value="2">E</option>
+                    </select>
+                </div>
+                <div class="col-3"> <label for="model" class="form-label">Day : </label>
+                    <select [(ngModel)]="features.currentDate"  class="form-control" formControlName="day" (click)="getTableByDate()">
+                        <option value="" disabled selected>Select a Day</option>
+                        <option *ngFor="let day of days" [value]="day" >{{day}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div formArrayName="timeSlots">
+                <h3>Add Table</h3>
+                <div class="row" *ngFor="let img of timeSlots.controls;let i=index;">
+                    <div [formGroupName]="i">
+                        <div class="row mt-2">
+                            <div class="col-2">
+                                <input type="time" class="form-control" id="" formControlName="startTime">
+                            </div>
+                            <div class="col-2">
+                                <input type="time" class="form-control" id="" formControlName="endTime">
+                            </div>
+                            <div class="col-2">
+                                <select formControlName="courseId" class="form-control" >
+                                    <option value="" disabled selected>Select a Course</option>
+                                    <option *ngFor="let course of courses" [value]="course.id">{{course.courseName}}</option>
+                                </select>
+                            </div>
+                            <div class="col-2">
+                                <select formControlName="place" class="form-control" formControlName="classType" >
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="1" >Lab</option>
+                                    <option value="2" >Session</option>
+                                </select>
+                            </div>
+                            <div class="col-2">
+                                <button class="btn btn-danger" type="button" (click)="removeRow(i)">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="btn btn-success mt-2" type="button" (click)="addRow()">Add</button>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3" [disabled]="timetableForm.invalid">Submit</button>
+        </div>
+    </form>
+</div>

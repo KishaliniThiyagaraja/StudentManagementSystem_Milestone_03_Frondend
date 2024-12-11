@@ -10,16 +10,21 @@ import { Injectable } from '@angular/core';
 export class TimeTableService {
   [x: string]: any;
 
-  url = 'https://localhost:7229/api/TimetableControllers';
-
+  url = 'http://localhost:5075/api/TimetableControllers';
+  //http://localhost:5075/api/TimetableControllers?CourseId=61BFA7CA-38E3-457E-7BD3-08DD129B3360
+//http://localhost:5075/api/TimetableControllers/Get-By-WeekNo?weekNo=51&year=2024
   constructor(private http: HttpClient) { }
-
-  getTables(){
-    return this.http.get<TimeTable[]>(this.url);
+  getTables(Date : string){
+    console.log(Date);
+    return this.http.get<TimeTable[]>(`${this.url}/${Date}`);
   }
 
-  createTable(timeTable:TimeTable){
-    return this.http.post(this.url,timeTable);
+  getTablesbyWeekNo(weekNo : number , year : number){
+    return this.http.get<TimeTable[]>(`${this.url}/Get-By-WeekNo?weekNo=${weekNo}&year=${year}`)
+  }
+  createTable(table : any , courseId : string){
+    console.log(courseId)
+    return this.http.post(`${this.url}?CourseId=${courseId}`,table);
   }
 
   deleteTable(Id:number){
@@ -32,5 +37,9 @@ export class TimeTableService {
 
   updateTable(timeTable:TimeTable, Id:number){
     return this.http.put(this.url +'/'+ Id,timeTable)
+  }
+
+  addTable(obj : any){
+    return this.http.post(this.url , obj)
   }
 }

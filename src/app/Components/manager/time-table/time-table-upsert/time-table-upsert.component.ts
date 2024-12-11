@@ -1,10 +1,12 @@
 import { TimeTableService } from '../../../../Services/time-table.service';
-import { TimeTable } from './../../../../../model';
+import { Course, TimeTable } from './../../../../../model';
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Route, Router } from '@angular/router';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { CourseService } from '../../../../Services/course.service';
+import { DatePipe } from '@angular/common';
 
 
 @Component({
@@ -17,59 +19,60 @@ export class TimeTableUpsertComponent implements OnInit {
 
   timeTableForm: FormGroup;
   timeTableEntries: TimeTableEntry[] = [];
-
+  courses!: Course[]
   constructor(
     private fb: FormBuilder,
-    private timeTableService : TimeTableService,
+    private timeTableService: TimeTableService,
+    private courseService: CourseService,
     private router: Router
   ) {
     this.timeTableForm = this.fb.group({
-      course: ['', Validators.required],
+      courseId: ['', Validators.required],
       dueDate: ['', Validators.required],
       day: ['', Validators.required],
       startTime: ['', Validators.required],
       endTime: ['', Validators.required],
-      class: ['', Validators.required],
+      // class: ['', Validators.required],
     });
+  }
+  ngOnInit(): void {
+    this.getCourses();
   }
 
   onSubmit() {
     let timeTable = this.timeTableForm.value;
-    // console.log(this.timeTableForm.value)
+    console.log(this.timeTableForm.value)
     // console.log(timeTable);
-    const newEntry: TimeTableEntry = {
-      course: timeTable.course,
-      dueDate: timeTable.dueDate,
-      day: timeTable.day,
-      startTime: timeTable.startTime,
-      endTime: timeTable.endTime,
-      classType: timeTable.class
+    const datePipe = new DatePipe('en-US');
+    const formattedStartTime = datePipe.transform(this.timeTableForm.value.startTime, "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+    const formattedEndTime = datePipe.transform(this.timeTableForm.value.endTime, "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+
+    const newEntry: any = {
+      startTime: formattedStartTime,
+      endTime: formattedEndTime
+      // classType: timeTable.class
     };
-    this.timeTableEntries.push(newEntry); // Add to the array
-      this.timeTableForm.reset(); // Reset the form
-
-    this.timeTableService.createTable(timeTable)
-    .subscribe((data: any) => {
-     // this.router.navigate(['/timetableview']);
+    console.log(this.timeTableForm.value.courseId)
+    this.timeTableService.createTable(newEntry,this.timeTableForm.value.courseId )
+      .subscribe((data: any) => {
+        console.log(data);
+      });
+    this.timeTableForm.reset(); // Reset the form
+  }
+  getCourses() {
+    this.courseService.getCourse().subscribe(data => {
       console.log(data);
-    });
-
-
+      this.courses = data;
+    })
   }
 
-  ngOnInit(): void {
-    this.timeTableService.getTables().subscribe(data =>{
-    this.timeTables =data;
-   })
-
-  }
 }
 
 export interface TimeTableEntry {
   course: string;
-  dueDate: string;
-  day: string;
+//  dueDate: string;
+ // day: string;
   startTime: string;
   endTime: string;
-  classType: string;
+  // classType: string;
 }
