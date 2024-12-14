@@ -128,5 +128,5 @@ export class AttendanceComponent implements OnInit {
     this.attendanceData = this.attendanceData.filter(a => !attendedUTNumbers.has(a.utNumber || a.studentUTNumber));
     console.log(this.attendanceData);
   }
-  
+
 }
