@@ -1,16 +1,33 @@
-
-.container-fluid {
-  height: 100vh;
-  background-image: url("/loginBg.jpg");
-}
 body {
   background-color: #f8f9fa;
   font-family: 'Roboto', sans-serif;
 }
 
+.container-fluid {
+  height: 100vh;
+  background-image: url('/bg-login.jpg');
+  background-size: cover;
+  background-position: center;
+  background-color: #3498db;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
 .card {
-  background: #ffffff;
+  background: white;
   border: none;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  transition: transform 0.2s ease-in-out;
+  margin-left: -50%;
+  transform: translateX(-50%);
 }
 
 .card .form-control {
@@ -20,13 +37,8 @@ body {
   transition: box-shadow 0.3s ease-in-out;
 }
 
-.card .form-control:focus {
-  box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.25);
-  border-color: #007bff;
-}
-
 .card .btn-primary {
-  background-color: #007bff;
+  background-color: rgb(21, 83, 150);
   border: none;
   border-radius: 8px;
   transition: background-color 0.3s ease-in-out, transform 0.2s;
@@ -47,5 +59,14 @@ body {
 }
 
 .text-primary {
-  color: #007bff;
+  color: #e8edf3;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card *:not(.btn-primary, .form-control) {
+  color: #000;
+  /* changed text color to black */
 }
