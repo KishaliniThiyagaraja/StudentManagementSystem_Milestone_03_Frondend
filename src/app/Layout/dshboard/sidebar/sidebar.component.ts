@@ -22,4 +22,7 @@ export class SidebarComponent implements OnInit {
   routeCourses(){
     this.router.navigate([`dashboard/${this.userRole}/course`])
   }
+  routeStudent(){
+    this.router.navigate([`dashboard/${this.userRole}/students`])
+  }
 }

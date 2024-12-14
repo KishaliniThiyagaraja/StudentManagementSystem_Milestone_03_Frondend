@@ -38,19 +38,22 @@ export interface Course {
 })
 export class AttendanceComponent implements OnInit {
   attendances: Attendance[] = [];
-  timeSlots : any;
-  timeTables : any;
+  timeSlots: any;
+  timeTables: any;
   isLoading = false;
-  currentDate! : string;
-  currentBatch! : string;
-  attendanceData : any[] = [];
-  currentSlot : string = ''
-  
+  currentDate!: string;
+  currentBatch!: string;
+  attendanceData: any[] = [];
+  attendedStudents!: any[];
+  currentSlot: string = '';
+  now: any;
+
   constructor(private attendanceService: AttendanceService, private router: Router,
-     private timeTableService : TimeTableService, private studentService : StudentService) {
-      var now = new Date();
-      this.currentDate = `${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}`;
-     }
+    private timeTableService: TimeTableService, private studentService: StudentService) {
+    var now = new Date();
+    this.now = `${now.getHours()}: ${now.getMinutes()}`
+    this.currentDate = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
+  }
 
   ngOnInit(): void {
     this.isLoading = true;
@@ -78,29 +81,52 @@ export class AttendanceComponent implements OnInit {
     // Logic to navigate to the add attendance form or show modal
     console.log('Navigate to add attendance form');
   }
-  markAttendance(utNum : string){
-    let obj : AttendanceRequest = {
-      timeSlotId : this.currentSlot,
-      studentUtNumber : utNum
+  markAttendance(utNum: string, index: number) {
+    let obj: AttendanceRequest = {
+      timeSlotId: this.currentSlot,
+      studentUtNumber: utNum
     }
-    this.attendanceService.addAttendance(obj).subscribe(data => console.log(data))
+    this.attendanceService.addAttendance(obj).subscribe(data => {
+      if (data) {
+        // this.attendanceData.splice(index, 1);
+        let record = this.attendanceData[index];
+        this.attendedStudents.push(record);
+        this.filterBoth();
+      }
+    }
+    )
   }
-  fetchCourses(){
+  fetchCourses() {
     this.timeTableService.getTables(this.currentDate).subscribe(data => {
       this.timeTables = data;
     })
   }
-  fetchSlots(batch : string){
+  fetchSlots(batch: string) {
     this.currentBatch = batch;
-   let slots = this.timeTables.filter((c :any) => c.batch == batch);
-   console.log(slots[0].timeSlots)
+    let slots = this.timeTables.filter((c: any) => c.batch == batch);
+    console.log(slots[0].timeSlots)
     this.timeSlots = slots[0].timeSlots;
     console.log(this.timeSlots);
   }
-  getStudents(courseId : string){
-    this.attendanceService.getAttendancebyCourseAndBatch(courseId ,this.currentBatch).subscribe(data => {
+  getStudents(courseId: string, slotId: string) {
+    this.currentSlot = slotId;
+    this.attendanceService.getAttendancebyCourseAndBatch(courseId, this.currentBatch).subscribe(data => {
       this.attendanceData = data;
       console.log(data);
-    })
+      this.attendanceService.getAttendedStudents(this.currentSlot).subscribe(data => {
+        this.attendedStudents = data;
+        console.log(data);
+        this.filterBoth();
+      })
+    });
   }
+  filterBoth() {
+    // Map attended student UT numbers for comparison
+    let attendedUTNumbers = new Set(this.attendedStudents.map(s => s.studentUTNumber || s.utNumber));
+    console.log(attendedUTNumbers)
+    // Filter attendanceData to exclude records with UT numbers in attendedUTNumbers
+    this.attendanceData = this.attendanceData.filter(a => !attendedUTNumbers.has(a.utNumber || a.studentUTNumber));
+    console.log(this.attendanceData);
+  }
+  
 }

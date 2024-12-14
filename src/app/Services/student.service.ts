@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class StudentService {
 
-  constructor() { }
+  constructor(private http : HttpClient) { }
+  getAllStudents(){
+    return this.http.get<any[]>(`http://localhost:5075/api/Student/GetAllStudents`);
+  }
+  getStudentById(utNum : string){
+    return this.http.get(`http://localhost:5075/api/Student/GetStudentById?utNumber=${utNum}`)
+  }
 }
