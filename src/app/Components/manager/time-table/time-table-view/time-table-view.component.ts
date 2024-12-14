@@ -49,6 +49,8 @@ export class TimeTableViewComponent implements OnInit {
     this.userRole = localStorage.getItem('role') || '';
     console.log(this.userRole);
     this.inputDate();
+    console.log(this.year);
+    console.log(this.weekNo)
   }
   getTables(date: string) {
     console.log(this.dateReq)
@@ -76,7 +78,7 @@ export class TimeTableViewComponent implements OnInit {
   getWeek(day: any) {
     const firstDayOfYear: any = new Date(day.getFullYear(), 0, 1);
     const pastDaysOfYear: number = (day - firstDayOfYear) / 86400000;
-    return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7) + 1;
+    return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
   };
   routeAdd() {
     this.router.navigate([`dashboard/${this.userRole}/timetable/add`])

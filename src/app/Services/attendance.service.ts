@@ -45,9 +45,10 @@ export class AttendanceService {
   getAttendancebyCourseAndBatch(courseId : string, batch : string){
     return this.http.get<any[]>(`http://localhost:5075/api/AttendanceControllers/Get-students${courseId}?batch=${batch}`)
   }
+//http://localhost:5075/api/AttendanceControllers/Get-students?timeSlotId=AEA59A3D-1482-41A4-DA6C-08DD18DD480A;
 //http://localhost:5075/api/AttendanceControllers/Get-students?timeSlotId=AEA59A3D-1482-41A4-DA6C-08DD18DD480A
-  getAttendedStudents(slotId ){
-    return this.http.get(`http://localhost:5075/api/AttendanceControllers/Get-students?timeSlotId=`)
+  getAttendedStudents(slotId :string){
+    return this.http.get<any[]>(`http://localhost:5075/api/AttendanceControllers/Get-students?timeSlotId=${slotId}`)
   }
   
 }

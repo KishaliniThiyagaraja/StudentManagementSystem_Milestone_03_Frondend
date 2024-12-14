@@ -63,7 +63,7 @@
           <!-- Date of Birth -->
           <div class="mb-2">
             <label for="dob" class="form-label">Date of Birth</label>
-            <input id="dob" type="date" class="form-control" formControlName="dob" />
+            <input id="dob" type="date" class="form-control" formControlName="dateOfBirth" />
             <div *ngIf="registrationForm.get('dob')?.touched && registrationForm.get('dob')?.invalid" class="text-danger">
               Date of birth is required.
             </div>

@@ -3,24 +3,28 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>User ID</th>
+        <th>No</th>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Email</th>
         <th>NIC</th>
         <th>UT Number</th>
         <th>Batch</th>
+        <th>Group</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let student of students">
-        <td>{{ student.userId }}</td>
+      <tr *ngFor="let student of students; let i=index">
+        <td>{{ i+1 }}</td>
         <td>{{ student.firstName }}</td>
         <td>{{ student.lastName }}</td>
         <td>{{ student.email }}</td>
         <td>{{ student.nicNumber }}</td>
         <td>{{ student.utNumber }}</td>
         <td>{{ student.batch }}</td>
+        <td>{{student.group==1? 'A' :student.group==2? 'B' : 'C' }}</td>
+        <td><i class="bi bi-arrow-right-square-fill fs-4" (click)="routeStudentView(student.utNumber)"></i></td>
       </tr>
     </tbody>
   </table>

@@ -31,6 +31,7 @@ import { LpContactComponent } from './Components/LandingPage/lp-contact/lp-conta
 import { LpCourseComponent } from './Components/LandingPage/lp-course/lp-course.component';
 import { HomeComponent } from './Components/LandingPage/home/home.component';
 import { TimeTableAddComponent } from './Components/manager/time-table/time-table-add/time-table-add.component';
+import { StudentsViewComponent } from './Components/manager/students-view/students-view.component';
 
 //dashboard/manager/timetable/add
 
@@ -65,6 +66,7 @@ const routes: Routes = [
                 path: '', component: TimeTableComponent, children: [
                   { path: '', component: TimeTableViewComponent },
                   { path: 'add', component: TimeTableAddComponent },
+                  
                 ]
               },
 
@@ -90,6 +92,16 @@ const routes: Routes = [
 
             ]
           },
+          {
+            path: 'students', children: [
+              {
+                path: '', component: StudentListComponent
+              },
+            ]
+          },
+          {
+            path : 'students/:id' , component : StudentsViewComponent
+          }
         ]
       },
       {

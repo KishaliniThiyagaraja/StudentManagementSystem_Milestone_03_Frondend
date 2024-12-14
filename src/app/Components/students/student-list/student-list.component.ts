@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentService } from '../../../Services/student.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-list',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentListComponent implements OnInit {
   students: any[] = [];
+  constructor(private studentService : StudentService, private router : Router){
+
+  }
   ngOnInit(): void {
-    // Retrieve student data (role `4`) from localStorage
-    const storedData = localStorage.getItem('4');
-    this.students = storedData ? JSON.parse(storedData) : [];
+   this.studentService.getAllStudents().subscribe(data => {
+    console.log(data);
+    this.students = data;
+   }) 
+  }
+  routeStudentView(utNum : string){
+    this.router.navigate([`dashboard/Staff/students` , utNum])
   }
 }

@@ -1,0 +1,85 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card" *ngIf="currentStudent">
+      <div class="card-header text-center">
+        <h4>Student Information</h4>
+      </div>
+      <div class="card-body text-center">
+        <img src="https://via.placeholder.com/100" alt="Student Avatar" class="avatar">
+        <h5 class="card-title">{{currentStudent.user.firstName}} {{currentStudent.user.lastName}}</h5>
+        <p class="card-text">ID: {{currentStudent.utNumber}}</p>
+        <p class="card-text">Batch: {{currentStudent.batch}}</p>
+        <p class="card-text">Email: {{currentStudent.user.email}}</p>
+        <p class="card-text">NIC No : {{currentStudent.user.nicNumber}}</p>
+        <p class="card-text">Date of Birth : {{currentStudent.user.dateOfBirth}}</p>
+      </div>
+      <div class="card-footer text-center">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Enrollments</button>
+        <button class="btn btn-danger">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Enroll {{currentStudent.utNumber}}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-check d-flex align-items-center" *ngFor="let course of courses">
+          <input class="form-check-input me-2" type="checkbox" name="myCourses" [value]="course.id">
+          <label class="form-check-label" for="studentCheck">{{course.courseName}}</label>
+        </div>
+        <button class="btn btn-primary" (click)="onSubmit()">Save changes</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container mt-4">
+  <h3>Enrollments</h3>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Course Name</th>
+        <th>Enrolled on</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let enrollment of currentStudent.enrollments; let i=index">
+        <td>{{ i+1 }}</td>
+        <td>{{ enrollment.course.courseName }}</td>
+        <td>{{ enrollment.enrolledDate | date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="container mt-4">
+  <h3>Marks</h3>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Course Name</th>
+        <th>Enrolled on</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let enrollment of currentStudent.enrollments; let i=index">
+        <td>{{ i+1 }}</td>
+        <td>{{ enrollment.course.courseName }}</td>
+        <td>{{ enrollment.enrolledDate | date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

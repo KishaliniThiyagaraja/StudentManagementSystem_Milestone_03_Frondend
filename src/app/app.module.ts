@@ -47,6 +47,7 @@ import { LpCourseComponent } from './Components/LandingPage/lp-course/lp-course.
 import { HomeComponent } from './Components/LandingPage/home/home.component';
 import { ViweAttendanceComponent } from './Components/students/viwe-attendance/viwe-attendance.component';
 import { TimeTableAddComponent } from './Components/manager/time-table/time-table-add/time-table-add.component';
+import { StudentsViewComponent } from './Components/manager/students-view/students-view.component';
 
 
 
@@ -89,6 +90,7 @@ import { TimeTableAddComponent } from './Components/manager/time-table/time-tabl
     HomeComponent,
     ViweAttendanceComponent,
     TimeTableAddComponent,
+    StudentsViewComponent,
 
   ],
   imports: [

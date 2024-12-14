@@ -25,7 +25,7 @@ export class LoginregisterComponent implements OnInit {
       password: ['', Validators.required],
       nicNumber: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      dob: ['', Validators.required], // Added Date of Birth field
+      dateOfBirth: ['', Validators.required], // Added Date of Birth field
       userRole: ['', Validators.required],
       utNumber: [''], // Optional fields
       batch: [''],
