@@ -77,6 +77,10 @@ export class TimeTableAddComponent {
     });
     this.timeTableService.addTable(this.timetableForm.value).subscribe(data => {
       console.log(data);
+      if (data){
+        this.toastr.success("Added successfully");
+        this.timetableForm.reset();
+      }
     })
   }
   getCourses() {

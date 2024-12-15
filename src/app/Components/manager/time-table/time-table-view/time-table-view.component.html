@@ -1,4 +1,5 @@
-<div class="row m-3">
+<br>
+ <div class="row m-3">
   <button *ngIf="userRole!='Student'" class="btn btn-primary" (click)="routeAdd()">Add TimeTable</button>
 <div class="container">
   <h3>{{heading0}}</h3>
@@ -7,12 +8,12 @@
       <tr>
         <!-- Header with day names and dates -->
         <th scope="col" class="text-center" *ngFor="let table of timeTableData0">
-          {{table.dayOfWeek == 0 ? "Monday" : 
-          table.dayOfWeek == 1 ? "Tuesday" : 
-          table.dayOfWeek == 2 ? "Wednesday" : 
-          table.dayOfWeek == 3 ? "Thursday" : 
-          table.dayOfWeek == 4 ? "Friday" : 
-          table.dayOfWeek == 5 ? "Saturday" : "Sunday"}} <br> <small>{{table.day}}</small>
+          {{table.dayOfWeek == 0 ? "Sunday" : 
+          table.dayOfWeek == 1 ? "Monday" : 
+          table.dayOfWeek == 2 ? "Tuesday" : 
+          table.dayOfWeek == 3 ? "Wednesday" : 
+          table.dayOfWeek == 4 ? "Thursday" : 
+          table.dayOfWeek == 5 ? "Friday" : "Saturday"}} <br> <small>{{table.day}}</small>
         </th>
       </tr>
     </thead>
@@ -34,12 +35,12 @@
       <tr>
         <!-- Header with day names and dates -->
         <th scope="col" class="text-center" *ngFor="let table of timeTableData1">
-          {{table.dayOfWeek == 0 ? "Monday" : 
-          table.dayOfWeek == 1 ? "Tuesday" : 
-          table.dayOfWeek == 2 ? "Wednesday" : 
-          table.dayOfWeek == 3 ? "Thursday" : 
-          table.dayOfWeek == 4 ? "Friday" : 
-          table.dayOfWeek == 5 ? "Saturday" : "Sunday"}} <br> <small>{{table.day}}</small>
+          {{table.dayOfWeek == 0 ? "Sunday" : 
+          table.dayOfWeek == 1 ? "Monday" : 
+          table.dayOfWeek == 2 ? "Tuesday" : 
+          table.dayOfWeek == 3 ? "Wednesday" : 
+          table.dayOfWeek == 4 ? "Thursday" : 
+          table.dayOfWeek == 5 ? "Friday" : "Saturday"}} <br> <small>{{table.day}}</small>
         </th>
       </tr>
     </thead>
@@ -65,13 +66,12 @@
       <!-- Header with day names and dates -->
       <th scope="col" class="text-center" *ngFor="let table of timeTables">
         <strong>{{table.batch}} </strong>
-        {{table.dayOfWeek == 0 ? "Monday" : 
-        table.dayOfWeek == 1 ? "Tuesday" : 
-        table.dayOfWeek == 2 ? "Wednesday" : 
-        table.dayOfWeek == 3 ? "Thursday" : 
-        table.dayOfWeek == 4 ? "Friday" : 
-        table.dayOfWeek == 5 ? "Saturday" : "Sunday"}} <br> <small>{{table.day}}</small>
-       
+        {{table.dayOfWeek == 0 ? "Sunday" : 
+        table.dayOfWeek == 1 ? "Monday" : 
+        table.dayOfWeek == 2 ? "Tuesday" : 
+        table.dayOfWeek == 3 ? "Wednesday" : 
+        table.dayOfWeek == 4 ? "Thursday" : 
+        table.dayOfWeek == 5 ? "Friday" : "Saturday"}} <br> <small>{{table.day}}</small>
       </th>
     </tr>
   </thead>

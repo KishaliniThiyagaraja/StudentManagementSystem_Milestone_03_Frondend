@@ -21,11 +21,11 @@ export class TimeTableViewComponent implements OnInit {
   }
   userRole: string = '';
   timeTables: any[] = [];
-  timeTableData0! : any;
+  timeTableData0 : any = '';
   heading0 : string = '';
   heading1 : string = '';
-  timeTableData1!: any;
-  dateReq: any;
+  timeTableData1: any = '';
+  dateReq: any = '';
   init: boolean = true;
 
   getWeeklyData() {
@@ -34,8 +34,10 @@ export class TimeTableViewComponent implements OnInit {
       this.timeTableData0 = data[0];
       let table1 : any = (data[0]);
       let table2 : any = (data[1]);
-      this.heading0 = table1[0].batch;
-      this.heading1 = table2[0].batch
+      this.heading0 = table1[0]?.batch;
+      if(table2){
+        this.heading1 = table2[0]?.batch
+      }
       console.log(this.heading0);
       console.log(this.heading1)
       this.timeTableData1 = data[1];

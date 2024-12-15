@@ -40,6 +40,13 @@ const routes: Routes = [
   {
     path: '',
     component: BlankComponent, children: [
+      { path: '', component: LandingpageComponent },
+      { path: 'register', component: LoginregisterComponent },
+    ]
+  },
+  {
+    path: '',
+    component: BlankComponent, children: [
       { path: '', component: LoginComponent },
       { path: 'register', component: LoginregisterComponent },
     ]
@@ -226,14 +233,14 @@ const routes: Routes = [
 
     ]
   },
-  // { path: 'attendance', component: AttendanceComponent },
-  // { path: 'admin-exam', component: AdminExamsComponent },
+  
+  { path: 'login', component: LoginComponent },
   // { path: 'lecturer-exam', component: LecturerExamsComponent },
   // { path: 'studentExam', component: StudentExamsComponent },
   // { path: 'course-add', component: CourseAddComponent },
   // { path: 'course-edit', component: CourseEditComponent },
   // { path: 'courseView', component: CourseViewComponent },
-  // { path: 'landingpage', component: LandingpageComponent },
+  //{ path: 'landingpage', component: LandingpageComponent },
   // { path: 'student', component: StudentListComponent },
   // { path: 'staff', component: ViewStaffComponent },
   // { path: 'lecturer', component: ViewLectureComponent },
