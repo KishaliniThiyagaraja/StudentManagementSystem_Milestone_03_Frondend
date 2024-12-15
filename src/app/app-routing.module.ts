@@ -46,27 +46,27 @@ const routes: Routes = [
   },
   {
     path: 'dashboard', component: DshboardComponent, children: [
+      // {
+      //   path: 'manager', component: ManagerDashboardComponent, children: [
+      //     {
+      //       path: 'timetable', children: [
+      //         { path: '', component: TimeTableComponent },
+      //         { path: 'add', component: TimeTableUpsertComponent },
+      //         { path: 'view', component: TimeTableViewComponent }
+      //       ]
+      //     }
+      //     , { path: 'register', component: LoginregisterComponent }
+      //   ]
+      // },
       {
-        path: 'manager', component: ManagerDashboardComponent, children: [
-          {
-            path: 'timetable', children: [
-              { path: '', component: TimeTableComponent },
-              { path: 'add', component: TimeTableUpsertComponent },
-              { path: 'view', component: TimeTableViewComponent }
-            ]
-          }
-          , { path: 'register', component: LoginregisterComponent }
-        ]
-      },
-      {
-        path: 'Staff', children: [
+        path: 'Manager', children: [
           {
             path: 'timetable', children: [
               {
                 path: '', component: TimeTableComponent, children: [
                   { path: '', component: TimeTableViewComponent },
                   { path: 'add', component: TimeTableAddComponent },
-                  
+
                 ]
               },
 
@@ -100,23 +100,77 @@ const routes: Routes = [
             ]
           },
           {
-            path : 'students/:id' , component : StudentsViewComponent
-          }
-        ]
-      },
-      {
-        path: 'lecturer', children: [
-          {
-            path: '', children: [
-              { path: '', component: ViewLectureComponent },
-              { path: 'add', component: ViewLectureComponent },
-              { path: 'view', component: ViewLectureComponent }
+            path: 'exams', children: [
+              {
+                path: '', component: AdminExamsComponent,
+              }, {
+                path: 'marking/:id' , component : LecturerExamsComponent
+              }
             ]
+          },
+          {
+            path: 'students/:id', component: StudentsViewComponent
           }
         ]
       },
       {
-        path: 'Student', children: [
+        path: 'Staff', children: [
+          {
+            path: 'timetable', children: [
+              {
+                path: '', component: TimeTableComponent, children: [
+                  { path: '', component: TimeTableViewComponent },
+                  { path: 'add', component: TimeTableAddComponent },
+
+                ]
+              },
+
+            ]
+          },
+          {
+            path: 'course', children: [
+              {
+                path: '', children: [
+                  { path: '', component: CourseViewComponent },
+                  { path: 'add', component: CourseAddComponent },
+                  { path: 'edit', component: CourseEditComponent }
+                ]
+              }
+            ]
+          },
+          {
+            path: 'attendance', children: [
+              {
+                path: '', component: AttendanceComponent, children: [
+                ]
+              },
+
+            ]
+          },
+          {
+            path: 'students/:id', component: StudentsViewComponent
+          },
+          {
+            path: 'students', children: [
+              {
+                path: '', component: StudentListComponent
+              },
+            ]
+          },
+          {
+            path: 'exams', children: [
+              {
+                path: '', component: AdminExamsComponent,
+              }, {
+                path: 'marking/:id' , component : LecturerExamsComponent
+              }
+            ]
+          },
+          
+        ]
+      },
+      {
+        path: 'Lecturer', children: [
           {
             path: 'timetable', children: [
               {
@@ -126,6 +180,45 @@ const routes: Routes = [
               },
 
             ]
+          },
+          {
+            path: 'course', children: [
+              {
+                path: '', children: [
+                  { path: '', component: CourseViewComponent },
+                ]
+              }
+            ]
+          },
+          {
+            path: 'exams', children: [
+              {
+                path: '', component: AdminExamsComponent,
+              }, {
+                path: 'marking/:id' , component : LecturerExamsComponent
+              }
+            ]
+          },
+          {
+            path: 'students/:id', component: StudentsViewComponent
+          }
+        ]
+      },
+      {
+        path: 'Student', children: [
+          {
+            path: 'timetable', children: [
+              {
+                path: '', component: TimeTableComponent, children: [
+                  { path: '', component: TimeTableViewComponent }
+
+                ]
+              },
+
+            ]
+          },
+          {
+            path: 'students/:id', component: StudentsViewComponent
           }
         ]
       },
@@ -133,19 +226,19 @@ const routes: Routes = [
 
     ]
   },
-  { path: 'attendance', component: AttendanceComponent },
-  { path: 'admin-exam', component: AdminExamsComponent },
-  { path: 'lecturer-exam', component: LecturerExamsComponent },
-  { path: 'studentExam', component: StudentExamsComponent },
-  { path: 'course-add', component: CourseAddComponent },
-  { path: 'course-edit', component: CourseEditComponent },
-  { path: 'courseView', component: CourseViewComponent },
-  { path: 'landingpage', component: LandingpageComponent },
-  { path: 'student', component: StudentListComponent },
-  { path: 'staff', component: ViewStaffComponent },
-  { path: 'lecturer', component: ViewLectureComponent },
-  { path: 'enrollment', component: EnrollmentUpsertComponent },
-  { path: 'table', component: TimeTableAddComponent }
+  // { path: 'attendance', component: AttendanceComponent },
+  // { path: 'admin-exam', component: AdminExamsComponent },
+  // { path: 'lecturer-exam', component: LecturerExamsComponent },
+  // { path: 'studentExam', component: StudentExamsComponent },
+  // { path: 'course-add', component: CourseAddComponent },
+  // { path: 'course-edit', component: CourseEditComponent },
+  // { path: 'courseView', component: CourseViewComponent },
+  // { path: 'landingpage', component: LandingpageComponent },
+  // { path: 'student', component: StudentListComponent },
+  // { path: 'staff', component: ViewStaffComponent },
+  // { path: 'lecturer', component: ViewLectureComponent },
+  // { path: 'enrollment', component: EnrollmentUpsertComponent },
+  // { path: 'table', component: TimeTableAddComponent }
 
 ];
 

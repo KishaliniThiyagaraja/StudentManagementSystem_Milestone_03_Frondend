@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ExamService {
 
-  private apiUrl = 'http://localhost:5000/api/exams'; // Backend API URL
+  private apiUrl = 'http://localhost:5075/api/ExamControllers'; // Backend API URL
 
   constructor(private http: HttpClient) {}
 
@@ -15,15 +15,16 @@ export class ExamService {
   getExams(): Observable<any> {
     return this.http.get(`${this.apiUrl}`);
   }
-
-  addExam(exam: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}`, exam);
+  //http://localhost:5075/api/ExamControllers/351A7209-D981-464E-975E-08DD1C85CB18
+  getExam(id : string){
+      return this.http.get<any>(`${this.apiUrl}/${id}`)
   }
-
+  addExam(exam: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}`, exam);
+  }
   updateExam(examId: string, exam: any): Observable<any> {
     return this.http.put(`${this.apiUrl}/${examId}`, exam);
   }
-
   deleteExam(examId: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${examId}`);
   }
@@ -31,12 +32,10 @@ export class ExamService {
   approveMarks(examId: string): Observable<any> {
     return this.http.post(`${this.apiUrl}/${examId}/approve`, {});
   }
-
   // Lecturer APIs
   submitMarks(examId: string, marks: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/${examId}/marks`, marks);
   }
-
   // Student APIs
   getMarks(studentId: string): Observable<any> {
     return this.http.get(`${this.apiUrl}/student/${studentId}`);

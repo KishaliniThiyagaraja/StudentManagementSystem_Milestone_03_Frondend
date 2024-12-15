@@ -1,5 +1,6 @@
 <div class="row">
-  <div class="col-12">
+  <div class="col-3"></div>
+  <div class="col-6">
     <div class="card" *ngIf="currentStudent">
       <div class="card-header text-center">
         <h4>Student Information</h4>
@@ -14,11 +15,11 @@
         <p class="card-text">Date of Birth : {{currentStudent.user.dateOfBirth}}</p>
       </div>
       <div class="card-footer text-center">
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Enrollments</button>
-        <button class="btn btn-danger">Delete</button>
+        <!-- <button class="btn btn-danger">Delete</button> -->
       </div>
     </div>
   </div>
+  <div class="col-3"></div>
 </div>
 
 
@@ -35,17 +36,24 @@
           <input class="form-check-input me-2" type="checkbox" name="myCourses" [value]="course.id">
           <label class="form-check-label" for="studentCheck">{{course.courseName}}</label>
         </div>
-        <button class="btn btn-primary" (click)="onSubmit()">Save changes</button>
+        <button class="btn btn-primary" (click)="onSubmit()">Add Enrollments</button>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
       </div>
     </div>
   </div>
 </div>
 <div class="container mt-4">
-  <h3>Enrollments</h3>
+  <div class="row">
+  <div class="col-3"><h3>Enrollments</h3></div>
+  <div class="col-3"></div>
+  <div class="col-3"></div>
+  <div class="col-3">  <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <i class="bi bi-plus-circle me-3"></i>Enroll</button></div>
+  </div>
+  
+
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -59,6 +67,23 @@
         <td>{{ i+1 }}</td>
         <td>{{ enrollment.course.courseName }}</td>
         <td>{{ enrollment.enrolledDate | date }}</td>
+      </tr>
+    </tbody>
+  </table>
+<h3>Marks</h3>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Exam</th>
+        <th>Marks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mark of currentStudent.marks; let i=index">
+        <td>{{ i+1 }}</td>
+        <td>{{ mark.exam.course.courseName }}</td>
+        <td>{{ mark.marksObtained }}</td>
       </tr>
     </tbody>
   </table>

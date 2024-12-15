@@ -38,13 +38,13 @@ export class TimeTableAddComponent {
   getWeek(day: any) {
     const firstDayOfYear: any = new Date(day.getFullYear(), 0, 1);
     const pastDaysOfYear: number = (day - firstDayOfYear) / 86400000;
-    return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7) + 1;
+    return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
   };
   generateDays() {
     this.formatDates(this.now.toLocaleDateString())
   }
   formatDates(obj: string) {
-    for (let i = 7; i < 14; i++) {
+    for (let i = 1; i < 14; i++) {
       let dateInput: any = obj.split('/').reverse();
       dateInput[2] = (parseInt(dateInput[2]) + i).toString();
       if (dateInput[2].length == 1) {

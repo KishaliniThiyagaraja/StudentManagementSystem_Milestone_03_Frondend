@@ -1,59 +1,103 @@
 <div class="container mt-4">
   <h2 class="mb-3 text-center">Manage Exams</h2>
   <div class="d-flex justify-content-end mb-3">
-    <button class="btn btn-primary d-flex align-items-center" (click)="addExam()">
-      Add Exam <i class="bi bi-plus-circle ms-2"></i>
-    </button>
+    <button class="btn btn-primary d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#exampleModal"> Add
+      Exam <i class="bi bi-plus-circle ms-2"></i></button>
   </div>
-  
+
   <!-- Responsive Table -->
   <div *ngIf="exams.length > 0" class="table-responsive">
     <table class="table table-striped table-bordered table-hover align-middle">
       <thead class="table-light">
         <tr>
           <th scope="col">#</th>
-          <th scope="col">UT Number</th>
-          <th scope="col">Student Name</th>
-          <th scope="col">Exam Type</th>
-          <th scope="col">Status</th>
+          <th scope="col">Date</th>
+          <th scope="col">Course</th>
+          <th scope="col">Group</th>
+          <th scope="col">Batch</th>
           <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let exam of exams; index as i">
           <td>{{ i + 1 }}</td>
-          <td>{{ exam.utNumber }}</td>
-          <td>{{ exam.studentName }}</td>
-          <td>{{ exam.examType }}</td>
+          <td>{{ exam.examDate | date:'yyyy-MM-dd'  }}</td>
+          <td>{{ exam.course.courseName }}</td>
+          <td>{{exam.group == '1'? 'A' : exam.group == '2'? 'B' : exam.group == '3'? 'C' : 'Unavailable'}}</td>
           <td>
-            <span
-              class="badge"
-              [ngClass]="exam.status === 'Approved' ? 'bg-success' : 'bg-danger'"
-            >
-              {{ exam.status }}
-            </span>
+            {{ exam.batch }}
           </td>
           <td>
-            <button
-              class="btn btn-warning btn-sm d-flex align-items-center me-2"
-              (click)="editExam(exam)"
-            >
+            <!-- <button class="btn btn-warning btn-sm d-flex align-items-center me-2" (click)="editExam(exam)">
               <i class="bi bi-pencil me-1"></i>Edit
             </button>
-            <button
-              class="btn btn-danger btn-sm d-flex align-items-center"
-              (click)="deleteExam(exam.id)"
-            >
+            <button class="btn btn-danger btn-sm d-flex align-items-center" (click)="deleteExam(exam.id)">
               <i class="bi bi-trash me-1"></i>Delete
-            </button>
+            </button> -->
+            <i class="bi bi-arrow-right-square-fill fs-4" [routerLink]="['/dashboard/Staff/exams/marking' , exam.id]"></i>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
-  
+
   <!-- No Exams Message -->
   <p *ngIf="exams.length === 0" class="text-center text-muted">
     No exams available.
   </p>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Enroll </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="addExamForm" (ngSubmit)="addExam()">
+          <label for="examDate" class="form-label">Exam Date : </label>
+          <input type="date" class="form-control" id="" formControlName="examDate">
+          <div *ngIf="addExamForm.controls.examDate?.touched">
+            <small class="text-danger" *ngIf="addExamForm.get('examDate').errors?.required">
+              Rate per hour is required
+            </small>
+          </div>
+        <label for="courseId" class="form-label">Course : </label>
+        <select formControlName="courseId" class="form-control">
+          <option value="" disabled selected>Select a Course</option>
+          <option *ngFor="let course of courses" [value]="course.id">{{course.courseName}}</option>
+        </select>
+        <div *ngIf="addExamForm.controls.courseId?.touched">
+          <small class="text-danger" *ngIf="addExamForm.get('courseId').errors">
+            Course is required
+          </small>
+        </div>
+        <label for="group" class="form-label">Group : </label>
+        <select formControlName="group" class="form-control">
+          <option value="" disabled selected>Select a Group</option>
+          <option [value]="1">A</option>
+          <option [value]="2">B</option>
+          <option [value]="3">C</option>
+        </select>
+        <div *ngIf="addExamForm.controls.group?.touched">
+          <small class="text-danger" *ngIf="addExamForm.get('group').errors">
+            Group is required
+          </small>
+        </div>
+        <label for="batch" class="form-label">Batch : </label>
+        <input type="number" class="form-control" id="" formControlName="batch">
+        <div *ngIf="addExamForm.controls.batch?.touched">
+          <small class="text-danger" *ngIf="addExamForm.get('batch').errors?.required">
+            Batch is required
+          </small>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3"
+          [disabled]="addExamForm.invalid"  data-bs-dismiss="modal">Submit</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>

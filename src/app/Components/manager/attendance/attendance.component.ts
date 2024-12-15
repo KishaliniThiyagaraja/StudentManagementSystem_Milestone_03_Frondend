@@ -99,6 +99,7 @@ export class AttendanceComponent implements OnInit {
   fetchCourses() {
     this.timeTableService.getTables(this.currentDate).subscribe(data => {
       this.timeTables = data;
+      console.log(data);
     })
   }
   fetchSlots(batch: string) {

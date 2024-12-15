@@ -59,3 +59,31 @@
 <input type="date" [(ngModel)]="dateReq" (input)="inputDate()">
 {{init}}
 <!-- <button class="btn btn-primary" [routerLink]="['/dashboard/Staff/timetable/add']">Add Table</button> -->
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <!-- Header with day names and dates -->
+      <th scope="col" class="text-center" *ngFor="let table of timeTables">
+        <strong>{{table.batch}} </strong>
+        {{table.dayOfWeek == 0 ? "Monday" : 
+        table.dayOfWeek == 1 ? "Tuesday" : 
+        table.dayOfWeek == 2 ? "Wednesday" : 
+        table.dayOfWeek == 3 ? "Thursday" : 
+        table.dayOfWeek == 4 ? "Friday" : 
+        table.dayOfWeek == 5 ? "Saturday" : "Sunday"}} <br> <small>{{table.day}}</small>
+       
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Row 1: Lab and Session columns merged, with times for each session -->
+    <tr>
+      <td class="text-center" *ngFor="let table of timeTables">
+        <div class="border border-black" *ngFor="let slot of table.timeSlots">
+          <strong>{{slot.classType}}</strong><br>
+          <small>{{slot.startTime}} - {{slot.endTime}}</small>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

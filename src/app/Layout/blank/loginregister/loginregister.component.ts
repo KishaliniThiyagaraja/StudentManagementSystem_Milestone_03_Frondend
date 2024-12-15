@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../Services/auth.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-loginregister',
@@ -12,9 +13,10 @@ export class LoginregisterComponent implements OnInit {
   registrationForm!: FormGroup;
   roles: number[] = [2, 3, 4];
   submittedData: any;
+  currentUseRole = '';
 
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private router : Router) { }
+  constructor(private fb: FormBuilder, private authService: AuthService, private router : Router, private toastr : ToastrService) { }
 
   ngOnInit(): void {
     // Initialize the form
@@ -31,7 +33,6 @@ export class LoginregisterComponent implements OnInit {
       batch: [''],
       group : ['']
     });
-
     // Handle role changes dynamically
     this.registrationForm.get('userRole')?.valueChanges.subscribe((selectedRole) => {
       console.log(selectedRole==4)
@@ -50,8 +51,19 @@ export class LoginregisterComponent implements OnInit {
       this.registrationForm.get('batch')?.updateValueAndValidity();
       this.registrationForm.get('group')?.updateValueAndValidity();
     });
+    this.getRole();
   }
+  getRole(){
+     let userRole = localStorage.getItem('role') ;
+     if(!userRole){
+      this.toastr.warning("Log In to add new user");
+      this.router.navigate(['/'])
+     }else {
+      this.currentUseRole = userRole;
+      console.log(this.currentUseRole);
+     }
 
+  }
   // Handle form submission
 
   onSubmit(): void {
@@ -64,7 +76,7 @@ export class LoginregisterComponent implements OnInit {
       this.authService.register(formData).subscribe((data: any) => {
         console.log(data);
         if(data){
-          this.router.navigate(['/dashboard'])
+          this.router.navigate(['/dashboard/Staff/students'])
         }
       })
       // Navigate to respective component based on role

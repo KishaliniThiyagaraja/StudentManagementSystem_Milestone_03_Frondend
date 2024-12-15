@@ -74,9 +74,9 @@
             <label for="userRole" class="form-label">Role</label>
             <select id="userRole" class="form-select" formControlName="userRole">
               <option value="" disabled selected>Select Role</option>
-              <option [value]="2">Staff</option>
-              <option [value]="3">Lecturer</option>
-              <option [value]="4">Student</option>
+              <option *ngIf="currentUseRole=='Manager'" [value]="2">Staff</option>
+              <option *ngIf="currentUseRole=='Staff' || 'Manager'" [value]="3">Lecturer</option>
+              <option  *ngIf="currentUseRole=='Staff' || 'Manager'"  [value]="4">Student</option>
             </select>
             <div *ngIf="registrationForm.get('userRole')?.touched && registrationForm.get('userRole')?.invalid" class="text-danger">
               Role is required.

@@ -31,9 +31,6 @@ export class TimeTableViewComponent implements OnInit {
   getWeeklyData() {
     this.timeTableService.getTablesbyWeekNo(this.weekNo, this.year).subscribe(data => {
       console.log(data);
-      // data.forEach((element : any)=> {
-      //   console.log(element); 
-      // });
       this.timeTableData0 = data[0];
       let table1 : any = (data[0]);
       let table2 : any = (data[1]);

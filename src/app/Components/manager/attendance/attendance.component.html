@@ -2,23 +2,25 @@
   <!-- Date and Time Section -->
   <div class="date-time-section">
     <h3>Date and Time</h3>
-    <table  class="date-time-table">
+    <table class="date-time-table">
       <tr>
         <th>Date</th>
         <input type="text" [(ngModel)]="currentDate" (input)="fetchCourses()">
       </tr>
     </table>
   </div>
-<div class="row">
-  <button class="col-2 btn btn-outline-primary" *ngFor="let table of timeTables" (click)="fetchSlots(table.batch)">{{table.batch}}</button>
-</div>
-<div class="row mt-2">
-  <button class="col-2 btn btn-outline-primary" *ngFor="let slot of timeSlots" (click)="getStudents(slot.courseId, slot.id)" (click)="currentSlot=slot.id">{{slot.startTime}}</button>
-</div>
+  <div class="row">
+    <button class="col-2 btn btn-outline-primary" *ngFor="let table of timeTables"
+      (click)="fetchSlots(table.batch)">{{table.batch}}</button>
+  </div>
+  <div class="row mt-2">
+    <button class="col-2 btn btn-outline-primary" *ngFor="let slot of timeSlots"
+      (click)="getStudents(slot.courseId, slot.id)" (click)="currentSlot=slot.id">{{slot.startTime}}</button>
+  </div>
   <!-- Attendance Table -->
   <div class="attendance-section">
     <h3>Mark Attendance</h3>
-    <table  class="attendance-table ">
+    <table class="attendance-table ">
       <thead>
         <tr>
           <th>UT Number</th>
@@ -31,18 +33,14 @@
           <td>{{ record.utNumber }}</td>
           <td>{{ record.user.firstName}} {{ record.user.lastName}}</td>
           <td class="align-middle">
-            <input
-              type="checkbox"
-              [checked]="record.isPresent"
-              (change)="markAttendance(record.utNumber , i)"
-            />
+            <input type="checkbox" [checked]="record.isPresent" (change)="markAttendance(record.utNumber , i)" />
           </td>
         </tr>
       </tbody>
     </table>
   </div>
-
-  <table  class="attendance-table ">
+  <h3>Attended Students</h3>
+  <table class="attendance-table">
     <thead>
       <tr>
         <th>UT Number</th>
@@ -53,10 +51,10 @@
     <tbody>
       <tr *ngFor="let record of attendedStudents; let i = index">
         <td>{{ record.studentUTNumber? record.studentUTNumber : record.utNumber }}</td>
-        <td>{{ record.student? record.student.user.firstName : record.user.firstName }} 
-          {{ record.student? record.student.user.lastName :  record.user.lastName}}</td>
+        <td>{{ record.student? record.student.user.firstName : record.user.firstName }}
+          {{ record.student? record.student.user.lastName : record.user.lastName}}</td>
         <td class="align-middle">
-         {{record.checkedIn? record.checkedIn : now }}
+          {{ (record.checkedIn ? record.checkedIn : now) | date:'short' }}
         </td>
       </tr>
     </tbody>

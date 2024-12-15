@@ -1,39 +1,38 @@
 /* Custom styling for the landing page */
 .hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-image: url("/weather-effects-collage-concept.jpg");
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-image: url("/weather-effects-collage-concept.jpg");
 }
 .main{
-    background-color: rgba(123, 212, 247, 0.753);
+  background-color: rgba(123, 212, 247, 0.753);
 }
 
-  .feature-card {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.feature-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cta {
+  background-image: linear-gradient(to right, #333, #555);
+}
+
+/* Ensure icons are responsive */
+.bi {
+  font-size: 50px;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
   }
   
-  .cta {
-    background-image: linear-gradient(to right, #333, #555);
+  .cta h2 {
+    font-size: 1.75rem;
   }
-  
-  /* Ensure icons are responsive */
-  .bi {
-    font-size: 50px;
-  }
-  
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2.5rem;
-    }
-    
-    .cta h2 {
-      font-size: 1.75rem;
-    }
-  }
-  
+}

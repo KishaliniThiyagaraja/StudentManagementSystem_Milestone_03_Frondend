@@ -24,8 +24,8 @@
                   Home
               </a>
           </li>
-          <li>
-              <a  class="nav-link text-white" (click)="routeAttendance()" >
+          <li >
+              <a *ngIf="userRole == 'Manager' || 'Staff'" class="nav-link text-white" (click)="routeAttendance()" >
                   <svg class="bi pe-none me-2" width="16" height="16">
                       <use xlink:href="#speedometer2" />
                   </svg>
@@ -41,7 +41,7 @@
               </a>
 
           </li>
-          <li>
+          <li *ngIf="userRole !='Student'">
             <a class="nav-link text-white" (click)="routeStudent()">
                 <svg class="bi pe-none me-2" width="16" height="16">
                     <use xlink:href="#table" />
@@ -50,15 +50,15 @@
             </a>
 
         </li>
-          <!-- <li>
-              <a  class="nav-link text-white">
+          <li *ngIf="userRole != 'Student'">
+              <a  class="nav-link text-white" (click)="routeMarks()">
                   <svg class="bi pe-none me-2" width="16" height="16">
                       
                   </svg>
-                 Marks
+                 Exams
               </a>
-          </li> -->
-          <li>
+          </li>
+          <li *ngIf="userRole != 'Student'">
               <a  class="nav-link text-white"  (click)="routeCourses()">
                   <svg class="bi pe-none me-2" width="16" height="16">
                       <use xlink:href="#table" />
@@ -66,6 +66,15 @@
                  Courses
               </a>
           </li>
+          <li *ngIf="userRole == 'Student'">
+            <a  class="nav-link text-white"  (click)="myProfile()">
+                <svg class="bi pe-none me-2" width="16" height="16">
+                    <use xlink:href="#table" />
+                </svg>
+               My Profile
+            </a>
+        </li>
+          
       </ul>
       <hr>
   </div>

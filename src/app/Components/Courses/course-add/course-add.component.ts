@@ -26,7 +26,7 @@ export class CourseAddComponent {
     const course = this.courseForm.value;
     return this.courseService.addCourse(course).subscribe(data=>{
       alert("Course Create Successfully.....")
-      this.router.navigate(['/course-view'])
+      this.router.navigate(['/Staff/Course'])
     })
   }
 }

@@ -45,12 +45,12 @@ export class LoginComponent {
             this.router.navigate(['/dashboard/Student'])
           }
           else if(user.UserRole == "Lecturer"){
-            this.router.navigate(['/dashboard/lecturer'])
+            this.router.navigate(['/dashboard/Lecturer'])
           }else if(user.UserRole == "Staff"){
             this.router.navigate(['/dashboard/Staff'])
           }
           else if(user.UserRole == "Manager"){
-            this.router.navigate(['/dashboard/manager'])
+            this.router.navigate(['/dashboard/Manager'])
           }
         }
       })

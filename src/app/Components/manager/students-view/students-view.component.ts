@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CourseService } from '../../../Services/course.service';
 import { FormBuilder } from '@angular/forms';
 import { EnrollmentService } from '../../../Services/enrollment.service';
+import { ExamService } from '../../../Services/exam.service';
 
 @Component({
   selector: 'app-students-view',
@@ -15,9 +16,11 @@ export class StudentsViewComponent implements OnInit {
   currentStudent: any;
   enrollForm: any
   courses: any[] = [];
+  marks : any[] = []
   alreadyEnrolled: any[] = []
-  constructor(private userService: StudentService, private route: ActivatedRoute, private courseService: CourseService, private enrollService : EnrollmentService) {
+  constructor(private userService: StudentService, private route: ActivatedRoute,private examService : ExamService, private courseService: CourseService, private enrollService : EnrollmentService) {
     this.currentId = this.route.snapshot.paramMap.get('id') || '';
+    console.log(this.currentId)
   }
   ngOnInit(): void {
     this.userService.getStudentById(this.currentId).subscribe(data => {
@@ -26,6 +29,9 @@ export class StudentsViewComponent implements OnInit {
     })
     this.courseService.getCourse().subscribe(data => {
       this.courses = data;
+      console.log(data);
+    })
+    this.examService.getExams().subscribe(data => {
       console.log(data);
     })
   }

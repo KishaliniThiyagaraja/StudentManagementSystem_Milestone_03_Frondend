@@ -1,46 +1,67 @@
 <div class="container mt-4">
-  <h2 class="mb-3 text-center">Submit Marks</h2>
+  <h2 class="mb-3 text-center">Submit Marks {{currentExam.examDate}} {{currentExam.course.courseName}}</h2>
 
-  <div *ngIf="exams.length > 0" class="table-responsive">
+  <div *ngIf="students.length > 0" class="table-responsive">
     <table class="table table-bordered">
       <thead class="table-light">
         <tr>
           <th>No</th>
           <th>UT Number</th>
           <th>Student Name</th>
-          <th>Exam Type</th>
+          <th>NIC number</th>
           <th>Marks</th>
           <th>Submit</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let exam of exams; index as i">
+        <tr *ngFor="let student of students; index as i">
           <td>{{ i + 1 }}</td>
-          <td>{{ exam.utNumber }}</td>
-          <td>{{ exam.studentName }}</td>
-          <td>{{ exam.examType }}</td>
+          <td>{{ student.utNumber }}</td>
+          <td>{{ student.firstName}} {{student.lastName}}</td>
+          <td>{{ student.nicNumber }}</td>
           <td>
-            <input
-              type="number"
-              class="form-control"
-              [(ngModel)]="exam.marks"
-              placeholder="Enter marks"
-            />
+            <input type="number" class="form-control" name="marks" [(ngModel)]="student.marks"
+              placeholder="Enter marks" />
           </td>
           <td>
-            <button
-              class="btn btn-success btn-sm d-flex align-items-center"
-              (click)="submitMarks(exam)"
-            >
+            <button class="btn btn-success btn-sm d-flex align-items-center" (click)="submitMarks(student , i)"
+              [disabled]="student.isChecked">
               Submit <i class="bi bi-check-circle ms-2"></i>
             </button>
+            <input class="form-check-input" type="checkbox" id="exampleCheckbox" [(ngModel)]="student.isChecked" />
           </td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <p *ngIf="exams.length === 0" class="text-center text-muted">
-    No exams available to submit marks for.
+  <p *ngIf="students.length === 0" class="text-center text-muted">
+    No students available to submit marks for.
   </p>
+  <div *ngIf="currentUserRole=='Manager'">
+    <h3>Uploaded marks</h3>
+    <table class="table table-bordered">
+      <thead class="table-light">
+        <tr>
+          <th>No</th>
+          <th>UT Number</th>
+          <th>Marks</th>
+          <th>Submit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mark of marks; index as i">
+          <td>{{ i + 1 }}</td>
+          <td>{{ mark.student.utNumber }}</td>
+          <td>
+            {{mark.marksObtained}}
+          </td>
+          <td>
+            <input class="form-check-input" type="checkbox" id="exampleCheckbox" [(ngModel)]="mark.isChecked"
+              (change)="onApprove(mark)" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
