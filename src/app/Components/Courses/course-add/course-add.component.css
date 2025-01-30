@@ -1,0 +1,83 @@
+/* Card background and shadow */
+.card {
+    border-radius: 15px; /* Add rounded corners */
+    box-shadow: 0 4px 10px rgba(6, 4, 4, 0.1); /* Soft shadow */
+    background-color: #f7f7f7; /* Light gray background */
+    padding: 30px; /* Padding inside the card */
+    width: 100%;
+    max-width: 600px; /* Maximum width for large screens */
+    margin: 30px auto; /* Center the form horizontally */
+    animation: fadeIn 1s ease-out; /* Animation for card appearance */
+  }
+  
+  /* Custom background color and gradient */
+  .card {
+    background: linear-gradient(to right, #1a0456, #5e91e9); /* Gradient background */
+    color: white; /* White text for contrast */
+  }
+  
+  /* Styling for form labels and inputs */
+  .form-label {
+    font-weight: bold;
+    color: #fff; /* White label text */
+  }
+  
+  .form-control {
+    border-radius: 10px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.075);
+    padding: 12px;
+    border: none; /* Remove border to match card styling */
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+  }
+  
+  .form-control:focus {
+    background-color: white; /* Clear background when focused */
+    border-color: #010307; /* Blue border on focus */
+  }
+  
+  /* Button Styling */
+  .btn {
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: auto;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 576px) {
+    .card {
+      padding: 20px;
+      max-width: 100%;
+    }
+  
+    .btn {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .form-control {
+      font-size: 14px;
+    }
+  }
+  
+  /* Animation: Fade In */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate__animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+  
+  .animate__fadeIn {
+    animation-name: fadeIn;
+  }
+  

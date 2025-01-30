@@ -1,0 +1,90 @@
+/* Full Container Styling */
+.container {
+  max-width: 100%;
+}
+
+/* Card Styling */
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid Layout for Search Box and Add Course Button */
+.row.mb-3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.col-md-8 input {
+  width: 100%;
+  padding: 10px;
+}
+
+.col-md-4 button {
+  padding: 10px 20px;
+}
+
+/* Table Styling */
+.table {
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+.table-bordered {
+  border: 1px solid #ddd;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+.table th, .table td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 15px;
+}
+
+.table th {
+  background-color: #05478e;
+  color: white;
+}
+
+/* Button Styling */
+.btn {
+  margin-top: 5px;
+}
+
+/* Make Table Responsive on Small Screens */
+.table-responsive {
+  overflow-x: auto;
+}
+
+/* Table Row Hover Effect */
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Mobile and Tablet Responsiveness */
+@media (max-width: 768px) {
+  .row.mb-3 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .col-md-8,
+  .col-md-4 {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .col-md-4 {
+    text-align: left;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}

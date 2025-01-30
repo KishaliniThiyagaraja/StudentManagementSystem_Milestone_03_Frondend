@@ -39,15 +39,25 @@
   </div>
 </div> -->
 
-<br><br>
- <div class="card mt-5 m-5 Larger shadow w-50 m-auto">
-  <div class="container mt-5">
-    <div class="d-grid gap-5 d-md-flex justify-content-between">
-      <input type="text" placeholder="Search Course" class="p-auto m-4 w-3" />
-      <button class="btn btn-success p-2 m-4 w-3" type="button" [routerLink]="['/dashboard/Staff/course/add']">+ Add New Course</button>
+<div class="container mt-5">
+  <!-- Card Container for Search and Table -->
+  <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+    <!-- Grid Layout for Search Box and Add Button -->
+    <div class="row mb-3 align-items-center">
+      <!-- Search Box Column -->
+      <div class="col-md-8">
+        <input type="text" placeholder="Search Course" class="form-control" />
+      </div>
+      <!-- Add Course Button Column -->
+      <div class="col-md-4 text-md-right">
+        <button class="btn btn-success p-2 m-4 w-3" type="button" [routerLink]="['/dashboard/Staff/course/add']">+ Add
+          New Course</button>
+      </div>
     </div>
-    <table class="table table-bordered">
-      <thead>
+
+      <!-- Table Section -->
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped"> <thead>
         <tr>
           <th scope="col">Id</th>
           <th scope="col">Course Name</th>
@@ -95,103 +105,6 @@
         </tr>
       </tbody>
     </table>
+    </div>
   </div>
 </div>
-
-<!-- <div class="card mt-5 m-5 Larger shadow w-50 m-auto">
-  <div class="container mt-5">
-    <div class="d-grid gap-5 d-md-flex justify-content-between">
-      <input type="text" placeholder="Search Course" class="p-auto m-4 w-3" />
-      <button class="btn btn-success p-2 m-4 w-3" type="button" [routerLink]="['/course-add']">
-        + Add New Course
-      </button>
-    </div>
-
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Course Name</th>
-          <th scope="col">Description</th>
-          <th scope="col">Start Date</th>
-          <th scope="col">End Date</th>
-          <th scope="col">Available</th>
-          <th scope="col">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngIf="isLoading">
-          <td colspan="7" class="text-center">Loading courses...</td>
-        </tr>
-
-        <tr *ngFor="let course of courses; let i = index">
-          <td>{{ course.id }}</td>
-
-          <td>
-            <input *ngIf="course.isEditing" [(ngModel)]="course.courseName" class="form-control" />
-            <span *ngIf="!course.isEditing">{{ course.courseName }}</span>
-          </td>
-
-          <td>
-            <input *ngIf="course.isEditing" [(ngModel)]="course.description" class="form-control" />
-            <span *ngIf="!course.isEditing">{{ course.description }}</span>
-          </td>
-
-          <td>
-            <input *ngIf="course.isEditing" type="date" [(ngModel)]="course.startDate" class="form-control" />
-            <span *ngIf="!course.isEditing">{{ course.startDate | date }}</span>
-          </td>
-
-          <td>
-            <input *ngIf="course.isEditing" type="date" [(ngModel)]="course.endDate" class="form-control" />
-            <span *ngIf="!course.isEditing">{{ course.endDate | date }}</span>
-          </td>
-
-          <td>{{ course.isDeleted ? 'No' : 'Yes' }}</td>
-
-          <td>
-            <button
-              *ngIf="!course.isEditing"
-              type="button"
-              class="btn btn-primary"
-              (click)="editCourse(course)"
-            >
-              <i class="bi bi-pencil-square"></i>
-            </button>
-            <button
-              *ngIf="course.isEditing"
-              type="button"
-              class="btn btn-success"
-              (click)="onSubmit(course.id)"
-            >
-              <i class="bi bi-save"></i>
-            </button>
-
-            <button
-              *ngIf="!course.isEditing"
-              type="button"
-              class="btn btn-danger mt-2"
-              (click)="deleteCourse(course.id)"
-            >
-              <i class="bi bi-trash3-fill"></i>
-            </button>
-            <button
-              *ngIf="course.isEditing"
-              type="button"
-              class="btn btn-secondary mt-2"
-              (click)="closeEdit(course)"
-            >
-              <i class="bi bi-x-circle"></i>
-            </button>
-          </td>
-        </tr>
-
-        <tr *ngIf="!isLoading && courses.length === 0">
-          <td colspan="7" class="text-center">No courses available.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div> -->
-
-

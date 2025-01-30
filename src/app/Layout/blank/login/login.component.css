@@ -26,8 +26,7 @@ body {
   grid-template-columns: 1fr;
   grid-gap: 20px;
   transition: transform 0.2s ease-in-out;
-  margin-left: -50%;
-  transform: translateX(-50%);
+  margin-left: -60%;
 }
 
 .card .form-control {

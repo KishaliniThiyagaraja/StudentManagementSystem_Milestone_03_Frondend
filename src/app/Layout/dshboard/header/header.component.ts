@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -6,6 +7,10 @@ import { Component, HostListener } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  userRole = '';
+  constructor(private router : Router){
+    this.userRole = localStorage.getItem('role') || ''
+  }
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
     const navbar = document.querySelector('#mainNav');
@@ -14,5 +19,13 @@ export class HeaderComponent {
     } else {
       navbar?.classList.remove('navbar-shrink');
     }
+  }
+  logOut(){
+    localStorage.clear();
+    this.router.navigate(['/'])
+  }
+  routeHome(){
+      this.router.navigate([`dashboard/${this.userRole}`])
+    
   }
 }

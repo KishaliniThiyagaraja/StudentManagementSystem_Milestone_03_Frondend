@@ -67,6 +67,7 @@ const routes: Routes = [
       // },
       {
         path: 'Manager', children: [
+          {path : '', component : ManagerDashboardComponent},
           {
             path: 'timetable', children: [
               {
@@ -101,6 +102,7 @@ const routes: Routes = [
           },
           {
             path: 'students', children: [
+              
               {
                 path: '', component: StudentListComponent
               },
@@ -122,6 +124,7 @@ const routes: Routes = [
       },
       {
         path: 'Staff', children: [
+          {path:'', component:StaffDashboardComponent},
           {
             path: 'timetable', children: [
               {
@@ -159,6 +162,7 @@ const routes: Routes = [
           },
           {
             path: 'students', children: [
+              
               {
                 path: '', component: StudentListComponent
               },
@@ -178,6 +182,7 @@ const routes: Routes = [
       },
       {
         path: 'Lecturer', children: [
+          {path:'', component:LectureDashboardComponent},
           {
             path: 'timetable', children: [
               {
@@ -213,6 +218,7 @@ const routes: Routes = [
       },
       {
         path: 'Student', children: [
+          {path : '' , component : StudentDashboardComponent},
           {
             path: 'timetable', children: [
               {
