@@ -3,9 +3,10 @@ import { ExamService } from '../../../Services/exam.service';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-student-exams',
-  templateUrl: './student-exams.component.html',
-  styleUrl: './student-exams.component.css'
+    selector: 'app-student-exams',
+    templateUrl: './student-exams.component.html',
+    styleUrl: './student-exams.component.css',
+    standalone: false
 })
 export class StudentExamsComponent implements OnInit {
   marks: any[] = [];

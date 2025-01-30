@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { ApiService } from '../../../../Services/api.service';
 
 @Component({
-  selector: 'app-staff-lecture',
-  templateUrl:'staff-lecture.component.html',
-  styleUrl: './staff-lecture.component.css'
+    selector: 'app-staff-lecture',
+    templateUrl: 'staff-lecture.component.html',
+    styleUrl: './staff-lecture.component.css',
+    standalone: false
 })
 export class StaffLectureComponent {
   name = '';

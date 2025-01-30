@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../Services/api.service';
 
 @Component({
-  selector: 'app-view-lecture',
-  templateUrl: './view-lecture.component.html',
-  styleUrl: './view-lecture.component.css'
+    selector: 'app-view-lecture',
+    templateUrl: './view-lecture.component.html',
+    styleUrl: './view-lecture.component.css',
+    standalone: false
 })
 export class ViewLectureComponent implements OnInit {
   lecturelist: any[] = [];

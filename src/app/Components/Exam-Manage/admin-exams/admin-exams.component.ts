@@ -6,9 +6,10 @@ import { CourseService } from '../../../Services/course.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-admin-exams',
-  templateUrl: './admin-exams.component.html',
-  styleUrl: './admin-exams.component.css'
+    selector: 'app-admin-exams',
+    templateUrl: './admin-exams.component.html',
+    styleUrl: './admin-exams.component.css',
+    standalone: false
 })
 export class AdminExamsComponent implements OnInit {
   exams: any[] = [];

@@ -5,9 +5,10 @@ import { TimeTableService } from '../../../../Services/time-table.service';
 
 
 @Component({
-  selector: 'app-time-table-view',
-  templateUrl: './time-table-view.component.html',
-  styleUrl: './time-table-view.component.css'
+    selector: 'app-time-table-view',
+    templateUrl: './time-table-view.component.html',
+    styleUrl: './time-table-view.component.css',
+    standalone: false
 })
 export class TimeTableViewComponent implements OnInit {
   now: any;

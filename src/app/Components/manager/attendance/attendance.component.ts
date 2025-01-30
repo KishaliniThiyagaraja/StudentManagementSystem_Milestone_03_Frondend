@@ -33,9 +33,10 @@ export interface Course {
 
 
 @Component({
-  selector: 'app-attendance',
-  templateUrl: './attendance.component.html',
-  styleUrl: './attendance.component.css'
+    selector: 'app-attendance',
+    templateUrl: './attendance.component.html',
+    styleUrl: './attendance.component.css',
+    standalone: false
 })
 export class AttendanceComponent implements OnInit {
   attendances: Attendance[] = [];

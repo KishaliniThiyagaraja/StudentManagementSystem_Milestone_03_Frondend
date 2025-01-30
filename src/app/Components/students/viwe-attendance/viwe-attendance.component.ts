@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { AttendanceService } from '../../../Services/attendance.service';
 
 @Component({
-  selector: 'app-viwe-attendance',
-  templateUrl: './viwe-attendance.component.html',
-  styleUrl: './viwe-attendance.component.css'
+    selector: 'app-viwe-attendance',
+    templateUrl: './viwe-attendance.component.html',
+    styleUrl: './viwe-attendance.component.css',
+    standalone: false
 })
 export class ViweAttendanceComponent implements OnInit {
   attendanceRecords: any[] = [];

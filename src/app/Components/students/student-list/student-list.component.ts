@@ -3,9 +3,10 @@ import { StudentService } from '../../../Services/student.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-student-list',
-  templateUrl: './student-list.component.html',
-  styleUrl: './student-list.component.css'
+    selector: 'app-student-list',
+    templateUrl: './student-list.component.html',
+    styleUrl: './student-list.component.css',
+    standalone: false
 })
 export class StudentListComponent implements OnInit {
   students: any[] = [];

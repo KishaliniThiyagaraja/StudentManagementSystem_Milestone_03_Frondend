@@ -10,9 +10,10 @@ import { DatePipe } from '@angular/common';
 
 
 @Component({
-  selector: 'app-time-table-upsert',
-  templateUrl: './time-table-upsert.component.html',
-  styleUrl: './time-table-upsert.component.css',
+    selector: 'app-time-table-upsert',
+    templateUrl: './time-table-upsert.component.html',
+    styleUrl: './time-table-upsert.component.css',
+    standalone: false
 })
 export class TimeTableUpsertComponent implements OnInit {
   timeTables: TimeTable[] = [];

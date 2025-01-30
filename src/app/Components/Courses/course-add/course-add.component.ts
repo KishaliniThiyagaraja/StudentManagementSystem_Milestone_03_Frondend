@@ -4,9 +4,10 @@ import { CourseService } from '../../../Services/course.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-course-add',
-  templateUrl: './course-add.component.html',
-  styleUrl: './course-add.component.css'
+    selector: 'app-course-add',
+    templateUrl: './course-add.component.html',
+    styleUrl: './course-add.component.css',
+    standalone: false
 })
 export class CourseAddComponent {
   courseForm:FormGroup;

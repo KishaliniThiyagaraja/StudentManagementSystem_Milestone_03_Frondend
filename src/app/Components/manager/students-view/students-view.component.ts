@@ -7,9 +7,10 @@ import { EnrollmentService } from '../../../Services/enrollment.service';
 import { ExamService } from '../../../Services/exam.service';
 
 @Component({
-  selector: 'app-students-view',
-  templateUrl: './students-view.component.html',
-  styleUrl: './students-view.component.css'
+    selector: 'app-students-view',
+    templateUrl: './students-view.component.html',
+    styleUrl: './students-view.component.css',
+    standalone: false
 })
 export class StudentsViewComponent implements OnInit {
   currentId: string = '';

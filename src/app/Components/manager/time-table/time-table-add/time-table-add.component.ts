@@ -7,9 +7,10 @@ import { Course } from '../../../../../model';
 import { TimeTableService } from '../../../../Services/time-table.service';
 
 @Component({
-  selector: 'app-time-table-add',
-  templateUrl: './time-table-add.component.html',
-  styleUrl: './time-table-add.component.css'
+    selector: 'app-time-table-add',
+    templateUrl: './time-table-add.component.html',
+    styleUrl: './time-table-add.component.css',
+    standalone: false
 })
 export class TimeTableAddComponent {
 

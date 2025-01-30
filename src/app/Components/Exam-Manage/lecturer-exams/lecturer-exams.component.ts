@@ -8,9 +8,10 @@ import { ToastrService } from 'ngx-toastr';
 import { MarksService } from '../../../Services/marks.service';
 
 @Component({
-  selector: 'app-lecturer-exams',
-  templateUrl: './lecturer-exams.component.html',
-  styleUrl: './lecturer-exams.component.css'
+    selector: 'app-lecturer-exams',
+    templateUrl: './lecturer-exams.component.html',
+    styleUrl: './lecturer-exams.component.css',
+    standalone: false
 })
 export class LecturerExamsComponent implements OnInit {
 

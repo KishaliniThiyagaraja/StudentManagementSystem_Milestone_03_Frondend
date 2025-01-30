@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-lp-contact',
-  templateUrl: './lp-contact.component.html',
-  styleUrl: './lp-contact.component.css'
+    selector: 'app-lp-contact',
+    templateUrl: './lp-contact.component.html',
+    styleUrl: './lp-contact.component.css',
+    standalone: false
 })
 export class LpContactComponent {
 

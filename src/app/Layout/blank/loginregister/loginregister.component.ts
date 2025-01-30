@@ -5,9 +5,10 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-loginregister',
-  templateUrl: './loginregister.component.html',
-  styleUrl: './loginregister.component.css'
+    selector: 'app-loginregister',
+    templateUrl: './loginregister.component.html',
+    styleUrl: './loginregister.component.css',
+    standalone: false
 })
 export class LoginregisterComponent implements OnInit {
   registrationForm!: FormGroup;

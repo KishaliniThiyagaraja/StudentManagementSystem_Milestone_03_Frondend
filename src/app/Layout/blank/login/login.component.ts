@@ -7,9 +7,10 @@ import { jwtDecode } from "jwt-decode";
 
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrl: './login.component.css',
+    standalone: false
 })
 export class LoginComponent {
   loginForm!: FormGroup;

@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-dshboard',
-  templateUrl:'./dshboard.component.html',
-  styleUrl:'./dshboard.component.css'
+    selector: 'app-dshboard',
+    templateUrl: './dshboard.component.html',
+    styleUrl: './dshboard.component.css',
+    standalone: false
 })
 export class DshboardComponent {
 

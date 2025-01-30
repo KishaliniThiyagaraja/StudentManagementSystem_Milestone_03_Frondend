@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../../../../Services/course.service';
 
 @Component({
-  selector: 'app-enrollment-upsert',
-  templateUrl: './enrollment-upsert.component.html',
-  styleUrl: './enrollment-upsert.component.css'
+    selector: 'app-enrollment-upsert',
+    templateUrl: './enrollment-upsert.component.html',
+    styleUrl: './enrollment-upsert.component.css',
+    standalone: false
 })
 // export class EnrollmentUpsertComponent {
 

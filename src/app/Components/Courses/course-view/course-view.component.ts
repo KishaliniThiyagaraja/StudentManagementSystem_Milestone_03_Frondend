@@ -5,9 +5,10 @@ import { Course } from '../../../../model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-course-view',
-  templateUrl: './course-view.component.html',
-  styleUrl: './course-view.component.css'
+    selector: 'app-course-view',
+    templateUrl: './course-view.component.html',
+    styleUrl: './course-view.component.css',
+    standalone: false
 })
 export class CourseViewComponent implements OnInit{
   // courses:Course[] = []
